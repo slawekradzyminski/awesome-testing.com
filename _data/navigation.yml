@@ -1,0 +1,14 @@
+# main links
+main:
+  - title: "Blog"
+    url: /blog/
+  - title: "Training"
+    url: /training/
+  - title: "Consulting"
+    url: /consulting/
+  - title: "Events"
+    url: /events/
+  - title: "Subscribe"
+    url: /subscribe/
+  - title: "Contact"
+    url: /contact/

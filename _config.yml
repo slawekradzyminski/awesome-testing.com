@@ -1,0 +1,96 @@
+url: "https://www.awesome-testing.com"
+title: Awesome Testing
+title_separator: "&#124;"
+subtitle: ""
+name: "Sławomir Radzymiński"
+description: "Test automation training and consultancy"
+logo: /images/logo2.png
+plugins:
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "air"
+markdown: kramdown
+paginate: 5
+paginate_path: "/blog/page:num"
+kramdown:
+  syntax_highlighter: rouge
+author_profile: true
+author:
+  name     : "Sławomir Radzymiński"
+  avatar   : "/images/slawek.jpeg"
+  bio      : "Senior Staff Test Engineer"
+  location : "Kraków, Poland"
+  links:
+    - label: Email
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:slawomir.radzyminski@gmail.com"
+    - label: LinkedIn
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/slawekradzyminski/"
+    - label: GitHub
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/slawekradzyminski"
+    - label: Twitter
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/s_radzyminski"
+    - label: Facebook
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/AwesomeTestingBlog"
+    - label: Instagram
+      icon: "fab fa-fw fa-instagram-square"
+      url: "https://www.instagram.com/awesome_testing/"
+footer:
+  links:
+    - label: Email
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:slawomir.radzyminski@gmail.com"
+    - label: LinkedIn
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/slawekradzyminski/"
+    - label: GitHub
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/slawekradzyminski"
+    - label: Twitter
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/s_radzyminski"
+    - label: Facebook
+      icon: "fab fa-fw fa-facebook-square"
+      url: "https://www.facebook.com/AwesomeTestingBlog"
+    - label: Instagram
+      icon: "fab fa-fw fa-instagram-square"
+      url: "https://www.instagram.com/awesome_testing/"
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+google_analytics: "TBD"
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+#jekyll-archives:
+#  enabled:
+#    - categories
+#    - tags
+#  layouts:
+#    category: archive-taxonomy
+#    tag: archive-taxonomy
+#  permalinks:
+#    category: /categories/:name/
+#    tag: /tags/:name/
+commentbox:
+  id: 5697635910418432-proj
+og_image: /images/logo2.png
