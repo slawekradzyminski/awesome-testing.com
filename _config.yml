@@ -74,7 +74,7 @@ defaults:
       comments: true
       share: true
       related: true
-google_analytics: "TBD"
+google_analytics: "G-S9LYTKEDYY"
 category_archive:
   type: liquid
   path: /categories/
