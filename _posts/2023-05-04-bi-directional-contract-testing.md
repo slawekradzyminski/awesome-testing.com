@@ -365,17 +365,17 @@ While the "happy flow" in CDCT is straightforward, things can become complicated
 contract between the consumer and provider. Initially, tags were used to manage these changes, but this approach has
 been deprecated in favor of using environments. The transition to environments and the complexities that arise during
 contract modifications have made CDCT more difficult to manage, hindering its widespread adoption.
-
-It is worth noting that the author of this analysis has never openly endorsed CDCT, acknowledging its limitations and
-the need for improvements to make it more accessible and practical for teams to adopt. While CDCT has potential, its
-current challenges have limited its impact on the testing landscape, and it remains a niche approach to integration
-testing. I recommend to take a look into BiDirectional Contract Testing instead.
-
+F
 **Integration with External APIs**
 
 CDCT presents a challenge when attempting to integrate with external APIs owned by third-party companies. This is
 because CDCT requires cooperation in defining contract states, which may not be possible when dealing with external
 providers that are outside your organization's control.
+
+It is worth noting that the author of this analysis has never openly endorsed CDCT, acknowledging its limitations and
+the need for improvements to make it more accessible and practical for teams to adopt. While CDCT has potential, its
+current challenges have limited its impact on the testing landscape, and it remains a niche approach to integration
+testing. I recommend to take a look into BiDirectional Contract Testing instead.
 
 ## BiDirectional Contract Testing
 
