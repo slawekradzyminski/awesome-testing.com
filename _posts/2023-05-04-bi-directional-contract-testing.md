@@ -365,7 +365,7 @@ While the "happy flow" in CDCT is straightforward, things can become complicated
 contract between the consumer and provider. Initially, tags were used to manage these changes, but this approach has
 been deprecated in favor of using environments. The transition to environments and the complexities that arise during
 contract modifications have made CDCT more difficult to manage, hindering its widespread adoption.
-F
+
 **Integration with External APIs**
 
 CDCT presents a challenge when attempting to integrate with external APIs owned by third-party companies. This is
