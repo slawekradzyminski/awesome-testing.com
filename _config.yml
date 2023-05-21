@@ -3,7 +3,7 @@ title: Awesome Testing
 title_separator: "&#124;"
 subtitle: ""
 name: "Sławomir Radzymiński"
-description: "Test automation training and consultancy"
+description: "Test automation blog, training and consultancy"
 logo: /images/logo2.png
 plugins:
   - jekyll-include-cache
@@ -74,6 +74,7 @@ defaults:
       comments: true
       share: true
       related: true
+      show_date: true
 google_analytics: "G-S9LYTKEDYY"
 category_archive:
   type: liquid
