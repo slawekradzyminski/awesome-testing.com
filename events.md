@@ -21,14 +21,6 @@ chance to connect with me in person.
             <th></th>
         </tr>
         <tr>
-            <td style="border: none;">May 15-18, 2023</td>
-            <td style="border: none;">Training</td>
-            <td style="border: none;">cantest.it: Cypress basics</td>
-            <td style="border: none;">Polish</td>
-            <td style="border: none;"><p align="center"><a href="https://cantest.it/cypress" target="_blank"
-                                                           class="btn btn--success">Enroll</a></p></td>
-        </tr>
-        <tr>
             <td style="border: none;">May 22-23, 2023</td>
             <td style="border: none;">Training</td>
             <td style="border: none;">cantest.it: Cypress intermediate</td>
