@@ -20,7 +20,7 @@ In this post, I’ll share my journey toward understanding AI, what I’ve learn
 
 It all started in 2022, when I first began using ChatGPT. I was immediately captivated, and I remember enthusiastically recommending it to my team with a simple Slack message: `Use it, this is the future`. Not everyone shared my excitement, though. Looking back, I realize this was because their initial experiences were different from mine.
 
-My mind tends to connect concepts across [various fields](https://www.ftfs.it/tips/5)—whether it’s software development or military strategy—and generative AI excels at creatively bridging those gaps. However, many people initially approached ChatGPT as more of an interactive knowledge base than a tool for generating novel insights. Even now in 2024, it’s important to note that while AI is powerful, it’s not an oracle.
+My mind tends to connect concepts across [various fields](https://www.ftfs.it/tips/interdisciplinary)—whether it’s software development or military strategy—and generative AI excels at creatively bridging those gaps. However, many people initially approached ChatGPT as more of an interactive knowledge base than a tool for generating novel insights. Even now in 2024, it’s important to note that while AI is powerful, it’s not an oracle.
 
 ### Starting point
 
@@ -52,7 +52,7 @@ This tool significantly helped me improve my [Dockerized localstack](https://git
 
 ### Becoming a teacher
 
-I didn’t stop there. Richard Feynman once said that the [real understanding](https://www.ftfs.it/tips/4) comes when you explain a topic to someone else, and that advice stuck with me. As ambitious as it may sound, I decided to run a ChatGPT/AI training session for others, partnering with [testerzy.pl](https://testerzy.pl/szkolenia/praktyka-testowania/efektywne-wykorzystanie-ai-w-testowaniu-od-chatgpt-do-generacji-kodu). I had to build everything from scratch, including the entire course agenda. At first glance, it may not seem like much, but believe me, it was far from easy. Even today, such trainings are rare, so I had to plan every detail myself. I’m really proud of the outcome and grateful for the opportunity to teach others. In fact, the next session has already sold out.
+I didn’t stop there. Richard Feynman once said that the [real understanding](https://www.ftfs.it/tips/feynman-technique) comes when you explain a topic to someone else, and that advice stuck with me. As ambitious as it may sound, I decided to run a ChatGPT/AI training session for others, partnering with [testerzy.pl](https://testerzy.pl/szkolenia/praktyka-testowania/efektywne-wykorzystanie-ai-w-testowaniu-od-chatgpt-do-generacji-kodu). I had to build everything from scratch, including the entire course agenda. At first glance, it may not seem like much, but believe me, it was far from easy. Even today, such trainings are rare, so I had to plan every detail myself. I’m really proud of the outcome and grateful for the opportunity to teach others. In fact, the next session has already sold out.
 
 To maintain the momentum, I’ve also spoken at several conferences. Two of my talks were recorded:
 
@@ -284,9 +284,9 @@ The last point offers a glimpse into the future of AI-powered development. You a
 
 ### Book renaissance
 
-In the age of AI, we are witnessing a renaissance of deep, structured knowledge—a key reason why [books are more relevant](https://www.ftfs.it/tips/7) than ever. Since it's crucial to start prompting with the end goal in mind, having extensive knowledge across multiple domains has never been so important. The more you know, the better equipped you are to guide AI toward useful outcomes, avoiding shallow results or errors.
+In the age of AI, we are witnessing a renaissance of deep, structured knowledge—a key reason why [books are more relevant](https://www.ftfs.it/tips/on-reading-regularly) than ever. Since it's crucial to start prompting with the end goal in mind, having extensive knowledge across multiple domains has never been so important. The more you know, the better equipped you are to guide AI toward useful outcomes, avoiding shallow results or errors.
 
-Additionally, as linguistic nuances are easily managed by LLMs, engineers should elevate their focus to higher-level, more [strategic matters](https://www.ftfs.it/tips/3). Rather than getting bogged down in syntax or language details, the emphasis should shift toward design, architecture, and long-term vision. This shift allows engineers to think big, leveraging AI as a tool for generating code.
+Additionally, as linguistic nuances are easily managed by LLMs, engineers should elevate their focus to higher-level, more [strategic matters](https://www.ftfs.it/tips/elevate-your-perspective). Rather than getting bogged down in syntax or language details, the emphasis should shift toward design, architecture, and long-term vision. This shift allows engineers to think big, leveraging AI as a tool for generating code.
 
 ### Testing renaissance
 
