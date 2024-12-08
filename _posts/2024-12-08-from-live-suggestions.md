@@ -18,7 +18,7 @@ To work effectively with AI-powered IDEs, it's essential to first become familia
 - How Large Language Models (LLMs) work: Understanding their capabilities, limitations, and how they process information.
 - Prompt Engineering Techniques: Crafting effective prompts to get the most out of AI-powered tools.
 
-I've covered these topics in my [previous post](./2024-09-21-the-rise-of-ai-driven-development.md) where I share recommended resources and practical tips to help you get started.
+I've covered these topics in my [previous post](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development) where I share recommended resources and practical tips to help you get started.
 
 AI-powered IDEs have become a significant presence in the software development landscape, highlighted extensively in the latest ThoughtWorks Technology Radar under categories such as:
 
@@ -29,7 +29,7 @@ AI-powered IDEs have become a significant presence in the software development l
 - [LLM-powered autonomous agents (Adopt)](https://www.thoughtworks.com/radar/techniques/summary/llm-powered-autonomous-agents)
 - [Function Calling with LLMs (Trial)](https://www.thoughtworks.com/radar/techniques/summary/function-calling-with-llms)
 
-If you’re not yet using these tools, consider discussing their potential with your managers. You might share resources like ThoughtWorks’ perspective on [LLM bans](https://www.thoughtworks.com/radar/techniques/summary/llm-bans) or even this article to emphasize their importance. As I’ve mentioned in my [previous post](./2024-09-21-the-rise-of-ai-driven-development.md), these tools are continuously improving, and early adoption can help you and your team stay ahead.
+If you’re not yet using these tools, consider discussing their potential with your managers. You might share resources like ThoughtWorks’ perspective on [LLM bans](https://www.thoughtworks.com/radar/techniques/summary/llm-bans) or even this article to emphasize their importance. As I’ve mentioned in my [previous post](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development), these tools are continuously improving, and early adoption can help you and your team stay ahead.
 
 In this post, I’ll evaluate AI-powered IDEs based on the following criteria:
 
@@ -230,7 +230,7 @@ Given the importance of RAG, you can evaluate the following criteria when choosi
 
 ## Agent performance boost
 
-In my [previous post about AI](./2024-09-21-the-rise-of-ai-driven-development.md) I mentioned that *autonomous* agents failed to fully deliver on their promises. However, *cooperative* agents working under close supervision of a human are a new promising and exciting area. 
+In my [previous post about AI](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development) I mentioned that *autonomous* agents failed to fully deliver on their promises. However, *cooperative* agents working under close supervision of a human are a new promising and exciting area. 
 
 In [SWE-agent paper](https://arxiv.org/pdf/2405.15793) we can find the following illustration and definition of an agent (please note that the author uses term *language model (LM)* instead of *large language model*):
 
