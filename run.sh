@@ -1,3 +1,3 @@
 #!/bin/bash
 #bundle install
-bundle exec jekyll serve
+JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config.development.yml
