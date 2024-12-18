@@ -29,7 +29,7 @@ If you’re looking for expert help with test automation, continuous integration
 
 </form>
 
-My company is called 'Sławomir Radzymiński Consulting' as is registered in Poland.
+My company is called 'Sławomir Radzymiński Consulting', which is registered in Poland.
 
 - VAT: PL8133497877
 - IBAN: PL83124022941111001110056282
