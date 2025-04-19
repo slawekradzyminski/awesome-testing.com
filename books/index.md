@@ -10,7 +10,7 @@ author_profile: true
 > A new random book is displayed each time you visit.
 
 <div style="display: flex; gap: 2rem; margin-top: 2rem;">
-  <div class="books-sidebar">
+  <div class="books-sidebar mobile-collapsed">
     <input id="bookSearch" type="search" placeholder="Filter books by title..." style="width:100%;padding:0.6rem;margin-bottom:1rem;border-radius:0.5rem;">
     <ul id="bookList" style="font-size: 0.85rem;">
       {% assign sorted_books = site.data.books | sort: "title" %}
@@ -163,6 +163,12 @@ author_profile: true
       overflow: visible;
     }
     
+    /* Default hidden state for mobile */
+    .mobile-collapsed #bookList,
+    .mobile-collapsed #bookSearch {
+      display: none;
+    }
+    
     .books-content {
       order: 0;
       margin-bottom: 1.5rem;
@@ -236,7 +242,7 @@ author_profile: true
       margin-bottom: 0.5rem;
     }
     
-    /* Collapsible sidebar */
+    /* Classes controlled by JavaScript */
     .sidebar-collapsed #bookList,
     .sidebar-collapsed #bookSearch {
       display: none;
@@ -264,14 +270,19 @@ window.addEventListener('load', function() {
     const searchContainer = document.getElementById('bookSearch').parentNode;
     searchContainer.insertBefore(sidebarToggle, searchContainer.firstChild);
     
-    // Initialize sidebar as collapsed on mobile
+    // Initialize sidebar for JavaScript control
     if (window.innerWidth <= 768) {
       sidebar.classList.add('sidebar-collapsed');
+      // Remove the CSS-only class now that JS is in control
+      sidebar.classList.remove('mobile-collapsed');
       sidebarToggle.textContent = 'Show Book List';
       
       // Ensure body has no overflow issues on mobile
       document.body.style.overflow = 'auto';
       document.documentElement.style.overflow = 'auto';
+    } else {
+      // On desktop, ensure the mobile-collapsed class is removed 
+      sidebar.classList.remove('mobile-collapsed');
     }
     
     // Toggle sidebar visibility on click
@@ -319,6 +330,12 @@ window.addEventListener('load', function() {
         bookDetails.forEach(detail => detail.style.display = 'none');
         document.getElementById('book-' + bookId).style.display = 'block';
         if (placeholder) placeholder.style.display = 'none';
+        
+        // Auto-collapse sidebar on mobile after selection
+        if (window.innerWidth <= 768) {
+          sidebar.classList.add('sidebar-collapsed');
+          sidebarToggle.textContent = 'Show Book List';
+        }
       });
     });
     
