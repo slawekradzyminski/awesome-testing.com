@@ -4,7 +4,9 @@ main:
     url: /blog/
   - title: "Tips"
     url: /tips/
-  - title: "Talks"
+  - title: "Public Speaking"
     url: /talks/
+  - title: "Book Recommendations"
+    url: /books/
   - title: "Contact"
     url: /contact/

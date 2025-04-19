@@ -5,7 +5,7 @@
 pkill -f jekyll
 
 # Wait a moment to ensure ports are freed
-sleep 2
+sleep 3
 
 # Start Jekyll in the background
 JEKYLL_ENV=development bundle exec jekyll serve --config _config.yml,_config.development.yml > jekyll.log 2>&1 &
