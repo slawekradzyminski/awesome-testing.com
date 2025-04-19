@@ -126,6 +126,16 @@ author_profile: true
   }
   
   @media (max-width: 768px) {
+    body, html {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    
+    div[style*="display: flex"] {
+      display: block !important;
+      gap: 0 !important;
+    }
+    
     .books-container {
       flex-direction: column;
     }
@@ -147,34 +157,52 @@ author_profile: true
       padding-bottom: 1rem;
       margin-bottom: 1rem;
       order: 1;
+      position: static;
+      height: auto;
+      max-height: none;
+      overflow: visible;
     }
     
     .books-content {
       order: 0;
       margin-bottom: 1.5rem;
+      overflow: visible;
+      height: auto;
     }
     
     #bookList {
-      max-height: 200px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      overflow-y: auto;
+      max-height: none;
+      overflow-y: visible;
+      margin-bottom: 1rem;
+      position: static;
     }
     
     .book-item {
-      padding: 0.5rem 0.8rem;
-      margin-bottom: 0;
-      font-size: 0.8rem;
-      flex: 0 0 auto;
-      white-space: nowrap;
+      padding: 0.6rem 0.8rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+      display: block;
+      white-space: normal;
       background-color: #f9f9f9;
       border: 1px solid #eaeaea;
+      border-radius: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.3;
     }
     
     .book-item.active {
       background-color: #e0e7ff;
       border-color: #c0c9ff;
+      position: relative;
+    }
+    
+    .book-item.active::after {
+      content: '👈';
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
     }
     
     .book-image {
@@ -231,12 +259,19 @@ window.addEventListener('load', function() {
     sidebarToggle.textContent = 'Show Book List';
     sidebarToggle.setAttribute('aria-label', 'Toggle book list visibility');
     sidebarToggle.setAttribute('type', 'button');
-    sidebar.insertBefore(sidebarToggle, sidebar.firstChild);
+    
+    // Insert the toggle button before the search input
+    const searchContainer = document.getElementById('bookSearch').parentNode;
+    searchContainer.insertBefore(sidebarToggle, searchContainer.firstChild);
     
     // Initialize sidebar as collapsed on mobile
     if (window.innerWidth <= 768) {
       sidebar.classList.add('sidebar-collapsed');
       sidebarToggle.textContent = 'Show Book List';
+      
+      // Ensure body has no overflow issues on mobile
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
     }
     
     // Toggle sidebar visibility on click
@@ -245,6 +280,16 @@ window.addEventListener('load', function() {
       sidebarToggle.textContent = sidebar.classList.contains('sidebar-collapsed') 
         ? 'Show Book List' 
         : 'Hide Book List';
+        
+      // Scroll to make selected book visible when showing the list
+      if (!sidebar.classList.contains('sidebar-collapsed')) {
+        const activeBook = document.querySelector('.book-item.active');
+        if (activeBook) {
+          setTimeout(() => {
+            activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+      }
     });
     
     // Show a random book by default
