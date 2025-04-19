@@ -6,8 +6,8 @@ classes: wide             # full‑width content area
 author_profile: true
 ---
 
-> Hand‑picked books I keep recommending to friends and colleagues.  
-> **Click a title** to view details.
+> Hand‑picked books I recommend to friends and colleagues.  
+> A new random book is displayed each time you visit.
 
 <div style="display: flex; gap: 2rem; margin-top: 2rem;">
   <div class="books-sidebar">
@@ -22,7 +22,7 @@ author_profile: true
   
   <div class="books-content">
     <div id="bookDetails">
-      <div class="book-placeholder">Choosing a random book...</div>
+      <div class="book-placeholder">Loading a random book recommendation...</div>
       {% for book in sorted_books %}
         <div class="book-detail" id="book-{{ forloop.index0 }}" style="display:none;">
           <h2>{{ book.title }}</h2>
@@ -112,27 +112,106 @@ author_profile: true
     border-radius: 8px;
   }
   
+  .sidebar-toggle {
+    display: none;
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+  }
+  
   @media (max-width: 768px) {
     .books-container {
       flex-direction: column;
     }
     
+    /* Mobile layout adjustments */
+    [style*="display: flex"] {
+      flex-direction: column;
+    }
+    
+    .sidebar-toggle {
+      display: block;
+    }
+    
     .books-sidebar {
-      flex: auto;
+      flex: 0 0 auto;
       border-right: none;
       border-bottom: 1px solid #eaeaea;
       padding-right: 0;
       padding-bottom: 1rem;
       margin-bottom: 1rem;
+      order: 1;
+    }
+    
+    .books-content {
+      order: 0;
+      margin-bottom: 1.5rem;
+    }
+    
+    #bookList {
+      max-height: 200px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      overflow-y: auto;
+    }
+    
+    .book-item {
+      padding: 0.5rem 0.8rem;
+      margin-bottom: 0;
+      font-size: 0.8rem;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      background-color: #f9f9f9;
+      border: 1px solid #eaeaea;
+    }
+    
+    .book-item.active {
+      background-color: #e0e7ff;
+      border-color: #c0c9ff;
+    }
+    
+    .book-image {
+      flex: 0 0 auto;
+      max-width: 65%;
+      margin: 0 auto 1.5rem;
     }
     
     .book-detail-flex {
       flex-direction: column;
+      align-items: center;
     }
     
-    .book-image {
+    .book-info {
+      width: 100%;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
       text-align: center;
+    }
+    
+    .book-placeholder {
+      padding: 2rem 1rem;
+    }
+    
+    #bookSearch {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Collapsible sidebar */
+    .sidebar-collapsed #bookList,
+    .sidebar-collapsed #bookSearch {
+      display: none;
     }
   }
 </style>
@@ -144,6 +223,29 @@ window.addEventListener('load', function() {
     const bookItems = document.querySelectorAll('.book-item');
     const bookDetails = document.querySelectorAll('.book-detail');
     const placeholder = document.querySelector('.book-placeholder');
+    
+    // Add sidebar toggle for mobile
+    const sidebar = document.querySelector('.books-sidebar');
+    const sidebarToggle = document.createElement('button');
+    sidebarToggle.className = 'sidebar-toggle';
+    sidebarToggle.textContent = 'Show Book List';
+    sidebarToggle.setAttribute('aria-label', 'Toggle book list visibility');
+    sidebarToggle.setAttribute('type', 'button');
+    sidebar.insertBefore(sidebarToggle, sidebar.firstChild);
+    
+    // Initialize sidebar as collapsed on mobile
+    if (window.innerWidth <= 768) {
+      sidebar.classList.add('sidebar-collapsed');
+      sidebarToggle.textContent = 'Show Book List';
+    }
+    
+    // Toggle sidebar visibility on click
+    sidebarToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('sidebar-collapsed');
+      sidebarToggle.textContent = sidebar.classList.contains('sidebar-collapsed') 
+        ? 'Show Book List' 
+        : 'Hide Book List';
+    });
     
     // Show a random book by default
     if (bookItems.length > 0 && bookDetails.length > 0) {
