@@ -17,6 +17,7 @@
 
 <div class="page__footer-copyright">&copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}. {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
+{% if site.sib_forms_enabled %}
 <script>
   window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
   window.LOCALE = 'en';
@@ -38,3 +39,4 @@
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 <script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
+{% endif %}
