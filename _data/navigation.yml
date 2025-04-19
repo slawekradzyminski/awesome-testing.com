@@ -2,5 +2,7 @@
 main:
   - title: "Blog"
     url: /blog/
+  - title: "Tips"
+    url: /tips/
   - title: "Contact"
     url: /contact/

@@ -14,6 +14,24 @@ remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air"
 markdown: kramdown
 paginate: 5
+
+# --- Tips for Seniors collection ------------------------------
+collections:
+  tips:
+    output: true              # generate standalone HTML
+    permalink: /tips/:title/  # pretty URLs
+    sort_by: date             # newest first
+    layout: single            # default layout for each tip
+    author_profile: true      # show author box by default
+# --------------------------------------------------------------
+
+search: true
+search_provider: lunr
+
+feed:
+  collections:
+    - tips
+
 paginate_path: "/blog/page:num"
 kramdown:
   syntax_highlighter: rouge
@@ -56,6 +74,15 @@ defaults:
       comments: true
       share: true
       related: true
+      show_date: true
+  # _tips
+  - scope:
+      path: ""
+      type: tips
+    values:
+      layout: single
+      author_profile: true
+      share: true
       show_date: true
 google_analytics: "G-S9LYTKEDYY"
 category_archive:
