@@ -4,5 +4,7 @@ main:
     url: /blog/
   - title: "Tips"
     url: /tips/
+  - title: "Talks"
+    url: /talks/
   - title: "Contact"
     url: /contact/
