@@ -84,6 +84,7 @@ defaults:
       author_profile: true
       share: true
       show_date: true
+      comments: true
 google_analytics: "G-S9LYTKEDYY"
 category_archive:
   type: liquid

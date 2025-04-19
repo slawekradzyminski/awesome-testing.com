@@ -8,3 +8,6 @@ vendor
 # IDE
 .idea/
 .DS_Store
+
+# Jekyll
+jekyll.log

@@ -55,6 +55,10 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
+      {% if site.commentbox.id and page.comments %}
+        {% include commentbox.html %}
+      {% endif %}
+
       {% include post_pagination.html %}
     </div>
 
