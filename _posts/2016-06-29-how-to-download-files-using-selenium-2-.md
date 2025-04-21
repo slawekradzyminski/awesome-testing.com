@@ -2,6 +2,7 @@
 title: How to Download files using Selenium 2
 layout: post
 permalink: /2016/06/how-to-download-files-using-selenium-2
+description: "Provides four methods to handle file downloads in Selenium/Java without brittle tools like AutoIT: checking URL status with HttpClient, simulating user download with cookies, verifying non-empty download, and confirming MD5 checksum."
 categories:
   - Selenium
 tags:
@@ -12,7 +13,7 @@ tags:
   - UI testing 
 ---
 
-![](/images/blog/downloading-001.png)
+<img src="/images/blog/downloading-001.png" loading="lazy" alt="">
 
 In my previous post
 about [Selenium](http://awesome-testing.blogspot.com/2016/02/selenium-browser-capabilities-explained.html), I explained

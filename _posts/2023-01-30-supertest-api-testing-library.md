@@ -2,13 +2,14 @@
 title: Supertest API testing library
 layout: post
 permalink: /2023/01/superest-api-testing-library
+description: Supertest is a popular JavaScript library for testing HTTP APIs. It allows developers to send HTTP requests to their server-side code and assert that the response meets certain criteria.
 categories:
   - API testing
 tags:
   - API testing 
 ---
 
-![](/images/blog/1*R8dpDe1F8LIgCrN1QTfVBw.png)
+<img src="/images/blog/1*R8dpDe1F8LIgCrN1QTfVBw.png" loading="lazy" alt="supertest">
 
 [Supertest](https://github.com/ladjs/supertest) is a popular JavaScript library for testing HTTP APIs. It allows
 developers to send HTTP requests to their server-side code and assert that the response meets certain criteria.

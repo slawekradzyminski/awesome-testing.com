@@ -2,6 +2,7 @@
 title: Best complete testing suites available online
 layout: post
 permalink: /2016/08/best-complete-testing-suites-available
+description: "Showcases several open-source E2E testing suites (Wikia, WordPress, NASA, Jenkins, Mozilla, Optimizely) for learning, referencing different languages and frameworks while emphasizing the test pyramid."
 categories:
   - Selenium
 tags:
@@ -9,7 +10,7 @@ tags:
   - learning 
 ---
 
-![](/images/blog/Passed-Exam.jpg)
+<img src="/images/blog/Passed-Exam.jpg" loading="lazy" alt="">
 
 In [Testers toolbox - an alternative guide](https://awesome-testing.com/2016/04/testers-toolbox-alternative-guide.html)
 post I listed various sites that you may use for testing skills improvement. Today I'd like to show you something
@@ -22,7 +23,7 @@ Word of warning at the beginning: The number of tests isn't too big. Probably th
 test pyramid pattern ([ThoughtWorks](https://www.thoughtworks.com/) example below). You should follow it too. E2E test
 may be cool, but they always require maintenance. No exceptions from that rule I'm afraid.
 
-![](/images/blog/testing-pyramid-fabio-pereira.png)
+<img src="/images/blog/testing-pyramid-fabio-pereira.png" loading="lazy" alt="">
 
 ### [Wikia](https://github.com/Wikia/selenium-tests)
 
@@ -37,7 +38,7 @@ for various resolutions and test notifications on Slack (with screenshot). Fanta
 explaining why tests were open sourced:
 
 > The quality of our code and our product depend on the amount of feedback we get and on the amount of people who use
-> them. If we’re developing behind closed doors, we are putting artificial limits to both.
+> them. If we're developing behind closed doors, we are putting artificial limits to both.
 
 Matt Mullenweg, CEO Automattic
 

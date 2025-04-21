@@ -2,13 +2,14 @@
 title: TestOps - Continuous Testing
 layout: post
 permalink: /2016/10/testops-3-continuous-testing
+description: "Part 3 of TestOps series defines Continuous Testing (CT) and its components within the SDLC: CI/unit tests, coverage/static analysis, automated deployment, integration/E2E/visual tests, performance, security, exploratory testing, and TiP."
 categories:
   - TestOps
 tags:
   - testops 
 ---
 
-![](/images/blog/jquery-ajax-loader.jpg)
+<img src="/images/blog/jquery-ajax-loader.jpg" loading="lazy" alt="">
 
 Part 3 of my [TestOps](https://awesome-testing.com/search/label/testops) series focuses on an extremely important
 subject that spans throughout the

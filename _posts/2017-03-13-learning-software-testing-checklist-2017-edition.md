@@ -2,6 +2,7 @@
 title: Learning Software Testing Checklist - 2017 edition
 layout: post
 permalink: /2017/03/learning-software-testing-checklist
+description: An updated checklist for software tester skill development, emphasizing Programming, TestOps (CI/CD, networking, virtualization, cloud, IaC), Security/Pentesting, and Coaching/Persuasion as key areas for continuous improvement.
 categories:
   - Testing thoughts
 tags:

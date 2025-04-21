@@ -2,13 +2,14 @@
 title: Headless testing with Firefox
 layout: post
 permalink: /2017/09/headless-testing-with-firefox
+description: Demonstrates running Firefox headlessly with Selenium, showing the simple `--headless` argument configuration in FirefoxOptions. Includes a full FluentLenium/TestNG demo testing the author's blog, highlighting the benefit for CI environments.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/firefox.jpg)
+<img src="/images/blog/firefox.jpg" loading="lazy" alt="">
 
 Last week I wanted to show you how to run Selenium tests using headless Firefox. Unfortunately
 my [Browser Capabilities](http://www.awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html)turned out

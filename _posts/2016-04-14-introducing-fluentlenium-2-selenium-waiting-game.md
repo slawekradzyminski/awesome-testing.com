@@ -2,6 +2,7 @@
 title: Introducing FluentLenium 2 - Selenium waiting game
 layout: post
 permalink: /2016/04/introducing-fluentlenium-2-selenium
+description: "Explores Selenium waits, highlighting issues with Thread.sleep() and implicit waits. Introduces explicit/fluent waits and showcases FluentLenium's concise await() methods for stable, readable, and efficient waits (e.g., AJAX completion)."
 categories:
   - Selenium
 tags:
@@ -13,7 +14,7 @@ tags:
   - chrome 
 ---
 
-![](/images/blog/myfacewhilewaitingforittoload_97763284cc024193ded2f45d572c0e98.jpg)
+<img src="/images/blog/myfacewhilewaitingforittoload_97763284cc024193ded2f45d572c0e98.jpg" loading="lazy" alt="">
 
 [Introducing FluentLenium](https://awesome-testing.com/2016/01/introducing-fluentlenium-1.html) is so far my most popular
 technical post and I will continue the series today with a very important subject - test waiting. For those who don't

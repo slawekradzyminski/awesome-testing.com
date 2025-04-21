@@ -2,13 +2,14 @@
 title: How to get a first job as a software tester?
 layout: post
 permalink: /2018/08/how-to-get-first-job-as-software-tester
+description: Advises those seeking a first software testing job to broaden their search to other IT roles and emphasizes learning programming as the key skill to increase hiring chances across the industry, explaining why junior roles are challenging to fill and linking programming skills to antifragility.
 categories:
   - Testing thoughts
 tags:
   - testing thoughts 
 ---
 
-![](/images/blog/code-944499_1280.jpg)
+<img src="/images/blog/code-944499_1280.jpg" loading="lazy" alt="">
 
 Numerous times people ask me how to get first job as a software tester. I have already written very
 popular '[How to become a software tester](https://www.awesome-testing.com/2016/06/how-to-become-software-tester.html)'

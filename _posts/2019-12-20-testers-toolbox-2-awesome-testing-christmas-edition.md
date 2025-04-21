@@ -2,6 +2,7 @@
 title: Tester's toolbox 2 - Awesome Testing Christmas edition
 layout: post
 permalink: /2019/12/testers-toolbox-2-awesome-testing
+description: A follow-up to the original Tester's Toolbox, showcasing free tools and projects created by the author, including starter guides for Selenium and Rest Assured, a sample API, and a Pact contract testing example.
 categories:
   - Toolbox
 tags:
@@ -12,7 +13,7 @@ tags:
   - testing tools 
 ---
 
-![](/images/blog/photo-1531718748519-a5fbb6cf972d.jpeg)
+<img src="/images/blog/photo-1531718748519-a5fbb6cf972d.jpeg" loading="lazy" alt="">
 
 It's been more than three years since I released one of my most popular
 posts - [Tester's toolbox - an alternative guide](https://www.awesome-testing.com/2016/04/testers-toolbox-alternative-guide.html).

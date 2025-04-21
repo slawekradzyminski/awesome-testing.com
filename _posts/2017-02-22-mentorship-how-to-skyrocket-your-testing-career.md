@@ -2,13 +2,14 @@
 title: Mentorship - how to skyrocket your testing career
 layout: post
 permalink: /2017/02/mentorship-how-to-skyrocket-your
+description: Advocates for mentorship in software testing, outlining benefits for mentees (fast feedback, gap identification, overcoming blockers) and mentors (deeper understanding, promotion, market value). Lists ideal mentor traits and stresses continuous improvement.
 categories:
   - Testing thoughts
 tags:
   - learning 
 ---
 
-![](/images/blog/MtBrighton_5212.jpg)
+<img src="/images/blog/MtBrighton_5212.jpg" loading="lazy" alt="">
 
 In my recent posts focused on [learning](http://www.awesome-testing.com/search/label/learning) I put much attention on
 mentorship importance. I listed it as one of the points

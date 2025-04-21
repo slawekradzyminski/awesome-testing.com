@@ -6,9 +6,13 @@ categories:
   - Testing
 tags:
   - Testing
+description: >
+  Explore a fully-featured local testing environment with Docker Compose. Includes React frontend, Spring Boot backend, monitoring tools, and more for practicing various testing techniques.
+redirect_from:
+  - /testing-localstack
 ---
 
-![](/images/blog/localstack.png)
+![](/images/blog/localstack.png){:width="100%" loading="lazy"}
 
 Among the many tools released in recent years, a robust local environment for testing and experimentation has remained surprisingly elusive. This post introduces a **brand-new local testing stack** that's both easy to run and advanced enough to challenge testers of all skill levels.
 

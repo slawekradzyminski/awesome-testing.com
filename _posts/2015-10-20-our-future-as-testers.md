@@ -2,6 +2,7 @@
 title: Our future as testers
 layout: post
 permalink: /2015/10/our-future-as-testers
+description: "Discusses the future of software testing roles amid automation trends, arguing testers remain crucial due to production bug costs but need to evolve skills in programming, scripting, UX, DevOps, and business domains."
 categories:
   - Testing thoughts
 tags:

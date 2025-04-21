@@ -9,9 +9,13 @@ tags:
   - selenium
   - UI testing
   - test automation 
+description: >
+  A comprehensive guide to Selenium BiDi functionality with Java examples, covering Chrome DevTools Protocol, WebDriver BiDi, network mocking, JavaScript error logging, and performance metrics collection.
+redirect_from:
+  - /selenium-bidi
 ---
 
-![](/images/blog/selenium_logo_square_green.png)
+![](/images/blog/selenium_logo_square_green.png){:width="100%" loading="lazy"}
 
 Selenium is a widely-used open-source testing framework designed for automating web browsers and validating web
 applications. Initially, Selenium consisted of Selenium IDE, a plugin for record-and-playback testing, and Selenium

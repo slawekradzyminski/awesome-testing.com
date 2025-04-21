@@ -2,6 +2,7 @@
 title: Selenium - Browser Capabilities explained 1
 layout: post
 permalink: /2016/02/selenium-browser-capabilities-explained
+description: "Explains configuring Chrome capabilities in Selenium Java using ChromeOptions (within DesiredCapabilities). Covers adding arguments/switches and experimental options/prefs, providing links to comprehensive lists and examples like disabling notifications."
 categories:
   - Selenium
 tags:
@@ -13,7 +14,7 @@ tags:
   - chrome 
 ---
 
-![](/images/blog/is-this-selenium-ide.png)
+<img src="/images/blog/is-this-selenium-ide.png" loading="lazy" alt="">
 
 In my first post about
 Selenium ([FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) series will focus
@@ -126,7 +127,7 @@ chromePrefs.put(BROWSER_NOTIFICATIONS, DISABLED);
 
 You should see this popup/notification and test failure. An experimental option from above solves this problem.
 
-![](/images/blog/Screenshot%2B2016-02-21%2B23.06.23.png)
+<img src="/images/blog/Screenshot%2B2016-02-21%2B23.06.23.png" loading="lazy" alt="">
 
 ## Part II - Firefox
 

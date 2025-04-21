@@ -2,6 +2,7 @@
 title: BiDirectional Contract Testing
 layout: post
 permalink: /2023/05/bi-directional-contract-testing
+description: "A comprehensive guide to BiDirectional Contract Testing with Pact. Learn how to bridge the gap between end-to-end tests and tests in isolation for robust microservices."
 categories:
   - Contract testing
 tags:
@@ -9,7 +10,7 @@ tags:
   - contract testing
 ---
 
-![](/images/blog/Pactflow-blog-logo.svg)
+![](/images/blog/Pactflow-blog-logo.svg){: loading="lazy" }
 
 In today's world of complex and interconnected software systems, ensuring the reliability and compatibility of various
 components has become a critical part of the development process. As teams work on different services, the need for
@@ -76,7 +77,7 @@ that all components of a system work together as expected.
   compared to tests in isolation. This can slow down the development process and delay the identification and resolution
   of issues.
 
-{% include image.html url="/images/blog/E2E.png" description="E2E tests give us confidence that the System works a whole, but do we really need to connect to everything while testing service F?" %}
+{% include image.html url="/images/blog/E2E.png" description="E2E tests give us confidence that the System works a whole, but do we really need to connect to everything while testing service F?" loading="lazy" %}
 
 ### Tests in Isolation: advantages and disadvantages
 
@@ -112,7 +113,7 @@ in my [post](https://www.awesome-testing.com/2020/02/isolated-cypress-ui-tests).
   the system. Relying solely on them can be risky, as they do not answer whether the system as a whole
   is working correctly, which is crucial for making informed decisions about the software's readiness for production.
 
-{% include image.html url="/images/blog/Isolation.png" description="Isolated tests scope is very small making them very stable. Each service is tested independently using stubs. But how do we make sure these stubs are up-to-date?" %}
+{% include image.html url="/images/blog/Isolation.png" description="Isolated tests scope is very small making them very stable. Each service is tested independently using stubs. But how do we make sure these stubs are up-to-date?" loading="lazy" %}
 
 ### Achieving Isolation with Docker Compose
 
@@ -181,7 +182,7 @@ There are several frameworks available for implementing Contract Testing, with P
 among the most popular. These frameworks offer powerful tools and features for creating and validating contracts between
 services, ensuring that both consumers and providers adhere to the agreed-upon expectations.
 
-{% include image.html url="/images/blog/Contract.png" description="Contract tests focus on interfaces (red arrows) making them perfect supplementary for isolated tests." %}
+{% include image.html url="/images/blog/Contract.png" description="Contract tests focus on interfaces (red arrows) making them perfect supplementary for isolated tests." loading="lazy" %}
 
 ### Pact: A Language-Agnostic Framework for Contract Testing
 

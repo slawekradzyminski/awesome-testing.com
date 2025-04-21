@@ -2,6 +2,7 @@
 title: Mastering T-Shaped Skills
 layout: post
 permalink: /2023/02/mastering-t-shaped-skills-comprehensive
+description: "Learn how to develop T-shaped skills as a software test engineer, combining deep technical expertise with broad knowledge across multiple disciplines for career growth."
 categories:
   - Testing thoughts
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/DALL%C2%B7E%202023-02-16%2021.24.28%20-%20Create%20minimalism-influenced%20big%20T%20letter..png)
+![](/images/blog/DALL%C2%B7E%202023-02-16%2021.24.28%20-%20Create%20minimalism-influenced%20big%20T%20letter..png){: loading="lazy" }
 
 T-shaped skills have become increasingly important for software engineers in test as the role of testing and quality
 assurance becomes more critical in the software development lifecycle. T-shaped skills refer to a combination of deep

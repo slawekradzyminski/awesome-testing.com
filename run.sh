@@ -26,7 +26,7 @@ until check_jekyll || [ $COUNTER -eq 30 ]; do
     echo -n "."
 done
 
-if [ $COUNTER -eq 30 ]; then
+if [ $COUNTER -eq 120 ]; then
     echo "Timeout waiting for Jekyll to start"
     pkill -f jekyll
     exit 1

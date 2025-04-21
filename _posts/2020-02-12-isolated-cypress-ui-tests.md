@@ -2,13 +2,14 @@
 title: Isolated Cypress UI tests
 layout: post
 permalink: /2020/02/isolated-cypress-ui-tests
+description: A guide on achieving isolated UI tests using Cypress, covering stubbing backend requests, asserting frontend requests, and providing a practical demo with a workaround for Fetch API limitations.
 categories:
   - Cypress
 tags:
   - cypress 
 ---
 
-![](/images/blog/Screenshot%2B2020-02-08%2Bat%2B14.09.16.png)
+<img src="/images/blog/Screenshot%2B2020-02-08%2Bat%2B14.09.16.png" loading="lazy" alt="">
 
 In my previous post, I described the
 whole [test automation strategy](https://www.awesome-testing.com/2020/01/practical-test-strategy-for-spring.html) for
@@ -37,7 +38,7 @@ application state before running.
 
 Let's look again at the system under test and analyze what isolation means for us.
 
-![](/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.41.12.png)
+<img src="/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.41.12.png" loading="lazy" alt="">
 
 We need to do two things:
 

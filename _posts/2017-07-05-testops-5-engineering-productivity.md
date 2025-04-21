@@ -2,13 +2,14 @@
 title: TestOps - Engineering Productivity
 layout: post
 permalink: /2017/07/testops-5-engineering-productivity
+description: Explores Google's concept of Engineering Productivity (EP), defining it as enabling development teams to own quality through tools and guidance. Covers EP goals (speed, quality, stability), responsibilities (shift left/right, frameworks, speed), and roles (TE, SET, SRE, TestOps, PO).
 categories:
   - TestOps
 tags:
   - testops 
 ---
 
-![](/images/blog/focus-productivity-green-highway-signpost-wording-sky-background-44076365.jpg)
+<img src="/images/blog/focus-productivity-green-highway-signpost-wording-sky-background-44076365.jpg" loading="lazy" alt="">
 
 **Introduction**
 

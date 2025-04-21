@@ -2,13 +2,14 @@
 title: Continuous Security with OWASP ZAP
 layout: post
 permalink: /2018/12/continuous-security-with-owasp-zap
+description: Introduces OWASP ZAP for continuous security scanning, detailing setup as a proxy for Selenium traffic and using its Java API to trigger spidering, passive, and active scans, concluding with report generation and assertion.
 categories:
   - Security
 tags:
   - security 
 ---
 
-![](/images/blog/051e0245d787d1f71246d515e88a8564_zap256x256-oversize.png)
+<img src="/images/blog/051e0245d787d1f71246d515e88a8564_zap256x256-oversize.png" loading="lazy" alt="">
 
 Referring nicely to 'continuous' word in the title I'm following up previous posts
 about [OWASP Dependency Checker](https://www.awesome-testing.com/2017/02/continuous-security-with-owasp.html)
@@ -16,7 +17,7 @@ and[Find Sec Bugs](https://www.awesome-testing.com/2018/11/continuous-security-w
 another tool which can help ensure security during Continuous Integration (CI) pipeline run - OWASP Zedd Proxy Attack (
 more popular with OWASP ZAP name).
 
-OWASP ZAP is one of the world’s most popular free security tools which can help you find security vulnerabilities in
+OWASP ZAP is one of the world's most popular free security tools which can help you find security vulnerabilities in
 your web application. It allows you to catch HTTP traffic via locally configured proxy. Such traffic can then be used to
 modify requests in order to exploit an app. Tweaks don't have to be done by a human. There is a possibility to actively
 scan an app using built-in logic. In this article, I'll show you how to trigger such actions using Java.
@@ -55,7 +56,7 @@ times in [multiple GUI automation posts](https://www.awesome-testing.com/search/
 
 The following image visualizes what's going to happen:
 
-![](/images/blog/Przechwytywanie3.PNG)
+<img src="/images/blog/Przechwytywanie3.PNG" loading="lazy" alt="">
 
 Selenium traffic will go through ZAP proxy in order to capture all traffic. It's not exactly necessary for the bodgeit
 shop, but in real-world applications spider would struggle to find URLs requiring logged in access.
@@ -161,7 +162,7 @@ They crawl logged in pages as well.
 
 If you have done everything right you should now see a couple of requests on ZAP GUI.
 
-![](/images/blog/owaspzap.PNG)
+<img src="/images/blog/owaspzap.PNG" loading="lazy" alt="">
 
 ## ZAP API
 

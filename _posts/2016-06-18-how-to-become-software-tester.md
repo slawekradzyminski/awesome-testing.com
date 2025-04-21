@@ -2,6 +2,7 @@
 title: How to become a software tester
 layout: post
 permalink: /2016/06/how-to-become-software-tester/
+description: "Provides 10 practical tips for aspiring software testers: Get relevant education, master English, avoid negativity, develop soft skills, consider ISTQB, learn programming/automation, engage with the community, read SE books, find mentors, and attend meetups."
 categories:
   - Testing thoughts
 tags:
@@ -11,7 +12,7 @@ tags:
   - soft skills
 ---
 
-![](/images/blog/1231-1.jpg)
+<img src="/images/blog/1231-1.jpg" loading="lazy" alt="">
 
 Software testing career is very peculiar - you can't just go to university and graduate, as none of them offer this
 field of study. Maybe because of that I hear a lot of questions like: 'how to become a software tester?'. Today I'd like
@@ -53,7 +54,7 @@ said [fighting an uphill battle](http://suntzusaid.com/book/7/33) is never a goo
 
 **Learn English**
 
-> The reality is that the companies consider the candidate’s ability or inability to speak fluently in English as one of
+> The reality is that the companies consider the candidate's ability or inability to speak fluently in English as one of
 > the major selection criterion.
 
 [_deccanherald.com_](http://www.deccanherald.com/content/249714/importance-english-employment.html)
@@ -68,7 +69,7 @@ language.
 
 **Avoid naysayers and doubters**
 
-> One of the dangers newcomers face in any industry are “broken” and “settled” employees.
+> One of the dangers newcomers face in any industry are "broken" and "settled" employees.
 
 [blacksintechnology.net](https://www.blacksintechnology.net/career-advice-for-entry-level-software-testers/)
 
@@ -108,7 +109,7 @@ post: '[How to nail testing job interview](http://awesome-testing.com/2016/05/ho
 
 > Pass ISTQB FL because it may give you an edge during recruitment, but don't waste time going higher.
 
-[_awesome-testing.com _](https://awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html)
+[_awesome-testing.com_](https://awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html)
 
 I'm not a fan of ISTQB certification, but it can be important during the recruitment process. Foundation Level is pretty
 easy so it shouldn't be a too big time investment. Learn basic vocabulary and try to understand basic concepts.
@@ -118,7 +119,7 @@ easy so it shouldn't be a too big time investment. Learn basic vocabulary and tr
 > Knowledge of coding is necessary but tends toward the coding skills necessary for {...} the modification of code over
 > its creation and the ability to script end-to-end user scenarios.
 
-[_How Google Tests Software_ ](https://www.amazon.com/Google-Tests-Software-James-Whittaker/dp/0321803027)
+[_How Google Tests Software_](https://www.amazon.com/Google-Tests-Software-James-Whittaker/dp/0321803027)
 
 Most of the testing jobs these days require test automation skills (some testers call it to check automation, but don't
 bother about it now). Pick any language you want, for example, Java. Start with general programming skills and move to
@@ -137,7 +138,7 @@ Selenium after that. My recommendation would be:
 If you want to be a good tester you need to at least like your profession. It's very important to show that interest
 during a job interview. The biggest international testing communities can be found:
 
-a) On Slack -> [testers.io ](http://www.testers.io/)
+a) On Slack -> [testers.io](http://www.testers.io/)
 
 b) On Ministry of Testing -> [ministryoftesting.com](http://www.ministryoftesting.com/)
 

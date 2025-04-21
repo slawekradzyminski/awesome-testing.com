@@ -2,6 +2,7 @@
 title: 11 Steps to successfully manage house project
 layout: post
 permalink: /2015/10/11-steps-to-successfully-manage-house
+description: "Shares 11 project management lessons from managing a house renovation, applying agile principles like defining objectives, team selection, quality focus, avoiding micromanagement, and clear communication."
 categories:
   - IT thoughts
 tags:

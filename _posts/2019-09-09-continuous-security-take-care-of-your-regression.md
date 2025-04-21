@@ -2,6 +2,7 @@
 title: Continuous Security - take care of your regression
 layout: post
 permalink: /2019/09/continuous-security-take-care-of-your
+description: Focuses on security regression testing, explaining how to add automated tests for security bugs found in production using OWASP Juice Shop and Spring Rest Template, with examples for specific vulnerabilities.
 categories:
   - Security
 tags:
@@ -9,7 +10,7 @@ tags:
   - API testing 
 ---
 
-![](/images/blog/photo-1519575706483-221027bfbb31.jpeg)
+<img src="/images/blog/photo-1519575706483-221027bfbb31.jpeg" loading="lazy" alt="">
 
 In my
 last '[Continuous Security - how to get involved](https://www.awesome-testing.com/2019/08/continuous-security-how-to-get-involved.html)?'
@@ -114,7 +115,7 @@ assertThatThrownBy(() -> restTemplate.postForEntity(LOGIN_ENDPOINT, body, String
 
 However when we use ' as login server responds with HTTP 500 and exposes implementation details.
 
-![](/images/blog/error_js-console.png)
+<img src="/images/blog/error_js-console.png" loading="lazy" alt="">
 
 The following test reproduces this vulnerability:
 

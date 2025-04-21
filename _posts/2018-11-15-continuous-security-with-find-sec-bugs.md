@@ -2,13 +2,14 @@
 title: Continuous Security with Find-Sec-Bugs
 layout: post
 permalink: /2018/11/continuous-security-with-find-sec-bugs
+description: Introduces Find Security Bugs, a static analysis tool for Java security vulnerabilities, explaining Maven integration, configuration, and execution for CI or manual verification, demonstrated with OWASP WebGoat.
 categories:
   - Security
 tags:
   - security 
 ---
 
-![](/images/blog/16162781.png)
+<img src="/images/blog/16162781.png" loading="lazy" alt="">
 
 One of the hardest software quality characteristic to cover in automated tests is security. In
 my [Automated testing vs manual testing - security perspective](https://www.awesome-testing.com/2017/03/automated-testing-vs-manual-testing.html)
@@ -137,7 +138,7 @@ e) Run `mvn findbugs:gui`
 
 You should see report like this. As you can see the presented tool was able to find a bug in tested module.
 
-![](/images/blog/serialisation.png)
+<img src="/images/blog/serialisation.png" loading="lazy" alt="">
 
 ## Credits
 

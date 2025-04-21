@@ -2,13 +2,14 @@
 title: Adding console error log verification to Selenium tests using Chrome
 layout: post
 permalink: /2019/01/adding-console-error-log-verification
+description: Explains how to capture and verify browser console errors (specifically SEVERE level) in Selenium tests using Chrome's logging capabilities, demonstrated with a FluentLenium example.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/Przechwytywanie.PNG)
+<img src="/images/blog/Przechwytywanie.PNG" loading="lazy" alt="">
 
 Selenium is an amazing test tool that is used pretty much everywhere these days. People are usually so spoiled by the
 number of functionalities it provides that they can't hide being surprised when they notice two missing functionalities:
@@ -80,7 +81,7 @@ Capturing console log errors is pretty easy. You only need one method
 
 And as you can see on the image below error was reported.
 
-![](/images/blog/Przechwytywanie2.PNG)
+<img src="/images/blog/Przechwytywanie2.PNG" loading="lazy" alt="">
 
 Every line of code needed to write this blog post was added to
 my [GitHub project](https://github.com/slawekradzyminski/AwesomeTesting/commit/51969357bf940c58821bc080dcc7c3588d69cf8e).

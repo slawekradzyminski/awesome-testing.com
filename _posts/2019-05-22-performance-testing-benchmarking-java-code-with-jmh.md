@@ -2,13 +2,14 @@
 title: Performance testing (benchmarking) Java code with JMH
 layout: post
 permalink: /2019/05/performance-testing-benchmarking-java
+description: Explores low-level Java code performance testing (benchmarking) using JMH, covering common pitfalls, setup with Maven, and configuration options for accurate measurement.
 categories:
   - Performance testing
 tags:
   - performance testing 
 ---
 
-![](/images/blog/performance-icon-png-8.png)
+<img src="/images/blog/performance-icon-png-8.png" loading="lazy" alt="">
 
 As test engineers when we approach performance testing we usually only think about final end-to-end application
 verification with tools such as [JMeter](https://jmeter.apache.org/), [Locust](https://locust.io/)

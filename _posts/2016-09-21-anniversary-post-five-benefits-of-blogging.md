@@ -2,13 +2,14 @@
 title: Anniversary post - Five benefits of blogging
 layout: post
 permalink: /2016/09/anniversary-post-five-benefits-of
+description: "Reflecting on one year of blogging, this post highlights five key benefits: encourages reading, boosts job market value, forces deeper understanding, exposes to new topics, and expands professional networks."
 categories:
   - Testing thoughts
 tags:
   - testing thoughts 
 ---
 
-![](/images/blog/happy-birthday-icon-33.gif)
+<img src="/images/blog/happy-birthday-icon-33.gif" loading="lazy" alt="">
 
 It's been a year already since I started blogging. I'm really happy that both my motivation for writing and new posts
 ideas haven't depleted (quite contrary actually).

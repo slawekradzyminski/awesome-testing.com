@@ -2,6 +2,7 @@
 title: Ideal tester equals 3.141592..
 layout: post
 permalink: /2015/11/ideal-tester-equals-3141592
+description: "Discusses the ideal tester role, arguing that both deep technical expertise (T-shaped skills) and strong social/collaboration skills are equally crucial for success, referencing ThoughtWorks articles and Janet Gregory."
 categories:
   - Testing thoughts
 tags:

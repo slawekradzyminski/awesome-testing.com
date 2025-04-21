@@ -2,6 +2,7 @@
 title: Arguing Micheal Bolton's 20 statements about testing
 layout: post
 permalink: /2016/05/arguing-micheal-boltons-20-statements
+description: "Challenges Michael Bolton's 20 statements on testing, arguing against the notion of testers lacking authority and advocating for integrated, empowered testers who share responsibility and credit within the team."
 categories:
   - Testing thoughts
 tags:
@@ -25,7 +26,7 @@ Such a negative and disempowering statement. I had already talked about the ever
 
   
 
-![](/images/blog/IMG_0098-2.JPG)
+<img src="/images/blog/IMG_0098-2.JPG" loading="lazy" alt="">
 
   
 

@@ -2,13 +2,14 @@
 title: Maximizing Performance with Gatling
 layout: post
 permalink: /2023/01/maximizing-performance-with-gatling
+description: Gatling is a powerful open-source load testing tool designed to help developers and performance engineers test the performance and scalability of their web applications. It's written in Scala and it's based on the Akka toolkit, which means it's highly extensible and easily integrated with other tools.
 categories:
   - Performance testing
 tags:
   - performance testing 
 ---
 
-![](/images/blog/1582210782200.png)
+<img src="/images/blog/1582210782200.png" loading="lazy" alt="">
 
 [Gatling](https://gatling.io) is a powerful open-source load testing tool designed to help developers and performance
 engineers test the performance and scalability of their web applications. It's written in Scala and it's based on

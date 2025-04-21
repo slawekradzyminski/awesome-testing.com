@@ -2,6 +2,7 @@
 title: How to nail testing job interview
 layout: post
 permalink: /2016/05/how-to-nail-testing-job-interview
+description: "Offers tips for testing job interviews beyond basic etiquette: Research your online brand, the company, and its culture. Present skills confidently but honestly, acknowledge knowledge gaps, and show a learning mindset."
 categories:
   - Testing thoughts
 tags:
@@ -12,7 +13,7 @@ tags:
   - job interview 
 ---
 
-![](/images/blog/6c572a85b6e1c6b22f491be92e499dc4.jpg)
+<img src="/images/blog/6c572a85b6e1c6b22f491be92e499dc4.jpg" loading="lazy" alt="">
 
 [Dan Ashby](https://twitter.com/DanAshby04) has recently published a
 brilliant [mind map](http://i1.wp.com/technophiletester.hintonweb.com/wp-content/uploads/2016/04/DansInterviewMindMap.jpg?w=2891)
@@ -66,7 +67,7 @@ probably the worst thing you can do on a job interview.
 **3\. Be aware that things you don't know you don't know exist -** Terrible linguistic construct.
 Watching [this video](https://www.youtube.com/watch?v=1CUHeUkQHes)and checking the image below may be helpful here.
 
-![](/images/blog/Knowledge-Matrix.png)
+<img src="/images/blog/Knowledge-Matrix.png" loading="lazy" alt="">
 
 Most people focus on things they know they know (that's probably why we tend to overestimate our knowledge). Don't be
 like everyone else and focus on other quadrants. Experiment, read, learn. Don't be afraid to show that approach to job

@@ -2,6 +2,7 @@
 title: Continuous Security - how to get involved as a tester?
 layout: post
 permalink: /2019/08/continuous-security-how-to-get-involved
+description: Encourages testers to engage in continuous security, suggesting starting points like OWASP ZAP scans and demonstrating how to write simple API tests with Rest-Assured to verify security headers.
 categories:
   - Security
 tags:
@@ -9,7 +10,7 @@ tags:
   - API testing 
 ---
 
-![](/images/blog/photo-1514302240736-b1fee5985889.jpeg)
+<img src="/images/blog/photo-1514302240736-b1fee5985889.jpeg" loading="lazy" alt="">
 
 **Introduction**
 
@@ -35,13 +36,13 @@ featured [OWASP ZAP](https://www.awesome-testing.com/2018/12/continuous-security
 automated scan against your application. If you don't have any
 use [OWASP Juice Shop](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project).
 
-![](/images/blog/Screenshot%2B2019-08-31%2Bat%2B12.29.25.png)
+<img src="/images/blog/Screenshot%2B2019-08-31%2Bat%2B12.29.25.png" loading="lazy" alt="">
 
 Most likely even with the simplest possible scan, you will be able to find vulnerabilities and things you can improve to
 make your application more secure. Here is sample output
 from [OWASP Juice Shop](https://www.owasp.org/index.php/OWASP_Juice_Shop_Project).
 
-![](/images/blog/Screenshot%2B2019-08-31%2Bat%2B12.45.27.png)
+<img src="/images/blog/Screenshot%2B2019-08-31%2Bat%2B12.45.27.png" loading="lazy" alt="">
 
 Today I'll focus on hardening (improving security)
 with [security headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers). In the next post, I'll analyze what

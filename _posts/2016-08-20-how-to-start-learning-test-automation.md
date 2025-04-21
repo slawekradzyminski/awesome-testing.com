@@ -2,13 +2,14 @@
 title: How to start learning test automation
 layout: post
 permalink: /2016/08/how-to-start-learning-test-automation
+description: "A guide for manual testers transitioning to automation, covering prerequisites (Agile, CI/CD, ROI), benefits (fun, career growth, respect, pay), learning at work vs. after hours, and specific learning paths for Selenium GUI and REST API automation."
 categories:
   - Testing thoughts
 tags:
   - learning 
 ---
 
-![](/images/blog/selenium.png)
+<img src="/images/blog/selenium.png" loading="lazy" alt="">
 
 In one of my previous
 posts - [How to become a software tester](https://awesome-testing.com/2016/06/how-to-become-software-tester.html), I

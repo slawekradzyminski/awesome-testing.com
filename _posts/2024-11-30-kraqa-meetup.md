@@ -6,9 +6,13 @@ categories:
   - Testing thoughts
 tags:
   - testing thoughts
+description: >
+  Key insights from the KraQA meetup panel discussion on software testing trends for 2025, covering AI impact, automation, skill development, and emerging industry niches.
+redirect_from:
+  - /kraqa-meetup-2025
 ---
 
-![](/images/blog/kraqa.jpeg)
+![](/images/blog/kraqa.jpeg){:width="100%" loading="lazy"}
 
 On the 26th of November, I had the pleasure of being a discussion panelist at [KraQA meetup](https://www.meetup.com/pl-PL/kraqa-pl/). The meetup focused on testing predictions for 2025. I was invited at the last minute due to a previous panelist being unable to attend. As a former KraQA co-organizer, I was happy to step in and contribute.
 
@@ -18,7 +22,7 @@ In the picture above, you can see all the panelists. From left to right:
 - [Dawid Pacia (speaking)](https://www.linkedin.com/in/paciadawid/)
 - [Maciej Kusz](https://www.linkedin.com/in/maciej-kusz/)
 
-The discussion was highly engaging, and I’d like to share some of the highlights.
+The discussion was highly engaging, and I'd like to share some of the highlights.
 
 To avoid bias and to gain new insights, I decided to use AI tools to generate a summary of the discussion. I leveraged my [naive RAG implementation](https://github.com/slawekradzyminski/personal-ai-assistant/), [Open AI speech-to-text tools](https://platform.openai.com/docs/guides/speech-to-text) and ChatGPT to create this summary. By the way, summarizing discussions, email chains, documents, or Slack threads is one of the tasks AI excels at. 
 
@@ -39,7 +43,7 @@ Let's dive into each topic one by one.
 
 We discussed how IT salaries are likely to stabilize in 2025, with significant raises becoming less frequent due to macroeconomic challenges. Inflation-driven adjustments might be rare, and many of us agreed that meaningful salary growth may often require changing companies rather than relying on internal promotions. Despite this, there are still areas of growth—roles in AI, cloud engineering, and DevOps remain in high demand, as these fields continue to address persistent skill shortages.
 
-AI-related positions stood out as a major topic. We acknowledged that while the AI boom is creating numerous opportunities, it’s essential to approach this trend with caution. The market will reward those who can not only work with AI but also integrate it effectively into broader systems. The consensus was that technical expertise paired with specialized knowledge in emerging areas will be key to thriving in this evolving landscape.
+AI-related positions stood out as a major topic. We acknowledged that while the AI boom is creating numerous opportunities, it's essential to approach this trend with caution. The market will reward those who can not only work with AI but also integrate it effectively into broader systems. The consensus was that technical expertise paired with specialized knowledge in emerging areas will be key to thriving in this evolving landscape.
 
 The importance of technical skills and self-reliance in testing roles also came up repeatedly. We noted that employers increasingly seek testers who can independently build and maintain testing infrastructure, contributing directly to development pipelines. In this shifting environment, adaptability and technical proficiency are critical for staying competitive.
 
@@ -49,7 +53,7 @@ We explored how AI is reshaping the field of software testing and debated its po
 
 The conversation highlighted the growing need for testers to adapt to this changing landscape. Roles are shifting from performing manual checks to orchestrating and overseeing AI-driven processes. We noted that while some traditional testing tasks may become obsolete, new opportunities are emerging for testers to validate AI systems, create effective prompts, and ensure the quality of AI-generated outputs. These roles require both technical expertise and a deep understanding of testing principles.
 
-Overall, we agreed that AI’s role in testing will continue to expand, but its adoption will also introduce new challenges. From ethical considerations to ensuring the reliability of AI-driven systems, testers will play a vital role in bridging the gap between human insight and machine efficiency. Rather than fearing replacement, we saw this as an opportunity to redefine and elevate the role of testers in the software development lifecycle.
+Overall, we agreed that AI's role in testing will continue to expand, but its adoption will also introduce new challenges. From ethical considerations to ensuring the reliability of AI-driven systems, testers will play a vital role in bridging the gap between human insight and machine efficiency. Rather than fearing replacement, we saw this as an opportunity to redefine and elevate the role of testers in the software development lifecycle.
 
 ## Manual Testing vs. Automation
 
@@ -61,17 +65,17 @@ We also explored the misconception that automation will entirely replace manual 
 
 ## The Evolution of Testing Frameworks
 
-We delved into the evolution of testing frameworks, particularly the shifting preferences among developers and testers. Frameworks like Playwright, Selenium, and Cypress dominated the discussion. While Selenium has long been a staple in the testing world, we noted that tools like Playwright are gaining popularity due to their modern design, enhanced features, and better integration with today’s tech stacks.
+We delved into the evolution of testing frameworks, particularly the shifting preferences among developers and testers. Frameworks like Playwright, Selenium, and Cypress dominated the discussion. While Selenium has long been a staple in the testing world, we noted that tools like Playwright are gaining popularity due to their modern design, enhanced features, and better integration with today's tech stacks.
 
-Playwright emerged as a key contender in this space, offering cross-browser support, parallel testing capabilities, and ease of use, which make it a favorite for many teams. We observed that its rising adoption could signal a shift in the industry, especially for teams focused on scalability and performance. However, we acknowledged that Selenium’s extensive ecosystem, community support, and compatibility with legacy systems still make it a strong option for many organizations.
+Playwright emerged as a key contender in this space, offering cross-browser support, parallel testing capabilities, and ease of use, which make it a favorite for many teams. We observed that its rising adoption could signal a shift in the industry, especially for teams focused on scalability and performance. However, we acknowledged that Selenium's extensive ecosystem, community support, and compatibility with legacy systems still make it a strong option for many organizations.
 
 We concluded that staying adaptable and continually evaluating new tools is essential. Frameworks will continue to evolve, and testers need to remain open to learning and adopting technologies that best suit their projects. This willingness to experiment and embrace innovation is what keeps the testing field dynamic and forward-looking. Overall, we agreed that the choice of a framework should be driven by project needs, team expertise, and future scalability rather than trends alone.
 
 ## Skill Development and Certification
 
-We discussed the importance of skill development and certifications in shaping a tester’s career. While certifications like ISTQB provide a foundational understanding of testing concepts, their relevance and value depend heavily on the context. For beginners, these certifications can act as stepping stones, offering structured learning and a way to demonstrate knowledge. However, we agreed that real-world experience and hands-on skills often outweigh formal credentials in the eyes of employers.
+We discussed the importance of skill development and certifications in shaping a tester's career. While certifications like ISTQB provide a foundational understanding of testing concepts, their relevance and value depend heavily on the context. For beginners, these certifications can act as stepping stones, offering structured learning and a way to demonstrate knowledge. However, we agreed that real-world experience and hands-on skills often outweigh formal credentials in the eyes of employers.
 
-A recurring theme was the growing demand for interdisciplinary skills. Knowledge of programming, cloud platforms, and DevOps practices is becoming increasingly important for testers to stay competitive. Certifications in these areas, such as AWS or Kubernetes, were highlighted as particularly valuable for expanding a tester’s toolkit and demonstrating technical competence. We emphasized the need for testers to continuously upskill, especially in areas like automation, AI integration, and system architecture.
+A recurring theme was the growing demand for interdisciplinary skills. Knowledge of programming, cloud platforms, and DevOps practices is becoming increasingly important for testers to stay competitive. Certifications in these areas, such as AWS or Kubernetes, were highlighted as particularly valuable for expanding a tester's toolkit and demonstrating technical competence. We emphasized the need for testers to continuously upskill, especially in areas like automation, AI integration, and system architecture.
 
 Mentorship and practical experience were also spotlighted as crucial elements of skill development. We noted that learning from seasoned professionals and working on real-world projects often provides deeper insights than any certification. Additionally, testers should seek opportunities to engage with emerging technologies and frameworks, as this not only enhances their capabilities but also opens doors to specialized roles.
 
@@ -93,7 +97,7 @@ In conclusion, while these emerging areas offer exciting prospects, they demand 
 
 We emphasized the critical role of soft skills and leadership in the ever-evolving world of software testing. While technical expertise is essential, the ability to navigate interpersonal dynamics, drive collaboration, and adapt to change often sets exceptional testers apart from the rest. In our discussion, we highlighted how these skills not only enhance individual performance but also contribute to building high-performing teams.
 
-Leadership in testing isn’t confined to formal managerial roles. We agreed that testers can demonstrate leadership by taking ownership of processes, driving quality initiatives, and fostering a culture of improvement within their teams. Effective communication is central to this, enabling testers to advocate for quality, bridge gaps between technical and non-technical stakeholders, and navigate the challenges of global, cross-functional teams.
+Leadership in testing isn't confined to formal managerial roles. We agreed that testers can demonstrate leadership by taking ownership of processes, driving quality initiatives, and fostering a culture of improvement within their teams. Effective communication is central to this, enabling testers to advocate for quality, bridge gaps between technical and non-technical stakeholders, and navigate the challenges of global, cross-functional teams.
 
 Adaptability was another key theme, particularly in the context of organizational change. Many of us shared experiences of navigating shifts such as pivots in business strategies, team reorganizations, and even layoffs. The ability to remain composed, motivate others, and realign efforts in such situations is invaluable. We noted that resilience and emotional intelligence are vital for testers to thrive in fast-paced and uncertain environments.
 
@@ -107,7 +111,7 @@ We discussed how remote work and Agile practices have transformed the way softwa
 
 Hybrid models emerged as a contentious topic. While they aim to combine the benefits of remote and in-office work, we questioned their effectiveness. Many of us pointed out that hybrid setups often fail to fully satisfy either remote-first employees or those who prefer the office, leading to compromises that can hinder productivity. Still, hybrid models are likely to remain popular as companies experiment with balancing flexibility and collaboration.
 
-Agile practices were another focal point. We examined how methodologies like Scrum and Kanban have evolved in distributed team settings. Many of us advocated for Kanban’s simplicity and adaptability, especially for managing asynchronous workflows in remote environments. However, we noted that Scrum remains widely used, particularly in teams that require structured communication and frequent check-ins.
+Agile practices were another focal point. We examined how methodologies like Scrum and Kanban have evolved in distributed team settings. Many of us advocated for Kanban's simplicity and adaptability, especially for managing asynchronous workflows in remote environments. However, we noted that Scrum remains widely used, particularly in teams that require structured communication and frequent check-ins.
 
 One recurring theme was the importance of tailoring Agile practices to team needs rather than rigidly adhering to frameworks. Successful Agile implementation often depends on aligning processes with team dynamics and project requirements. We agreed that the focus should always be on delivering value, not just following rituals or processes for their own sake.
 

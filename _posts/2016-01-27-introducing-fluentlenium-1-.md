@@ -2,6 +2,7 @@
 title: Introducing FluentLenium 1
 layout: post
 permalink: /2016/01/introducing-fluentlenium-1
+description: "Introduces FluentLenium framework for Selenium via a Facebook group approval automation example using Java/TestNG. Covers setup, Page Objects, CSS selectors, and dynamic waits."
 categories:
   - Selenium
 tags:
@@ -11,7 +12,7 @@ tags:
   - UI testing 
 ---
 
-![](/images/blog/developer.png)
+<img src="/images/blog/developer.png" loading="lazy" alt="">
 
 I had started a new initiative recently - Facebook group [Technology Books](https://www.facebook.com/groups/booksIT/).
 Feel free to join if you look for reading recommendations or want to share your thoughts. Because of that, I had to
@@ -59,7 +60,7 @@ are [faster and more readable](http://elementalselenium.com/tips/32-xpath-vs-css
 id just add **#** sign, and via class add **.** sign. Using developer tools console makes element identification very
 easy. See the example screenshot below.
 
-![](/images/blog/Screenshot%2B2016-01-17%2B09.03.34.png)
+<img src="/images/blog/Screenshot%2B2016-01-17%2B09.03.34.png" loading="lazy" alt="">
 
 So FacebookLoggedOutPage.class may look like this:
 

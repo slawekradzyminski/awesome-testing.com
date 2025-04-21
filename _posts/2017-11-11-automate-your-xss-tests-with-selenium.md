@@ -2,6 +2,7 @@
 title: Automate your XSS tests with Selenium
 layout: post
 permalink: /2017/11/automate-your-xss-tests-with-selenium
+description: Explains how to automate Reflected Cross-Site Scripting (XSS) tests using Selenium, covering disabling Chrome's XSS auditor, implementing a Page Object for a vulnerable page (XSS Game Level 1), injecting a script payload, and asserting if an alert appears.
 categories:
   - Selenium
 tags:
@@ -9,7 +10,7 @@ tags:
   - security 
 ---
 
-![](/images/blog/safety-lock-logo_23-2147493514.jpg)
+<img src="/images/blog/safety-lock-logo_23-2147493514.jpg" loading="lazy" alt="">
 
 We are heading into an era where potential attackers have very easy knowledge access. In some instances proper training
 isn't even required, because offensive tools are getting better and better. A lot of companies decided that it's better

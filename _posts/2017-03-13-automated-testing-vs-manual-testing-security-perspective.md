@@ -2,6 +2,7 @@
 title: Automated testing vs manual testing - security perspective
 layout: post
 permalink: /2017/03/automated-testing-vs-manual-testing
+description: Compares automated and manual testing in the security context, arguing that while automation (scanners, static analysis) is vital for CI/CD, manual pentesting is crucial for finding complex flaws and addressing social engineering risks, emphasizing their complementary nature.
 categories:
   - Testing thoughts
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/computer-1591018_640.jpg)
+<img src="/images/blog/computer-1591018_640.jpg" loading="lazy" alt="">
 
 Throughout this document you will see the term 'pentester'. Precise definitions vary, but at its core a penetration
 tester's job is to demonstrate and document a flaw in security. In a normal situation, a pentester will perform
@@ -63,7 +64,7 @@ vulnerabilities detection, OWASP Dependency Check for library scanning, OWASP ZA
 fuzz testing for SQL injection/XSS, etc, etc. Below is a screenshot taken from the Kali Linux application folder. All of
 those tools can be used during the early development life-cycles.
 
-![](/images/blog/burp.jpg)
+<img src="/images/blog/burp.jpg" loading="lazy" alt="">
 
 Please observe an interesting duality here - manual pentesting can't be done without automated tools, and automated
 tools can't be used effectively without skilled pentesting. I'll come back to this statement later.

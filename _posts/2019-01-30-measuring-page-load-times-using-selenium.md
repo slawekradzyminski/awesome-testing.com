@@ -2,13 +2,14 @@
 title: Measuring page load times using Selenium
 layout: post
 permalink: /2019/01/measuring-page-load-times-using-selenium
+description: Shows how to measure page load times in Selenium using the PerformanceTiming interface, explaining access to metrics via JavaScript and providing a FluentLenium example.
 categories:
   - Selenium
 tags:
   - selenium performance testing 
 ---
 
-![](/images/blog/kisscc0-computer-icons-performance-indicator-drawing-bench-performance-by-cyberang3l-5b74ed3ee8fa74.5190956615343895669543.png)
+<img src="/images/blog/kisscc0-computer-icons-performance-indicator-drawing-bench-performance-by-cyberang3l-5b74ed3ee8fa74.5190956615343895669543.png" loading="lazy" alt="">
 
 ## Introduction
 
@@ -32,7 +33,7 @@ seems to be the implemented in every browser (I tested Chrome, Firefox, and Edge
 
 There's even an image which visualizes each metric:
 
-![](/images/blog/timing-overview.png)
+<img src="/images/blog/timing-overview.png" loading="lazy" alt="">
 
 As you probably know deciding what to measure is crucial for effective performance testing so I suggest you to read it
 the standard carefully. For my demo I'll use only two metrics:
@@ -47,7 +48,7 @@ return zero when the load event is not fired or is not completed.
 
 You can access each of those metrics via browser console. Just start typing _window.performance.timing._
 
-![](/images/blog/perfapi.png)
+<img src="/images/blog/perfapi.png" loading="lazy" alt="">
 
 ## Demo
 

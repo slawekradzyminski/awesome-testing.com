@@ -2,6 +2,7 @@
 title: How to find & test CSS Selector using Chrome DevTools
 layout: post
 permalink: /2017/05/how-to-find-test-cssselector-using
+description: A basic tutorial on using Chrome DevTools to find and test CSS selectors for Selenium automation, covering inspect element, copy selector, and console verification ($$), with examples and a Java/FluentLenium demo.
 categories:
   - Selenium
 tags:
@@ -9,7 +10,7 @@ tags:
   - selenium 
 ---
 
-![](/images/blog/maxresdefault.jpg)
+<img src="/images/blog/maxresdefault.jpg" loading="lazy" alt="">
 
 I was surprised after seeing a couple of questions regarding selector verification. This triggered me to create this
 basic tutorial which hopefully would be useful for test automation newcomers.
@@ -26,7 +27,7 @@ b) Cmd + Opt (Alt)+ I on Mac
 
 You should see something like this (DevTools may also open at the bottom of the page)
 
-![](/images/blog/awesometesting.png)
+<img src="/images/blog/awesometesting.png" loading="lazy" alt="">
 
 Assuming you are testing websites I strongly advise you to get familiar with every single option. We would be using only
 two tabs:  
@@ -40,17 +41,17 @@ header CSS selector:
 
 a) Rightclick on header (big A) and pick Inspect - this should highlight header element in Elements tab
 
-![](/images/blog/inspect.png)
+<img src="/images/blog/inspect.png" loading="lazy" alt="">
 
 b) Rightclick on highlighted code and pick Copy -> Copy selector
 
-![](/images/blog/selector.png)
+<img src="/images/blog/selector.png" loading="lazy" alt="">
 
 c) Open Console tab
 
 d) Type $$("") and paste copied selector between quotation marks. You should get something like this.
 
-![](/images/blog/css.png)
+<img src="/images/blog/css.png" loading="lazy" alt="">
 
 Thanks to those nice Chrome DevTools features we were able to find selector and also test it. This is very helpful
 especially when we have to deal with something more complicated.
@@ -61,13 +62,13 @@ that I need to find post title selector and make sure it occurs exactly 5 times.
 
 a) Inspecting element in Chrome DevTools leads us here
 
-![](/images/blog/posttitle.png)
+<img src="/images/blog/posttitle.png" loading="lazy" alt="">
 
 b) I'm seeing that all titles are _h1_ and with class _post-title_. What's the selector then? It's _h1.post-title_
 
 c) Verification in Console confirms that we have found proper selector.
 
-![](/images/blog/posttitle2.png)
+<img src="/images/blog/posttitle2.png" loading="lazy" alt="">
 
 ### How can I learn how to build CSS Selectors?
 There is good and free tutorial available on w3schools site. It's extremely important for every aspiring test engineer

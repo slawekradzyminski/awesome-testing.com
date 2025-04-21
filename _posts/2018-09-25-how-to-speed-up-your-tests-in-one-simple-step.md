@@ -2,6 +2,7 @@
 title: How to speed up your tests in one simple step
 layout: post
 permalink: /2018/09/how-to-speed-up-your-tests-in-one
+description: Presents a simple strategy to speed up test execution by splitting the test suite across multiple environments using regex/glob patterns, with Gitlab CI examples for Java/Maven and Javascript/Mocha.
 categories:
   - CI/CD
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing tools 
 ---
 
-![](/images/blog/traffic-car-vehicle-black.jpg)
+<img src="/images/blog/traffic-car-vehicle-black.jpg" loading="lazy" alt="">
 
 Every tester
 with [Continuous Improvement](https://www.awesome-testing.com/2017/01/testops-4-continuous-improvement.html) mindset

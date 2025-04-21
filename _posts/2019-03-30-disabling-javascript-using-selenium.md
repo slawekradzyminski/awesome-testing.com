@@ -2,6 +2,7 @@
 title: Disabling JavaScript using Selenium
 layout: post
 permalink: /2019/03/disabling-javascript-using-selenium
+description: Discusses reasons for testing websites with JavaScript disabled and provides Selenium (FluentLenium) code examples for disabling JavaScript in Chrome and Firefox.
 categories:
   - Selenium
 tags:

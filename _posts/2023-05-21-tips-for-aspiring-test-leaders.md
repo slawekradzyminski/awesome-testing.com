@@ -2,6 +2,7 @@
 title: "Steering the Ship: A Comprehensive Guide for Aspiring Test Leaders"
 layout: post
 permalink: /2023/05/tips-for-aspiring-test-leaders
+description: "A comprehensive guide for aspiring test leaders covering 17 essential tips from mentorship to continuous learning. Learn how to effectively lead testing teams and drive quality."
 categories:
   - Testing thoughts
 tags:
@@ -9,6 +10,7 @@ tags:
   - leadership
 header:
   image: /images/blog/female_leader.png
+  image_loading: lazy
 ---
 
 In the vast ocean of software development, the role of a test leader is akin to that of a skilled navigator, steering
@@ -178,7 +180,7 @@ strive to improve these skills and promote effective communication within your t
 
 #### My Journey in Enhancing Communication Skills
 
-Effective communication is the backbone of successful leadership. It’s how we convey our thoughts, share our ideas, and
+Effective communication is the backbone of successful leadership. It's how we convey our thoughts, share our ideas, and
 collaborate with our team. Yet, for many, including myself, this skill doesn't come naturally, especially if you
 identify as a 'geeky-introvert', as I do.
 

@@ -2,13 +2,14 @@
 title: What CIA teaches us about productivity
 layout: post
 permalink: /2017/12/what-cia-teaches-us-about-productivity
+description: Draws productivity lessons by contrasting tips from the declassified CIA Simple Sabotage manual, advocating for empowered decision-making, failing fast, prioritizing, avoiding useless meetings, continuous improvement, and knowledge sharing, with applications to software testing.
 categories:
   - Testing thoughts
 tags:
   - testing thoughts 
 ---
 
-![](/images/blog/declassified.jpg)
+<img src="/images/blog/declassified.jpg" loading="lazy" alt="">
 
 I've done lots of code-rich posts this year which may leave some of my readers disappointed. Today there would be no
 code and the topic would be much broader - productivity. Christmas time favors off-topic so this post (and next one)
@@ -136,7 +137,7 @@ productivity.
 I'm sure you saw it before, but it perfectly summarizes my post. Daily 1% improvement can lead to gigantic gains,
 whereas 1% sabotage to gigantic losses. It's scary by the way how impactful saboteurs can be.
 
-![](/images/blog/Nr1R3e5.png)
+<img src="/images/blog/Nr1R3e5.png" loading="lazy" alt="">
 
 Testing perspective:
 

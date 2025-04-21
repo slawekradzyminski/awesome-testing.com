@@ -2,6 +2,7 @@
 title: The Comprehensive Guide to Essential Soft Skills for Testers
 layout: post
 permalink: /2023/03/the-comprehensive-guide-to-essential
+description: "Master essential soft skills for software testers including emotional intelligence, communication, leadership, and adaptability. A comprehensive guide to professional growth."
 categories:
   - Testing thoughts
 tags:
@@ -10,7 +11,7 @@ tags:
   - soft skills 
 ---
 
-![](/images/blog/Slawek_famale_presenter_talking_on_conference_do_big_audience_8c548b2f-f615-4d50-9e8c-0928b5ece039.png)
+![](/images/blog/Slawek_famale_presenter_talking_on_conference_do_big_audience_8c548b2f-f615-4d50-9e8c-0928b5ece039.png){: loading="lazy" }
 
 In the dynamic and evolving world of software testing, technical expertise alone is not enough to ensure success. Soft
 skills play an equally important role in enhancing a tester's overall effectiveness and ability to thrive in their role.
@@ -127,7 +128,7 @@ can harness the full potential of their team and deliver more effective and inno
 
 ## Continuous learning and improvement
 
-![](/images/blog/Slawek_person_enjoying_a_book_47b47263-430e-4459-abe6-936f7e118444.png)
+![](/images/blog/Slawek_person_enjoying_a_book_47b47263-430e-4459-abe6-936f7e118444.png){: loading="lazy" }
 
 Continuous learning and improvement are essential for testers to stay relevant, adapt to new technologies and
 methodologies, and consistently deliver high-quality results. Embracing a growth mindset and focusing on personal and
@@ -282,7 +283,7 @@ Book recommendation: [Thinking in Systems](https://www.amazon.com/Thinking-Syste
 
 ## Time management skills
 
-![](/images/blog/Slawek_fancy_clock_ticking_ed76627d-2a28-41d0-a6d0-4ded4c8a2524.png)
+![](/images/blog/Slawek_fancy_clock_ticking_ed76627d-2a28-41d0-a6d0-4ded4c8a2524.png){: loading="lazy" }
 
 Effective time management skills are essential for testers to optimize their efforts and ensure that projects are
 completed within deadlines. By mastering the art of prioritization, scheduling, and delegation, testers can make the

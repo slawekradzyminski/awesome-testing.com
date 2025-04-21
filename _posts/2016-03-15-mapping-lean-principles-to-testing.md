@@ -2,6 +2,7 @@
 title: Mapping lean principles to testing
 layout: post
 permalink: /2016/03/mapping-lean-principles-to-testing
+description: "Applies Poppendieck's seven Lean principles to software testing: Eliminate waste (automate smartly, balance costs), Amplify learning, Decide late (BDD, maintainable tests), Deliver fast, Empower the team, Build integrity (perceived & conceptual), See the whole."
 categories:
   - Testing thoughts
 tags:
@@ -13,7 +14,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/manifesto-thinklean.jpg)
+<img src="/images/blog/manifesto-thinklean.jpg" loading="lazy" alt="">
 
 [Do's and don'ts for testers](https://awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html) is my most
 viewed post so far. Because of that (and because it's always better to leave various doors open) I wouldn't focus on
@@ -48,7 +49,7 @@ to go live?
 I think we should measure two things - **the cost of delayed-release** (due to testing) and **the cost of finding a bug
 in production**. I can't tell you how to measure it, because it depends on your type of business. Make sure you're not
 delaying your awesome feature release because you want to find all bugs in the manual regression process. We can't find
-100% of bugs anyway. Simple as that.
+100% of bugs anyway.
 
 So to summarise it I suggest:
 

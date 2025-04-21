@@ -10,10 +10,17 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "air"
 markdown: kramdown
 paginate: 5
+
+# --- SEO-tag globals
+locale: "en_US"            # <html lang> & og:locale
+twitter:
+  username: "s_radzyminski" # if you have one; remove otherwise
 
 # --- Tips for Seniors collection ------------------------------
 collections:

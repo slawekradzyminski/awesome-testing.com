@@ -2,13 +2,14 @@
 title: Throttling network in Selenium tests using BrowserMob Proxy
 layout: post
 permalink: /2019/06/throttling-network-in-selenium-tests
+description: Explains the importance of testing web applications under slow network conditions and provides a practical guide on how to throttle network latency and bandwidth in Selenium tests using BrowserMob Proxy.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/photo-1520869562399-e772f042f422.jpeg)
+<img src="/images/blog/photo-1520869562399-e772f042f422.jpeg" loading="lazy" alt="">
 
 It's a good testing practice to avoid as many external dependencies as possible. We want to run everything on localhost
 and avoid test failures caused by things outside our application scope (environment issues, network problems,

@@ -2,6 +2,7 @@
 title: How to use automated functional tests to drive your exploratory, security and performance testing efforts?
 layout: post
 permalink: /2018/01/how-to-use-automated-functional-tests
+description: Explains how to leverage existing automated functional tests (Selenium, Rest-Assured) by running them through a local proxy (JMeter, Burp, ZAP etc.) to capture traffic, which can then drive security scanning, performance testing, and exploratory testing efforts.
 categories:
   - Security
 tags:
@@ -10,7 +11,7 @@ tags:
   - performance testing
 ---
 
-![](/images/blog/silly.jpg)
+<img src="/images/blog/silly.jpg" loading="lazy" alt="">
 
 There is a growing need for technical testers who can test applications comprehensively. With such a low amount of top
 specialists you may have been encouraged to extend your skill set not only in programming domain. Today I'd like to show
@@ -31,7 +32,7 @@ In order to capture traffic we will need a[proxy](https://en.wikipedia.org/wiki/
 computer system or an application) that acts as an intermediary for requests from clients seeking resources from other
 servers. This [Wikipedia](https://en.wikipedia.org/wiki/Proxy_server) image explains the idea.
 
-![](/images/blog/Proxy_concept_en.svg.png)
+<img src="/images/blog/Proxy_concept_en.svg.png" loading="lazy" alt="">
 
 ## How to setup local proxy?
 
@@ -58,7 +59,7 @@ traffic between their machine and the Internet.
 
 [Link to Charles proxy setup guide](https://www.charlesproxy.com/documentation/configuration/proxy-settings/)
 
-e) [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) - one of the world’s most popular free
+e) [OWASP ZAP](https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project) - one of the world's most popular free
 security tools which is actively maintained by hundreds of international volunteers
 
 [Link to OWASP ZAP proxy setup guide](https://chrisdecairos.ca/intercepting-traffic-with-zaproxy/)

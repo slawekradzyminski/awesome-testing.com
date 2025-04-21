@@ -2,6 +2,7 @@
 title: TestOps - Continuous Improvement 
 layout: post
 permalink: /2017/01/testops-4-continuous-improvement
+description: Applies Continuous Improvement (Kaizen) to TestOps, advocating a Beginner's Mind and focusing on improving test strategy (pyramid), speed (parallelism), code quality (refactoring), automation (including infrastructure), leveraging cloud/OSS, and reading.
 categories:
   - TestOps
 tags:
@@ -9,7 +10,7 @@ tags:
   - learning 
 ---
 
-[![Oscar De La Hoya Continuous Improvement quotation](https://4.bp.blogspot.com/-LEGBZzRgHVg/WHoI1mNkZVI/AAAAAAAACj8/l_BPjsJiVaAb4saZILsVsjLpjZmrExnzQCLcB/s400/There-is-always-space.jpg)](https://4.bp.blogspot.com/-LEGBZzRgHVg/WHoI1mNkZVI/AAAAAAAACj8/l_BPjsJiVaAb4saZILsVsjLpjZmrExnzQCLcB/s1600/There-is-always-space.jpg)
+<a href="https://4.bp.blogspot.com/-LEGBZzRgHVg/WHoI1mNkZVI/AAAAAAAACj8/l_BPjsJiVaAb4saZILsVsjLpjZmrExnzQCLcB/s1600/There-is-always-space.jpg" target="_blank" rel="noopener noreferrer"><img src="https://4.bp.blogspot.com/-LEGBZzRgHVg/WHoI1mNkZVI/AAAAAAAACj8/l_BPjsJiVaAb4saZILsVsjLpjZmrExnzQCLcB/s400/There-is-always-space.jpg" alt="Oscar De La Hoya Continuous Improvement quotation" loading="lazy"></a>
 
 **Continuous Improvement / Kaizen introduction**
 

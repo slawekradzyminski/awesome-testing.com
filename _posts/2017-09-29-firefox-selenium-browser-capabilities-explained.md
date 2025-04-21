@@ -2,13 +2,14 @@
 title: Firefox Selenium Browser Capabilities explained
 layout: post
 permalink: /2017/09/firefox-selenium-browser-capabilities
+description: Explains the shift from Firefox Profiles to FirefoxOptions/DesiredCapabilities for configuring Firefox in Selenium, aligning it with Chrome's approach. Covers GeckoDriver setup and demonstrates setting capabilities like insecure certs acceptance, preferences, and log level.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/firefox.jpg)
+<img src="/images/blog/firefox.jpg" loading="lazy" alt="">
 
 Two very important Firefox news related to Selenium were published recently:  
 a) Selenium IDE will no longer be supported in Firefox

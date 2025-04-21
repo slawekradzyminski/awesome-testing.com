@@ -2,6 +2,7 @@
 title: Get rid of your external dependencies with WireMock
 layout: post
 permalink: /2017/12/get-rid-of-your-external-dependencies
+description: Introduces WireMock for stubbing HTTP dependencies in isolated API testing, explaining Maven/JUnit setup and demonstrating how to define stubs for GET/POST requests matching URL, headers, and body, using Rest-Assured for client requests.
 categories:
   - API testing
 tags:
@@ -9,7 +10,7 @@ tags:
   - security
 ---
 
-![](/images/blog/wiremock.jpg)
+<img src="/images/blog/wiremock.jpg" loading="lazy" alt="">
 
 So far in my posts focusing on [API testing](http://www.awesome-testing.com/search/label/API%20testing) I was using
 external services only. This isn't particularly bad for higher level tests, but sometimes we would like to work on our

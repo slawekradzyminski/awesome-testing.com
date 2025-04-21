@@ -2,6 +2,7 @@
 title: System Testing
 layout: post
 permalink: /2015/11/system-testing
+description: "Highlights the lack of clear resources on system testing, contrasts the ISTQB definition with a practical view, and examines potential system testing approaches by analyzing Apple job requirements."
 categories:
   - Testing thoughts
 tags:

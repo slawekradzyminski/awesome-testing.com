@@ -2,13 +2,14 @@
 title: Continuous Security with OWASP Dependency Check
 layout: post
 permalink: /2017/02/continuous-security-with-owasp
+description: Introduces OWASP Dependency Check for Continuous Security, explaining its integration into Maven projects, running checks, interpreting reports, handling false positives via suppression files, and integrating into CI pipelines with build failure conditions.
 categories:
   - Security
 tags:
   - security 
 ---
 
-[![Dependency Check logo](https://3.bp.blogspot.com/-_QCu2SgaOKI/WIzMr-ktv4I/AAAAAAAAClU/QFKEe7uMhBw0TCW_vaWTKWX5AsCUy4tTQCLcB/s400/pobrane%2B%25281%2529.png)](https://3.bp.blogspot.com/-_QCu2SgaOKI/WIzMr-ktv4I/AAAAAAAAClU/QFKEe7uMhBw0TCW_vaWTKWX5AsCUy4tTQCLcB/s1600/pobrane%2B%25281%2529.png)
+<a href="https://3.bp.blogspot.com/-_QCu2SgaOKI/WIzMr-ktv4I/AAAAAAAAClU/QFKEe7uMhBw0TCW_vaWTKWX5AsCUy4tTQCLcB/s1600/pobrane%2B%25281%2529.png" target="_blank" rel="noopener noreferrer"><img src="https://3.bp.blogspot.com/-_QCu2SgaOKI/WIzMr-ktv4I/AAAAAAAAClU/QFKEe7uMhBw0TCW_vaWTKWX5AsCUy4tTQCLcB/s400/pobrane%2B%25281%2529.png" alt="Dependency Check logo" loading="lazy"></a>
 
 ## OWASP Dependency Check as a Continuous Security tool
 
@@ -138,7 +139,7 @@ Every single vulnerability is nicely explained with full description and links w
 versions are also included. As a tester you would probably be interested in testing it - try upgrading
 commons-collections to 3.2.2 and you would observe that vulnerability is no longer reported.
 
-![](/images/blog/commons.jpg)
+<img src="/images/blog/commons.jpg" loading="lazy" alt="">
 
 ## Ignoring False Positives
 
@@ -213,7 +214,7 @@ out.
 [Visual .html](http://htmlpreview.github.io/?https://github.com/slawekradzyminski/AwesomeTesting/blob/master/dependency-check-report.html)
 reporting can be nicely integrated into your CI tool. Here is example screenshot from TeamCity.
 
-![](/images/blog/dependencycheck.jpg.png)
+<img src="/images/blog/dependencycheck.jpg.png" loading="lazy" alt="">
 
 ## Conclusions
 

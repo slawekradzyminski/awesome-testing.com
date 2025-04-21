@@ -2,6 +2,7 @@
 title: Selenium maintenance hell
 layout: post
 permalink: /2015/11/selenium-maintenance-hell
+description: "Addresses the common issue of unstable Selenium tests ('maintenance hell'), emphasizing the need to prioritize stability, exclude flaky tests, and build trust in automation results."
 categories:
   - Selenium
 tags:

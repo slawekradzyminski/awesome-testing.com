@@ -2,6 +2,7 @@
 title: Five minutes performance report with Google Lighthouse
 layout: post
 permalink: /2018/03/five-minutes-performance-report-with
+description: Introduces Google Lighthouse as a quick and easy tool for performance analysis, showing how to install it via npm and generate desktop/mobile reports from the command line with options for throttling and headers, also mentioning CI integration.
 categories:
   - Performance testing
 tags:
@@ -50,7 +51,7 @@ You can view generated reports here:
 
 As you can see performance of my blog is really good :)
 
-![](/images/blog/wOjmmz3BCDKC1856YSLjtk3JH-OedzNnVT20-Eq0fZpWmVZ4rWtcopwAOLu1Ig0jZSA6fR2eWy1h9lsD_A8zSFuDdPTfyy2xQqJrL70nhiHbbdgTga7Tzt0j1sCrPZdQnFyhH7dx)
+<img src="/images/blog/wOjmmz3BCDKC1856YSLjtk3JH-OedzNnVT20-Eq0fZpWmVZ4rWtcopwAOLu1Ig0jZSA6fR2eWy1h9lsD_A8zSFuDdPTfyy2xQqJrL70nhiHbbdgTga7Tzt0j1sCrPZdQnFyhH7dx" loading="lazy" alt="">
 
 ## Useful options
 

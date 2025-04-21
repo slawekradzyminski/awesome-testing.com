@@ -2,6 +2,7 @@
 title: Maximizing Your Employability as a Software Engineer in Test
 layout: post
 permalink: /2023/01/maximizing-your-employability-as
+description: Employability refers to a person's ability to quickly find an attractive job opportunity that matches their skills and qualifications. Recent layoffs in Big Tech companies such as Twitter, Google, and Spotify have highlighted the importance of employability for IT specialists. These layoffs have shown that even highly skilled and experienced professionals can be affected by changes in the industry or company-specific issues. Therefore, it is crucial for IT specialists to be aware of their employability and to take steps to improve it.
 categories:
   - Testing thoughts
 tags:
@@ -9,7 +10,7 @@ tags:
   - soft skills 
 ---
 
-![](/images/blog/photo-1459499362902-55a20553e082.webp)
+<img src="/images/blog/photo-1459499362902-55a20553e082.webp" loading="lazy" alt="">
 
 Employability refers to a person's ability to quickly find an attractive job opportunity that matches their skills and
 qualifications. Recent layoffs in Big Tech companies such as Twitter, Google, and Spotify have highlighted the
@@ -67,7 +68,7 @@ ultimately, protecting the business is the top priority for them.
   methodologies, and testing tools and techniques.
 * Evaluate your soft skills: Assess your communication skills, problem-solving abilities, self-reliance, assertiveness
   and the ability to work well in a team
-* Do you have real examples of the things you’ve done in order to confirm the above? DONE is the key word here. It’s not
+* Do you have real examples of the things you've done in order to confirm the above? DONE is the key word here. It's not
   about the things you have CONSIDERED improving.
 
 2\. Seek feedback from peers, mentors, or former employers you trust. Obtain an unbiased opinion from individuals who

@@ -2,6 +2,7 @@
 title: Do's and don'ts for testers - 2016 edition
 layout: post
 permalink: /2016/02/dos-and-donts-for-testers-2016-edition
+description: "Offers 2016 advice for testers: DO learn continuously, automate checks, manage environments, adopt Agile/Lean & social skills, specialize (pentest, mobile, etc.). Don't rely solely on manual checks, over-invest in ISTQB, expect training shortcuts, be shy."
 categories:
   - Testing thoughts
 tags:
@@ -11,7 +12,7 @@ tags:
   - learning 
 ---
 
-![](/images/blog/dos_and_donts.jpg)
+<img src="/images/blog/dos_and_donts.jpg" loading="lazy" alt="">
 
 Time is flying pretty fast. Christmas has just finished and we have February already. Probably everyone who wanted to
 post 2016 testing predictions has already done it. Hopefully, I'm the last one (lots of scientists say

@@ -2,6 +2,7 @@
 title: (In)famous testers
 layout: post
 permalink: /2016/01/infamous-testers
+description: "Discusses the concept of a shared \"testing brand\" in IT, urging testers to uphold its reputation by improving skills and avoiding complacency, referencing negative perceptions of some ISTQB testers and \"bad actors\"."
 categories:
   - Testing thoughts
 tags:
@@ -12,7 +13,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/good-testers-guide.gif)
+<img src="/images/blog/good-testers-guide.gif" loading="lazy" alt="">
 
 img source:[http://leitesculinaria.com/recipe-testers](http://leitesculinaria.com/recipe-testers)
 

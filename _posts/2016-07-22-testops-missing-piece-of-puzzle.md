@@ -2,6 +2,7 @@
 title: TestOps - missing piece of puzzle
 layout: post
 permalink: /2016/07/testops-missing-piece-of-puzzle
+description: "Introduces the TestOps concept (efficiently providing test infrastructure/frameworks) and outlines benefits: expanding skills, deepening SE understanding, learning operations, discovering new test areas, and increasing contribution value."
 categories:
   - TestOps
 tags:
@@ -9,7 +10,7 @@ tags:
   - devops 
 ---
 
-![](/images/blog/CPBtwnKWgAIne5H.jpg)
+<img src="/images/blog/CPBtwnKWgAIne5H.jpg" loading="lazy" alt="">
 
 Some time ago in
 my [do/don't recommend](https://awesome-testing.com/2016/02/dos-and-donts-for-testers-2016-edition.html)I encouraged you
@@ -51,7 +52,7 @@ you can't excel in the IT/testing industry. Train yourself to change it.
 > If you want to be an effective employee, then take a look at your job description and treat the description a soft
 > boundary.
 
-_[Rob Lambert. “10 Behaviours Of Effective Employees.”](https://leanpub.com/10behavioursofeffectiveemployees)_
+_[Rob Lambert. "10 Behaviours Of Effective Employees."](https://leanpub.com/10behavioursofeffectiveemployees)_
 
 ### Deepening your Software Engineering understanding
 
@@ -111,7 +112,7 @@ written a nice [book](https://leanpub.com/remainingrelevant) about that).
 You should aim at making your [day-to-day](https://leanpub.com/remainingrelevant) **contribution** indispensable. This
 gives you real job security. By being smart you can sleep well.
 
-> If you are among the top 1% in the world at what you do, you will never have to worry about “making it”. It’s the
+> If you are among the top 1% in the world at what you do, you will never have to worry about "making it". It's the
 > surest path there is.
 
 [Peep Laja - This I believe](http://conversionxl.com/this-i-believe/)

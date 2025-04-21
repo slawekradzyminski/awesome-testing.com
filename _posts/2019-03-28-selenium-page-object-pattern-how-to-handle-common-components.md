@@ -2,27 +2,28 @@
 title: Selenium Page Object Pattern - how to handle common components?
 layout: post
 permalink: /2019/03/selenium-page-object-pattern-how-to
+description: Discusses handling common components (header, footer) within the Selenium Page Object Pattern, compares inheritance vs. composition, recommends composition with DI, and showcases how FluentLenium simplifies this.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/photo-1522542550221-31fd19575a2d.jpeg)
+<img src="/images/blog/photo-1522542550221-31fd19575a2d.jpeg" loading="lazy" alt="">
 
 Page Object Pattern (POP) is probably the most widely adopted Selenium design pattern in the world. It has one very
 simple principle: every action (method), field (page element) available for a user on a single page should be
 implemented in one place (class). This class is popularly called Page Object.
 
-Unfortunately, this overly simplified definition often causes confusion because it’s incomplete. In order to make it
+Unfortunately, this overly simplified definition often causes confusion because it's incomplete. In order to make it
 more precise, we have to add that Page Object represents fields and methods available on this page exclusively. Every
-piece of shared logic (header, footer, sidebars) should be stored in separate classes. Let’s call those shared elements
+piece of shared logic (header, footer, sidebars) should be stored in separate classes. Let's call those shared elements
 components from now on.
 
 Imagine a very simple website that has multiple pages using a common template with certain components. All Page Objects
 using this template should represent functionalities available only in non-shared space (see image below).
 
-![](/images/blog/Screen%2BShot%2B2019-03-29%2Bat%2B17.20.17.png)
+<img src="/images/blog/Screen%2BShot%2B2019-03-29%2Bat%2B17.20.17.png" loading="lazy" alt="">
 
 Page Object should cover only the orange section. Header, footer and sidebar should be implemented as separate entities
 which can be accessed by each page class.
@@ -33,7 +34,7 @@ Now imagine you are a tester responsible for testing such a website from scratch
 every test design decision you make today can have a significant impact tomorrow, next year, and maybe even 10 years
 from now. How would you do it?
 
-To make things more realistic let’s also say that there is one page which doesn’t have a sidebar and we expect to create
+To make things more realistic let's also say that there is one page which doesn't have a sidebar and we expect to create
 more pages with various templates soon.
 
 ## Inheritance
@@ -157,7 +158,7 @@ annotation. They are not injected - we have to initialize them using initElement
 Components handling has to be implemented by a test developer separately using inheritance or composition. This is
 visualized below.
 
-![](/images/blog/Screen%2BShot%2B2019-03-30%2Bat%2B16.42.07.png)
+<img src="/images/blog/Screen%2BShot%2B2019-03-30%2Bat%2B16.42.07.png" loading="lazy" alt="">
 
 With [FluentLenium framework](https://fluentlenium.com/), life is much easier for a test developer. FluentLenium treats
 custom Components in the same way as WebElements (wrapped by FluentWebElemet class) and injects them dynamically when
@@ -166,7 +167,7 @@ visible for the customer perspective.
 
 The image below shows the difference comparing to standard Selenium.
 
-![](/images/blog/Screen%2BShot%2B2019-03-30%2Bat%2B21.47.28.png)
+<img src="/images/blog/Screen%2BShot%2B2019-03-30%2Bat%2B21.47.28.png" loading="lazy" alt="">
 
 For those who prefer actual implementation here is Page Object example:
 

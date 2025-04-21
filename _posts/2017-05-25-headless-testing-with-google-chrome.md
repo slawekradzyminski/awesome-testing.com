@@ -2,13 +2,14 @@
 title: Headless testing with Google Chrome
 layout: post
 permalink: /2017/05/headless-testing-with-google-chrome
+description: Explains headless browser testing benefits for CI, focusing on Google Chrome's native headless mode (v59+). Provides a Java/Selenium/FluentLenium demo showing how to enable headless mode via ChromeOptions and run a simple AJAX test.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/suit-158820_1280.png)
+<img src="/images/blog/suit-158820_1280.png" loading="lazy" alt="">
 
 Headless Testing means running a browser UI test without the graphical user interface, i.e. without the head. Such a
 test requires a headless browser, which (according to [Wikipedia](https://en.wikipedia.org/wiki/Headless_browser))

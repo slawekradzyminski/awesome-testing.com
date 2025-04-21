@@ -6,13 +6,17 @@ categories:
   - AI
 tags:
   - AI
+description: >
+  A comprehensive guide to evaluating AI-powered IDEs based on live code suggestions, LLM chat integration, RAG performance, and agent capabilities for enhanced development workflows.
+redirect_from:
+  - /ai-powered-ides
 ---
 
-![](/images/blog/aiide.jpg){:width="50%"}
+![](/images/blog/aiide.jpg){:width="50%" loading="lazy"}
 
 Among the many AI tools that have been released in the last two years, the coding IDE is one of the most powerful. It's a tool that can help developers write code faster and more efficiently. In this post I'll explain what an AI-powered IDE is, and how to evaluate it. You may be surprised to learn that it's not just a chat-based tool, but a combination of several different technologies that work together to help you write code faster.
 
-To keep this exploration engaging and interesting, I'll break down the underlying mechanics of these tools without overwhelming you with technical jargon. Instead, I’ll use straightforward explanations and analogies. If you're interested in the details I suggest to take a look into soon-to-be-released [AI Engineering book](https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302). I had the privilege to read an early version on [O'Reilly's website](https://learning.oreilly.com/library/view/ai-engineering/9781098166298/).
+To keep this exploration engaging and interesting, I'll break down the underlying mechanics of these tools without overwhelming you with technical jargon. Instead, I'll use straightforward explanations and analogies. If you're interested in the details I suggest to take a look into soon-to-be-released [AI Engineering book](https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302). I had the privilege to read an early version on [O'Reilly's website](https://learning.oreilly.com/library/view/ai-engineering/9781098166298/).
 
 To work effectively with AI-powered IDEs, it's essential to first become familiar with:
 - How Large Language Models (LLMs) work: Understanding their capabilities, limitations, and how they process information.
@@ -29,28 +33,28 @@ AI-powered IDEs have become a significant presence in the software development l
 - [LLM-powered autonomous agents (Adopt)](https://www.thoughtworks.com/radar/techniques/summary/llm-powered-autonomous-agents)
 - [Function Calling with LLMs (Trial)](https://www.thoughtworks.com/radar/techniques/summary/function-calling-with-llms)
 
-If you’re not yet using these tools, consider discussing their potential with your managers. You might share resources like ThoughtWorks’ perspective on [LLM bans](https://www.thoughtworks.com/radar/techniques/summary/llm-bans) or even this article to emphasize their importance. As I’ve mentioned in my [previous post](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development), these tools are continuously improving, and early adoption can help you and your team stay ahead.
+If you're not yet using these tools, consider discussing their potential with your managers. You might share resources like ThoughtWorks' perspective on [LLM bans](https://www.thoughtworks.com/radar/techniques/summary/llm-bans) or even this article to emphasize their importance. As I've mentioned in my [previous post](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development), these tools are continuously improving, and early adoption can help you and your team stay ahead.
 
-In this post, I’ll evaluate AI-powered IDEs based on the following criteria:
+In this post, I'll evaluate AI-powered IDEs based on the following criteria:
 
-- “Live” code suggestions
+- "Live" code suggestions
 - LLM Chat integration with the IDE
 - RAG performance boost
 - Agent performance boost
 
 _Note: All screenshots were taken in Cursor IDE using my naive RAG implementation [personal-ai-assistant](https://github.com/slawekradzyminski/personal-ai-assistant)._
 
-## “Live” code suggestions
+## "Live" code suggestions
 
 The first significant release branded as an AI coding game-changer was Google Copilot's in-line code suggestions. While relatively simple, this feature was groundbreaking at the time. The idea was that, instead of manually writing code, AI could suggest code snippets for you. You could then choose to apply the suggestion (usually by pressing `Tab`) or continue typing as you preferred.
 
-![](/images/blog/codesuggestion.png){:width="50%"}
+![](/images/blog/codesuggestion.png){:width="50%" loading="lazy"}
 
 At that time, the most advanced model powering these suggestions was GPT-3 Codex, which is now considered obsolete. The hype around Copilot was immense, but its actual performance often fell short of expectations. Users frequently had to insert artificial comments into their code to make the suggestions more accurate. Without detailed code context, Copilot struggled to provide meaningful suggestions, often producing outputs only marginally better than random guesses.
 
-One of GitHub Copilot’s biggest selling point is its integration into the most popular IDEs (VSCode plugin, Intellij plugin, etc.). This makes it incredibly easy to get started. Convincing developers to switch to a new IDE (like Windsurf) is a challenging proposition. Developers are creatures of habit, and most are not early adopters, making adoption of new tools slower.
+One of GitHub Copilot's biggest selling point is its integration into the most popular IDEs (VSCode plugin, Intellij plugin, etc.). This makes it incredibly easy to get started. Convincing developers to switch to a new IDE (like Windsurf) is a challenging proposition. Developers are creatures of habit, and most are not early adopters, making adoption of new tools slower.
 
-However, incorporating GitHub Copilot into existing IDEs still presents challenges. When using Copilot, some built-in suggestions from the IDE itself may become unavailable. Considering that Copilot’s suggestions are not always accurate, this can be frustrating for developers who have to switch between Copilot and the IDE’s native autocomplete features.
+However, incorporating GitHub Copilot into existing IDEs still presents challenges. When using Copilot, some built-in suggestions from the IDE itself may become unavailable. Considering that Copilot's suggestions are not always accurate, this can be frustrating for developers who have to switch between Copilot and the IDE's native autocomplete features.
 
 Copilot competitors attempt to resolve some of these issues by introducing innovations such as:
 
@@ -60,17 +64,17 @@ Copilot competitors attempt to resolve some of these issues by introducing innov
 
 - **Providing suggestions across the entire file**: Instead of limiting suggestions to the mouse cursor's position, competitors offer context-aware recommendations for the whole file. This enhances productivity by speeding up repetitive tasks.
 
-- **Designing new IDEs for seamless integration**: Building a dedicated IDE from scratch helps resolve many UX issues that arise when Copilot competes with an IDE’s built-in autocomplete functionality.
+- **Designing new IDEs for seamless integration**: Building a dedicated IDE from scratch helps resolve many UX issues that arise when Copilot competes with an IDE's built-in autocomplete functionality.
 
 While using live suggestions it is important to have these things in mind:
 
-- **Your code is exposed to the LLM**: Even if you don’t apply suggestions or use chat features, your code is still shared with a third party. Your IDE sends prompts to the LLM in real-time to generate suggestions. This means you cannot use tools like Copilot if you’re working on proprietary or sensitive code. It also means that at work you have to obtain approval from your manager before using these tools.
+- **Your code is exposed to the LLM**: Even if you don't apply suggestions or use chat features, your code is still shared with a third party. Your IDE sends prompts to the LLM in real-time to generate suggestions. This means you cannot use tools like Copilot if you're working on proprietary or sensitive code. It also means that at work you have to obtain approval from your manager before using these tools.
 
-- **Fast Inference is Crucial for User Experience**: The LLM powering “live” coding assistants must respond quickly to ensure a smooth user experience. Ideally, it should be as fast as the native autocomplete feature in the IDE. To achieve this, tools like Copilot often use smaller, less computationally intensive models compared to those used in products like ChatGPT. For example, models designed for deep reasoning (such as OpenAI's `o1-family`) are too slow for this use case.
+- **Fast Inference is Crucial for User Experience**: The LLM powering "live" coding assistants must respond quickly to ensure a smooth user experience. Ideally, it should be as fast as the native autocomplete feature in the IDE. To achieve this, tools like Copilot often use smaller, less computationally intensive models compared to those used in products like ChatGPT. For example, models designed for deep reasoning (such as OpenAI's `o1-family`) are too slow for this use case.
 
-- **Smart Models Can Be Expensive**: If your IDE extensions rely on an API key and use advanced models (e.g., GPT-4), you could rack up significant costs. It’s essential to monitor usage and configure settings wisely to avoid unexpectedly high bills.
+- **Smart Models Can Be Expensive**: If your IDE extensions rely on an API key and use advanced models (e.g., GPT-4), you could rack up significant costs. It's essential to monitor usage and configure settings wisely to avoid unexpectedly high bills.
 
-With this in mind, let’s explore and attempt to handcraft a prompt that an IDE coding assistant might use.
+With this in mind, let's explore and attempt to handcraft a prompt that an IDE coding assistant might use.
 
 > The user is a developer working on Python project called `personal-ai-assistant`. It is a simple RAG implementation that uses LLM and user-provided resources to answer questions.
 >
@@ -168,13 +172,13 @@ Before chat features became available in AI-powered IDEs, developers often relie
 
 This limitation inspired the development of new AI-enhanced IDE tools, which integrate cutting-edge LLM chat models directly into the development environment. These tools eliminate the need to switch context, allowing developers to query the model, receive detailed answers, and integrate them seamlessly into their codebase—all within the IDE itself.
 
-![](/images/blog/aiide.png){:width="100%"}
+![](/images/blog/aiide.png){:width="100%" loading="lazy"}
 
 You can use the following criteria to evaluate the performance of the chat integration:
 
-- **Ability to pick a model**: At the time of writing, many developers prefer using the `claude-3-5-sonnet` model for ad-hoc queries due to its balance of speed and utility. For more complex tasks, the `o1-family` models, equipped with built-in Chain-of-Thought prompting, often provide better results. The ability to select a model is crucial, especially during peak hours or downtimes when certain models may be unavailable or unreliable. It’s worth noting that most AI tool providers do not guarantee SLAs for their models, making this flexibility even more important.
+- **Ability to pick a model**: At the time of writing, many developers prefer using the `claude-3-5-sonnet` model for ad-hoc queries due to its balance of speed and utility. For more complex tasks, the `o1-family` models, equipped with built-in Chain-of-Thought prompting, often provide better results. The ability to select a model is crucial, especially during peak hours or downtimes when certain models may be unavailable or unreliable. It's worth noting that most AI tool providers do not guarantee SLAs for their models, making this flexibility even more important.
 
-- **Ability to use your API key**: Some tools allow users to integrate their own API keys. While this can improve reliability and uptime, it may also lead to increased costs. It’s vital to monitor usage closely to avoid unexpected expenses.
+- **Ability to use your API key**: Some tools allow users to integrate their own API keys. While this can improve reliability and uptime, it may also lead to increased costs. It's vital to monitor usage closely to avoid unexpected expenses.
 
 - **Ease of applying code suggestions**: Applying suggestions should be straightforward—ideally achievable with a single click. The IDE should intelligently determine where the suggestion should be applied and manage any necessary modifications or deletions. A user interface resembling a Git conflict resolution screen, with options to apply, discard, or modify each suggestion individually, provides an optimal experience.
 
@@ -182,11 +186,11 @@ You can use the following criteria to evaluate the performance of the chat integ
 
 - **Ease of code error debugging**: The IDE should be capable of constructing prompts that describe encountered errors and querying the LLM for potential fixes. This integration streamlines error resolution, reducing manual effort for the developer.
 
-![](/images/blog/errordebug.png){:width="100%"}
+![](/images/blog/errordebug.png){:width="100%" loading="lazy"}
 
 - **Ease of terminal error debugging**: Similar to code error debugging, the IDE should assist with terminal error resolution. The tool should construct and query prompts to resolve the issue causing a terminal command to fail. Note that the root cause here may be in code or in the terminal command itself.
 
-![](/images/blog/terminalerrordebug.png){:width="100%"}
+![](/images/blog/terminalerrordebug.png){:width="100%" loading="lazy"}
 
 - **Ability to inspect raw prompt and LLM response**: A bit of wishful thinking here, but it would be great if the IDE allowed developers to inspect the raw prompt used to generate a response as well as the LLM response. This can be useful for debugging and understanding how IDE uses LLM under the hood.
 
@@ -194,17 +198,17 @@ You can use the following criteria to evaluate the performance of the chat integ
 
 ## RAG performance boost
 
-Retrieval-Augmented Generation (RAG) is a technique that enhances the capabilities of large language models (LLMs) by incorporating external knowledge into their response generation process. While LLMs are powerful, their knowledge is static, limited to the data they were trained on, and unable to handle recent or project-specific information. RAG addresses these limitations by dynamically retrieving relevant, up-to-date information from an external database, which is then combined with the user’s prompt before being fed into the model.
+Retrieval-Augmented Generation (RAG) is a technique that enhances the capabilities of large language models (LLMs) by incorporating external knowledge into their response generation process. While LLMs are powerful, their knowledge is static, limited to the data they were trained on, and unable to handle recent or project-specific information. RAG addresses these limitations by dynamically retrieving relevant, up-to-date information from an external database, which is then combined with the user's prompt before being fed into the model.
 
-![](/images/blog/RAG.png){:width="100%"}
+![](/images/blog/RAG.png){:width="100%" loading="lazy"}
 
 The image above illustrates how RAG works:
 
 - **User Prompt**: The process begins with a user providing a prompt, such as a query or a specific task they need assistance with.
 
-- **Similarity Search in Vector Database**: The prompt is analyzed, and a similarity search is conducted in a Vector Database, which contains encoded representations of up-to-date knowledge. This database enables the system to quickly identify and retrieve relevant pieces of information that are most similar to the user’s query.
+- **Similarity Search in Vector Database**: The prompt is analyzed, and a similarity search is conducted in a Vector Database, which contains encoded representations of up-to-date knowledge. This database enables the system to quickly identify and retrieve relevant pieces of information that are most similar to the user's query.
 
-- **Constructing the RAG-Enhanced Prompt**: The extracted knowledge from the vector database is combined with the original user prompt to create a RAG-enhanced prompt. This ensures that the LLM receives both the user’s request and the contextual knowledge needed to provide a more accurate and relevant response.
+- **Constructing the RAG-Enhanced Prompt**: The extracted knowledge from the vector database is combined with the original user prompt to create a RAG-enhanced prompt. This ensures that the LLM receives both the user's request and the contextual knowledge needed to provide a more accurate and relevant response.
 
 - **Response Generation by the LLM**: Finally, the RAG-enhanced prompt is sent to the LLM, which generates a response using both its internal knowledge and the external context provided by the RAG process.
 
@@ -218,9 +222,9 @@ Given the importance of RAG, you can evaluate the following criteria when choosi
 
 - **Ability to attach files from the project**: When using LLM chat, the currently opened file is often automatically included in the prompt. However, the IDE should provide an easy way to attach additional files from the project to extend the context of the query.
 
-- **Ability to attach project context**: The IDE should support chatting with the entire project context (e.g., `@workspace` in GitHub Copilot’s VSCode plugin). In this mode, the IDE selects relevant files to include in the prompt automatically. The effectiveness of this feature depends heavily on code quality and project size.
+- **Ability to attach project context**: The IDE should support chatting with the entire project context (e.g., `@workspace` in GitHub Copilot's VSCode plugin). In this mode, the IDE selects relevant files to include in the prompt automatically. The effectiveness of this feature depends heavily on code quality and project size.
 
-- **Multi-modality support**: With advancements in LLMs, it’s now possible to use various input types, such as images, audio, and documents, in prompts. The IDE should allow users to attach files in these modalities, converting them into text before querying the LLM. For example, tools like [LangChain](https://python.langchain.com/docs/integrations/document_loaders/) offer document loaders that can easily integrate into an IDE to process non-textual inputs.
+- **Multi-modality support**: With advancements in LLMs, it's now possible to use various input types, such as images, audio, and documents, in prompts. The IDE should allow users to attach files in these modalities, converting them into text before querying the LLM. For example, tools like [LangChain](https://python.langchain.com/docs/integrations/document_loaders/) offer document loaders that can easily integrate into an IDE to process non-textual inputs.
 
 - **Ability to index tool documentation**: The IDE should support a built-in Vector Database to index documentation for commonly used tools like React, Python, or others. For instance, prompting with `@OpenAI` could retrieve relevant, pre-indexed documentation that matches the query, streamlining the development process.
 
@@ -234,7 +238,7 @@ In my [previous post about AI](https://www.awesome-testing.com/2024/09/the-rise-
 
 In [SWE-agent paper](https://arxiv.org/pdf/2405.15793) we can find the following illustration and definition of an agent (please note that the author uses term *language model (LM)* instead of *large language model*):
 
-![](/images/blog/sweagent.png){:width="100%"}
+![](/images/blog/sweagent.png){:width="100%" loading="lazy"}
 
 An agent refers to a system that leverages a language model (LM) to autonomously interact with a digital environment, such as a computer, to solve tasks. The agent operates by iteratively taking actions (e.g., running commands, editing files) and receiving feedback from the environment to adjust its behavior.
 

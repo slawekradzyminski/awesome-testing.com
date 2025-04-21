@@ -2,6 +2,7 @@
 title: Tester's toolbox - an alternative guide
 layout: post
 permalink: /2016/04/testers-toolbox-alternative-guide
+description: "An alternative tester's toolbox focusing on online playgrounds for practice: GUI, API, white-box, mail, SMS/call, BDD, test case writing, usability, pen testing, text comparison, plus links to Awesome resource lists."
 categories:
   - Toolbox
 tags:
@@ -17,7 +18,7 @@ tags:
   - usability testing 
 ---
 
-![](/images/blog/bob.png)
+<img src="/images/blog/bob.png" loading="lazy" alt="">
 
 When you type 'test tools' in Google you can see a lot of links to Selenium, cURL, Cucumber, or even Firefox. I agree
 they are useful, but we are testers, and we shouldn't test tools, but real systems. Below I give a lot of links to

@@ -2,13 +2,14 @@
 title: TestOps - Testing in Production
 layout: post
 permalink: /2016/09/testops-2-testing-in-production
+description: "Explores Testing in Production (TiP) techniques like Canary/Blue-Green deployments, Controlled Test Flights (feature flags), A/B testing, Synthetic User testing, Fault Injection (Chaos Monkey), and Dogfooding, outlining prerequisites and risks."
 categories:
   - TestOps
 tags:
   - testops
 ---
 
-![](/images/blog/production-icon-18.png)
+<img src="/images/blog/production-icon-18.png" loading="lazy" alt="">
 
 Some time ago I started [the TestOps](https://awesome-testing.com/2016/07/testops-missing-piece-of-puzzle.html) series.
 I outlined why the topic is important (actually I expect it to be even more important in the nearest future) and listed
@@ -30,7 +31,7 @@ Testing in production impacts your application running live, therefore it impact
 this statement on the back of your head. There is no place for dummy data like $99,999.00 little mouse (funny example
 from Amazon below).
 
-![](/images/blog/4812.image_6EB04442.png)
+<img src="/images/blog/4812.image_6EB04442.png" loading="lazy" alt="">
 
 Before you approach it you need to make sure you fully understand its impacts. You should have skilled people planning
 and executing it from start to finish. Usually when it comes to testing error margin is quite big, but that's not the
@@ -64,7 +65,7 @@ You deploy your software on a separate set of servers (Blue pool in the image be
 customers. Start small (with internal or beta users) and do few smoke tests and log analyses. If everything seems ok
 redirect some part of external customers (5% in our example) for the new pool.
 
-![](/images/blog/canary-release-2.png)
+<img src="/images/blog/canary-release-2.png" loading="lazy" alt="">
 
 Now assuming if something goes wrong you may rollback all traffic to sta able pool (Green) or just proceed with new
 release rollout and redirect half/all customers to Blue pool.
@@ -83,7 +84,7 @@ The technique very similar to Canary deployment, but instead of a new applicatio
 features. I'll use [Aviadezra](http://aviadezra.blogspot.com/2014/05/testing-in-production-benefits-risks.html) image to
 explain it in a simple way:
 
-![](/images/blog/image16.png)
+<img src="/images/blog/image16.png" loading="lazy" alt="">
 
 Let's assume we have a new feature hidden in Code Path 1. After successful deployment, we have all customers using Code
 Path 2. Now we change the config file and from now on some customers (first internal, then 5%) are using a new feature
@@ -100,7 +101,7 @@ my opinion, it's worth the effort.
 Another excellent tool for business and UX designers. I'll use [a vwo](https://vwo.com/ab-testing/) image for an
 explanation (excellent guide, read it).
 
-![](/images/blog/02.png.pagespeed.ce.BmWcShEZAM.png)
+<img src="/images/blog/02.png.pagespeed.ce.BmWcShEZAM.png" loading="lazy" alt="">
 
 The idea is very simple here. 50% of our customers see Variation A of our application, and 50% of customers see
 Variation B. We measure all the data and then analyze it (with Data Scientists help perhaps). In the case of our

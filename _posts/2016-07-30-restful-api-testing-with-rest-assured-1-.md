@@ -2,6 +2,7 @@
 title: RESTful API Testing with Rest-Assured (1)
 layout: post
 permalink: /2016/07/restful-api-testing-with-rest-assured-1
+description: "Part 1 of Rest-Assured guide: Covers setup, BDD approach (given/when/then), basic GET tests against JSONPlaceholder, Hamcrest assertions, JSON schema validation, and PUT requests with automatic Java object to JSON conversion."
 categories:
   - API testing
 tags:
@@ -10,7 +11,7 @@ tags:
   - test automation 
 ---
 
-![](/images/blog/Rest-Assured-new-brand-identity-lr.jpg)
+<img src="/images/blog/Rest-Assured-new-brand-identity-lr.jpg" loading="lazy" alt="">
 
 Before I start writing about API testing let me announce the big news. I released all my Selenium related Java code
 snippets on [the Github Awesome Testing](https://github.com/slawekradzyminski/AwesomeTesting) project. I will update it

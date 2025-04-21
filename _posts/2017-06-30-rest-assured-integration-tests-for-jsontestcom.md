@@ -2,6 +2,7 @@
 title: Rest Assured integration tests for jsontest.com
 layout: post
 permalink: /2017/06/rest-assured-integration-tests-for
+description: Demonstrates Rest-Assured integration tests using various free endpoints from jsontest.com, covering GET requests (IP, date, echo, cookie, headers) and POST requests (MD5 calculation, JSON validation).
 categories:
   - API testing
 tags:
@@ -9,7 +10,7 @@ tags:
 ---
 
 
-![](/images/blog/name-transparent.png)
+<img src="/images/blog/name-transparent.png" loading="lazy" alt="">
 
 In my very
 popular [Tester's toolbox - an alternative guide](http://www.awesome-testing.com/2016/04/testers-toolbox-alternative-guide.html)

@@ -2,6 +2,7 @@
 title: Understanding Cypress synchronous/asynchronous duality
 layout: post
 permalink: /2023/03/understanding-cypress
+description: "Deep dive into Cypress's unique approach to handling synchronous and asynchronous JavaScript operations. Learn about command chaining and effective debugging strategies."
 categories:
   - Cypress
 tags:
@@ -10,7 +11,7 @@ tags:
   - UI testing 
 ---
 
-![](/images/blog/cypress.png)
+![](/images/blog/cypress.png){: loading="lazy" }
 
 Cypress is a widely used end-to-end testing framework for web applications that offers an easy-to-use API and a powerful
 command-line interface. It enables developers to write tests that mimic end-users' interactions with their applications.

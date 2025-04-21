@@ -2,6 +2,7 @@
 title: GPT-4 Test Manifesto
 layout: post
 permalink: /2023/03/gpt-4-test-manifesto
+description: "Discover a groundbreaking Test Manifesto created by GPT-4, showcasing AI's advanced reasoning in software testing principles and methodologies."
 categories:
   - Generative AI
 tags:
@@ -15,7 +16,7 @@ to showcase this impressive AI-generated artifact, which offers a fresh and insi
 principles. Join me as we delve into the world of cutting-edge AI technology and explore the future of software testing
 through the lens of this groundbreaking innovation.
 
-![gpt4 yoda](/images/blog/gpt4yoda.png "GPT4 Yoda")
+![gpt4 yoda](/images/blog/gpt4yoda.png "GPT4 Yoda"){: loading="lazy" }
 
 ## Test Manifesto
 
@@ -75,7 +76,7 @@ success and value of our automated test suites.
 By following these principles, we aim to create a testing culture that fosters collaboration, continuous improvement,
 and customer satisfaction, ultimately leading to the delivery of high-quality software products.
 
-![gpt4 vader](/images/blog/gpt4vader.png "GPT4 Darth Vader")
+![gpt4 vader](/images/blog/gpt4vader.png "GPT4 Darth Vader"){: loading="lazy" }
 
 ### ChatGPT Prompts
 

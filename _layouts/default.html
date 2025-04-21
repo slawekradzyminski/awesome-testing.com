@@ -12,6 +12,7 @@ author_profile: true
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
     {% include head.html %}
+    {% seo %}
     {% include head/custom.html %}
     {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include analytics.html %}

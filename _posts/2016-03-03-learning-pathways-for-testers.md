@@ -2,6 +2,7 @@
 title: Learning pathways for testers
 layout: post
 permalink: /2016/03/learning-pathways-for-testers
+description: "Outlines learning pathways for testers: Motivation (like your job, beginner's mind, supportive company, fair pay), Learning at Work (use time wisely, step out of comfort zone, seek feedback), and Learning After Work (avoid burnout, read daily, diversify knowledge, choose sources critically)."
 categories:
   - Testing thoughts
 tags:
@@ -11,7 +12,7 @@ tags:
   - learning 
 ---
 
-![](/images/blog/Learning-Quotes-16-of-16.jpg)
+<img src="/images/blog/Learning-Quotes-16-of-16.jpg" loading="lazy" alt="">
 
 Usually, when I look online for learning resources I find a lot of rankings like:
 

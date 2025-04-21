@@ -2,6 +2,7 @@
 title: On being multiskilled
 layout: post
 permalink: /2018/10/on-being-multiskilled
+description: Advocates for becoming multiskilled in IT, offering tips like continuous learning, accepting new perspectives, volunteering, varying approaches, perseverance, exploring unknowns, adopting a beginner's mind, and setting realistic expectations.
 categories:
   - Testing thoughts
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/negative-space-programming-code-javascript-editor-boskampi-thumb-1.jpg)
+<img src="/images/blog/negative-space-programming-code-javascript-editor-boskampi-thumb-1.jpg" loading="lazy" alt="">
 
 ### Introduction
 
@@ -18,16 +19,16 @@ positions. On my blog, I have already promoted such approach (
 see [How to get a first job as a tester?](https://www.awesome-testing.com/2018/08/how-to-get-first-job-as-software-tester.html)
 for beginners
 and [Testops - the most antifragile testing role](https://www.awesome-testing.com/2018/02/testops-most-antifragile-testing-role.html)
-for more experienced testers). Today I’d like to show you how to put it into practice. I have collected a few tips from
+for more experienced testers). Today I'd like to show you how to put it into practice. I have collected a few tips from
 multiple fields to make the list more complete.
 
 ### No not overestimate things you already know
 
-IT industry has multiple branches and it’s literally impossible to know them all. This may be a bit sad realization, but
-I bet you can’t quickly fill product owner/developer/team lead shoes. Think about it. Surely there is still a lot of
+IT industry has multiple branches and it's literally impossible to know them all. This may be a bit sad realization, but
+I bet you can't quickly fill product owner/developer/team lead shoes. Think about it. Surely there is still a lot of
 knowledge to discover.
 
-Some people lose the ability to see what’s missing in their skills as they get older. They stick to old habits,
+Some people lose the ability to see what's missing in their skills as they get older. They stick to old habits,
 frameworks, ways of working which become more and more obsolete each passing year. This is very dangerous because they
 not only stop adding value in the current place of work but also lose employability. Do not allow such thing to happen.
 Train your mind & body daily.
@@ -35,9 +36,9 @@ Train your mind & body daily.
 ### Accept different point of views
 
 In theory, we love to share and hear experiences of others during various technical conferences. In practice though, we
-often struggle to emphasize with others. I don’t know why, but I know few people who never say ‘I’m wrong’. For example,
-I’m writing those words knowing that I may make mistakes… and there is absolutely nothing wrong with that. This
-shouldn’t discourage you from reading further, because you still may benefit from this text on multiple fronts:
+often struggle to emphasize with others. I don't know why, but I know few people who never say 'I'm wrong'. For example,
+I'm writing those words knowing that I may make mistakes… and there is absolutely nothing wrong with that. This
+shouldn't discourage you from reading further, because you still may benefit from this text on multiple fronts:
 
 * you may realize that your knowledge starts to be obsolete
 * you may start to volunteer for new, challenging tasks
@@ -47,7 +48,7 @@ shouldn’t discourage you from reading further, because you still may benefit f
 
 During workdays, test engineers have to tackle various tasks: easy, mundane, challenging, time-consuming, weird, boring
 etc. Occasionally something completely new pops out and we need to find someone ready for a challenge. Our natural
-inclination is to behave like during school questioning: heads down, eyes on the ground, ‘please let it be someone else’
+inclination is to behave like during school questioning: heads down, eyes on the ground, 'please let it be someone else'
 prayers murmured. Instead of acting as others step up and volunteer yourself. There is a high chance that not everyone
 in your team read my blog, and you will be able to work on new stuff.
 

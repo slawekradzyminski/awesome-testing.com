@@ -2,6 +2,7 @@
 title: Learning Tips for Using ChatGPT in Software Testing
 layout: post
 permalink: /2023/03/learning-tips-for-using-chatgpt-in
+description: "Essential tips for software testers using ChatGPT effectively, covering data privacy, bias awareness, prompt engineering, and decision-making strategies with AI assistance."
 categories:
   - Generative AI
 tags:
@@ -11,7 +12,7 @@ tags:
   - test automation 
 ---
 
-![](/images/blog/Slawek_visualise_generative_AI_as_seen_by_someone_who_loves_it_9e6822a2-2d42-47ea-8348-5c11e757d283.png)
+![](/images/blog/Slawek_visualise_generative_AI_as_seen_by_someone_who_loves_it_9e6822a2-2d42-47ea-8348-5c11e757d283.png){: loading="lazy" }
 
 ChatGPT is a powerful tool that can be useful for a wide range of applications, from creative writing and conversation
 to research and decision-making. For software engineers in test, ChatGPT can be an invaluable resource for generating
@@ -22,7 +23,7 @@ context, so that you can get the most out of this powerful tool.
 
 ## Beware of the Dunning-Kruger Effect
 
-![](/images/blog/chatgpt-dunning-kruger-effect.webp)
+![](/images/blog/chatgpt-dunning-kruger-effect.webp){: loading="lazy" }
 
 One of the most important things to keep in mind when using ChatGPT is the Dunning-Kruger Effect. This psychological
 phenomenon refers to the tendency for people to overestimate their abilities in a given area, especially when they have
@@ -63,7 +64,7 @@ can use ChatGPT effectively and responsibly.
 
 ## Try to do something specific using it as assistance
 
-![](/images/blog/Slawek_pretty_girl_with_a_happy_robot_fa372d45-f21a-439e-ada3-d191e9594429.png)
+![](/images/blog/Slawek_pretty_girl_with_a_happy_robot_fa372d45-f21a-439e-ada3-d191e9594429.png){: loading="lazy" }
 
 When using ChatGPT, it's important to have a specific task or goal in mind. Rather than randomly querying it, try to use
 ChatGPT as assistance for a particular task, such as generating ideas for a writing project or automating certain tasks
@@ -147,7 +148,7 @@ and helpful. If the responses are not satisfactory, you can adjust your prompts 
 get a more well-rounded perspective. By using alter egos to assist with decision-making, you can leverage the power of
 ChatGPT to generate insights and ideas that you might not be able to generate on your own.
 
-![](/images/blog/Screenshot%202023-03-12%20at%2013.01.55.png)
+![](/images/blog/Screenshot%202023-03-12%20at%2013.01.55.png){: loading="lazy" }
 
 ## Stay up to date with the latest generative AI developments
 

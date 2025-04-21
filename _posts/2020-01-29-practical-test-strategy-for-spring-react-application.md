@@ -2,6 +2,7 @@
 title: Practical test strategy for Spring & React application
 layout: post
 permalink: /2020/01/practical-test-strategy-for-spring
+description: Outlines a practical test strategy for a Spring Boot and React application, covering isolated vs. E2E tests, guidelines for coverage, and specific functional and non-functional testing approaches.
 categories:
   - Test strategy
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/photo-1523875194681-bedd468c58bf.jpeg)
+<img src="/images/blog/photo-1523875194681-bedd468c58bf.jpeg" loading="lazy" alt="">
 
 There are two leading approaches for tests: isolated and end to end (E2E). As usual, both approaches have upsides and
 downsides, and it's impossible to say which one is better. Everything is dependent on application context and
@@ -41,12 +42,12 @@ b) [React frontend](https://github.com/slawekradzyminski/reactfrontend)
 To complicate things a bit let's also assume that our backend is interacting with external API served by the other
 service (which we have limited control of).
 
-![](/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.41.12.png)
+<img src="/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.41.12.png" loading="lazy" alt="">
 
 The application I wrote is very simple, it only allows to CRUD (create, read, update, delete) a user but it's about to
 overcome Facebook soon as the most popular social media platform so we need to prepare a comprehensive test strategy.
 
-![](/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.16.13.png)
+<img src="/images/blog/Screenshot%2B2020-01-18%2Bat%2B12.16.13.png" loading="lazy" alt="">
 
 ### Functional test strategy
 

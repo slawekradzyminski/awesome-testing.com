@@ -2,13 +2,14 @@
 title: Appium up and running (working example)
 layout: post
 permalink: /2020/08/appium-up-and-running-working-example
+description: An introduction to Appium setup with links to installation guides and a GitHub project containing working examples for Android and iOS E2E test automation.
 categories:
   - Mobile testing
 tags:
   - mobile testing 
 ---
 
-![](/images/blog/images-2.png)
+<img src="/images/blog/images-2.png" loading="lazy" alt="appium">
 
 **1\. Introduction**
 

@@ -2,6 +2,7 @@
 title: Selenium vs FluentLenium
 layout: post
 permalink: /2018/05/selenium-vs-fluentlenium
+description: Compares Selenium WebDriver with the FluentLenium extension by implementing the same test scenario, demonstrating how FluentLenium simplifies setup, interactions, assertions, and waiting, leading to more concise code.
 categories:
   - Selenium
 tags:
@@ -9,7 +10,7 @@ tags:
   - fluentlenium 
 ---
 
-![](/images/blog/fluentlenium.png)
+<img src="/images/blog/fluentlenium.png" loading="lazy" alt="">
 
 All my previous posts labeled with [Selenium tag](https://www.awesome-testing.com/search/label/selenium)
 featured [FluentLenium](http://fluentlenium.org/) syntax. Why? Even though I tried to answer it in FluentLenium focused

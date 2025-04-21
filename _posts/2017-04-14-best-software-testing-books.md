@@ -2,6 +2,7 @@
 title: Best software testing books
 layout: post
 permalink: /2017/04/best-software-testing-books
+description: "Recommends essential software testing books, emphasizing 'why' over 'how'. Includes: How Google Tests Software, Team Geek (collaboration), Thinking Fast & Slow (cognitive biases), Continuous Delivery (pipelines/releases), and Agile Testing/More Agile Testing (tester's role in Agile)."
 categories:
   - Books
 tags:
@@ -9,7 +10,7 @@ tags:
   - books
 ---
 
-![](/images/blog/stack-of-books-1001655_640.jpg)
+<img src="/images/blog/stack-of-books-1001655_640.jpg" loading="lazy" alt="">
 
 I've been very lucky recently to read quite a few fascinating books (
 like[How to Fail at Almost Everything and Still Win Big,](http://amzn.to/2oS8FIE)[Black Swan](http://amzn.to/2pZPCtt)
@@ -50,7 +51,7 @@ Ok, let's go into books recommended for testers.
 
 **How Google Tests Software**
 
-![](/images/blog/google.jpg)
+<img src="/images/blog/google.jpg" loading="lazy" alt="">
 
 Many things in our lives that look complicated at first can be simplified by following one simple rule: 'Take a look at
 what's working for the most successful and do the same'. If you want to have a body like the local gym muscleman you
@@ -72,7 +73,7 @@ I'll add just one here from Patrick Copeland's foreword.
 
 **Team Geek - A Software Developer's Guide to Working Well with Others**
 
-![](/images/blog/teamgeek.jpg)
+<img src="/images/blog/teamgeek.jpg" loading="lazy" alt="">
 
 I often emphasize the importance of social aspects in software development. Engineers who can communicate only in a
 boolean language are no longer looked for. They're often exploited in average positions because they can't stand up for
@@ -89,7 +90,7 @@ Further reading: [Soft Skills: The software developer's life manual](http://amzn
 
 **Thinking Fast & Slow**
 
-![](/images/blog/thinkingfastandslow.jpg)
+<img src="/images/blog/thinkingfastandslow.jpg" loading="lazy" alt="">
 
 Absolute classic. Number one of [Gurock's alternative book lists](https://blog.gurock.com/must-read-testing-books/)
 recommended for testers. [Thinking Fast and Slow](http://amzn.to/2pmITO9) by Daniel Kahneman starts with a description
@@ -105,7 +106,7 @@ Further reading: [Nassim Nicholas Taleb bibliography](http://amzn.to/2od4mZG)
 
 **Continuous Delivery**
 
-![](/images/blog/continuousdelivery.jpg)
+<img src="/images/blog/continuousdelivery.jpg" loading="lazy" alt="">
 
 The ultimate guide of 'why?'. Why do we build automated pipelines? Why do we want to release as often as possible? Why
 frequent releases actually reduce the probability of production bugs? Why do we automate tests? Why do we need fast
@@ -121,7 +122,7 @@ A must-read.
 
 **Agile Testing & More Agile Testing**
 
-![](/images/blog/agiletesting.jpg)![](/images/blog/moreagiletesting.jpg)
+<img src="/images/blog/agiletesting.jpg" loading="lazy" alt=""><img src="/images/blog/moreagiletesting.jpg" loading="lazy" alt="">
 
 Last but not least. [Agile Testing](http://amzn.to/2odgI3K) and [More Agile Testing](http://amzn.to/2odm0MK)by Lisa
 Crispin and Janet Gregory are two high-quality books describing the peculiar role of testers in Agile teams. The first

@@ -2,6 +2,7 @@
 title: My road to public speaking + slides from Engineering Productivity talk
 layout: post
 permalink: /2018/04/my-road-to-public-speaking-slides-from
+description: Reflects on the author's journey to public speaking, highlighting the roles of blogging, community involvement (KraQA), and teaching experience in overcoming fear, concluding with feedback and slides from an Engineering Productivity talk.
 categories:
   - Testing thoughts
 tags:
@@ -10,9 +11,9 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/microphone-298587_1280.jpg)
+<img src="/images/blog/microphone-298587_1280.jpg" loading="lazy" alt="">
 
-In [33 Strategies of War ](https://www.amazon.com/Strategies-War-Joost-Elffers-Books/dp/0143112783)Robert Greene starts
+In [33 Strategies of War ](https://www.amazon.com/Strategies-War-Joost-Elffers-Books/dp/0143112783)Robert Greene starts
 with the most important part - self-directed warfare. In order to achieve anything in life we have to conquer own fears
 first. On Monday (23th of April) I had a privilege to speak
 about [Engineering Productivity](https://www.awesome-testing.com/2017/07/testops-5-engineering-productivity.html) during
@@ -40,9 +41,9 @@ started gradual improvement.
 
 Rating myself is probably a bad idea, so I'll just copy-paste results.
 
-![](/images/blog/knowledge.PNG)
+<img src="/images/blog/knowledge.PNG" loading="lazy" alt="">
 
-![](/images/blog/presenting.PNG)
+<img src="/images/blog/presenting.PNG" loading="lazy" alt="">
 
 Probably even with worse ratings I'd be very happy, because as I said already in first paragraph it was more about
 conquering personal fears.

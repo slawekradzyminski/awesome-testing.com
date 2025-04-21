@@ -2,6 +2,7 @@
 title: Revolutionizing Test Engineering with ChatGPT
 layout: post
 permalink: /2023/02/revolutionizing-test-engineering-with
+description: "Explore how ChatGPT transforms test engineering with practical examples of test generation, CI configuration, tool comparison, and creative testing scenarios."
 categories:
   - Generative AI
 tags:
@@ -10,7 +11,7 @@ tags:
   - test automation 
 ---
 
-![](/images/blog/b9093e86-a249-44ed-88bb-b9a578fd5ac0_nEcoIDXz_400x400.jpg.webp)
+![](/images/blog/b9093e86-a249-44ed-88bb-b9a578fd5ac0_nEcoIDXz_400x400.jpg.webp){: loading="lazy" }
 
 The field of test engineering is constantly evolving, with new tools and technologies emerging every day. One such
 innovation is the use of language models like ChatGPT in test engineering. ChatGPT's ability to generate text based on
@@ -41,11 +42,11 @@ _You have verified the title. Please verify that ChatGPT website is listed in se
 
 **Results:**
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.01.50.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.01.50.png){: loading="lazy" }
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.02.09.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.02.09.png){: loading="lazy" }
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.02.16.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.02.16.png){: loading="lazy" }
 
 ### CI configuration generation
 
@@ -72,7 +73,7 @@ depend on the first job success_
 
 **Result:**
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.14.58.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.14.58.png){: loading="lazy" }
 
 ### Tool comparison, advices
 
@@ -94,7 +95,7 @@ you think I should take into account while making a decision?_
 
 **Result:**
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.23.16.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.23.16.png){: loading="lazy" }
 
 ### Influential writing
 
@@ -120,7 +121,7 @@ aspect or multitude minor ones? Please decide yourself_
 
 **Result:**
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.32.55.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.32.55.png){: loading="lazy" }
 
 Please note error in last sentence :)
 
@@ -143,4 +144,4 @@ _Write testing manifesto in the style of agile manifesto_
 
 **Result:**
 
-![](/images/blog/Screenshot%202023-02-07%20at%2015.38.11.png)
+![](/images/blog/Screenshot%202023-02-07%20at%2015.38.11.png){: loading="lazy" }

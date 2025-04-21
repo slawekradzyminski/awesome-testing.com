@@ -2,9 +2,10 @@
 title: 2016 Summary, Planning and More :)
 layout: post
 permalink: /2016/12/2016-summary-planning-and-more
+description: "Announces the blog's move to www.awesome-testing.com, encourages following via Feedly/Email, and shares plans to focus on security and penetration testing in 2017."
 ---
 
-![](/images/blog/Happy-New-Year-2017-2.jpg)
+<img src="/images/blog/Happy-New-Year-2017-2.jpg" loading="lazy" alt="">
 
 I'm happy to announce that I got myself Christmas gift and this blog is available on:
 

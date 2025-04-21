@@ -2,13 +2,14 @@
 title: Headless Browser Testing with Selenium
 layout: post
 permalink: /2019/04/headless-browser-testing-with-selenium
+description: Explains headless browser testing benefits and limitations, providing Selenium WebDriver Java demos for Chrome, Firefox, HtmlUnit, PhantomJS, and JBrowser.
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/suit-158819_960_720.png)
+<img src="/images/blog/suit-158819_960_720.png" loading="lazy" alt="">
 
 A headless browser is a very popular term in the testing community which refers to a web browser running without
 Graphical User Interface (GUI). A headless browser can access any website but unlike normal browsers (which you
@@ -25,7 +26,7 @@ Firefox, HtmlUnit, PhantomJS, and JBrowser.
 
 Why do people use headless browsers?
 
-a) Speed - since headless browsers don’t have a UI, they are faster than real browsers.
+a) Speed - since headless browsers don't have a UI, they are faster than real browsers.
 
 b) Dependencies - sometimes you don't have full access to test environment and headless browsers are much easier to
 setup on Continuous Integration servers like Jenkins

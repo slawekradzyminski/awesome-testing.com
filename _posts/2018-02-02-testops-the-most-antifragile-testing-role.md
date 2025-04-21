@@ -2,6 +2,7 @@
 title: TestOps - the most antifragile testing role
 layout: post
 permalink: /2018/02/testops-most-antifragile-testing-role
+description: Introduces the concept of antifragility and argues that the 'TestOps' role (strong automation skills across testing, CI/CD, environments) is the most antifragile testing role due to the wide range of career options it enables, recommending programming skills for increased job security.
 categories:
   - TestOps
 tags:
@@ -9,7 +10,7 @@ tags:
   - testing thoughts 
 ---
 
-![](/images/blog/antifragile.jpg)
+<img src="/images/blog/antifragile.jpg" loading="lazy" alt="">
 
 I have read many fascinating books in 2017 which influenced me a lot. Among the very best are Nassim Nicholas
 Taleb's [Fooled by Randomness](https://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219/ref=asap_bc?ie=UTF8), [The Black Swan](https://www.amazon.com/Black-Swan-Improbable-Robustness-Fragility/dp/081297381X/ref=asap_bc?ie=UTF8)

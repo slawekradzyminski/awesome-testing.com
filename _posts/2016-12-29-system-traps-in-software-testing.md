@@ -2,13 +2,14 @@
 title: System traps in software testing
 layout: post
 permalink: /2016/12/system-traps-in-software-testing
+description: "Explores common software testing pitfalls through the lens of systems thinking, applying Donella Meadows' system traps like policy resistance, tragedy of the commons, and drift to low performance."
 categories:
   - Testing thoughts
 tags:
   - testing thoughts 
 ---
 
-![](/images/blog/system.jpg)
+<img src="/images/blog/system.jpg" loading="lazy" alt="">
 
 I had written several times on this blog that from my perspective majority of testers today lack full Software
 Engineering Life-Cycle (SDLC) understanding. As a community we should also look at our projects not only through
@@ -27,7 +28,7 @@ below are from sources listed above.
 
 ## Trap 1 - Policy Resistance: separate development teams and testing team
 
-> Otherwise known as ‘Fixes that fail’, this trap prevents system change due to the conflicting needs of multiple actors
+> Otherwise known as 'Fixes that fail', this trap prevents system change due to the conflicting needs of multiple actors
 > in the system.
 
 Imagine you are creating a complicated system which require multiple parts developed by separate teams. You know that
@@ -145,7 +146,7 @@ assessment is much better than dummy activities just to follow the bad rules.
 
 ## Trap 8 - Seeking the wrong goal: quality by numbers
 
-> This trap often occurs when one’s progress towards a goal is evaluated via a proxy measure rather than the goal
+> This trap often occurs when one's progress towards a goal is evaluated via a proxy measure rather than the goal
 > itself.
 
 With 90% code coverage we can be sure that everything works well. Well, sort of. If you enforce level of coverage bad

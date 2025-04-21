@@ -2,6 +2,7 @@
 title: Best software testing books - 2
 layout: post
 permalink: /2020/06/best-software-testing-books-2
+description: An expansion of the previous list of recommended software testing books, including titles on test automation, thinking-driven testing, software architecture, antifragility, JavaScript, and inspiration from Leonardo da Vinci.
 categories:
   - Books
 tags:
@@ -9,7 +10,7 @@ tags:
   - books
 ---
 
-![](/images/blog/photo-1457369804613-52c61a468e7d.jpeg)
+<img src="/images/blog/photo-1457369804613-52c61a468e7d.jpeg" loading="lazy" alt="">
 
 **Introduction**
 
@@ -26,7 +27,7 @@ can be considered as systems thinking book. There is only one way of seeing such
 
 **[Complete Guide to Test Automation](https://www.amazon.com/Complete-Guide-Test-Automation-Maintaining-ebook/dp/B07FKGVQP6)- Arnold Axelrod**
 
-![](/images/blog/testautomation.jpg)
+<img src="/images/blog/testautomation.jpg" loading="lazy" alt="">
 
 A surprisingly unknown book. The first part contains an in-depth description of every possible aspect of test
 automation. The author goes through the whole journey from old-school manual testing to modern continuous delivery
@@ -47,7 +48,7 @@ problems testers solve every day grab your copy now.
 **[Thinking-Driven Testing](https://www.amazon.com/Thinking-Driven-Testing-Reasonable-Approach-Quality-ebook/dp/B07BN17VZ7)-
 Adam Roman**
 
-![](/images/blog/thinking.jpg)
+<img src="/images/blog/thinking.jpg" loading="lazy" alt="">
 
 I recommend this book for four different reasons:
 
@@ -69,7 +70,7 @@ should build your test cases on. How? Read a book.
 **[Fundamentals of Software Architecture](https://www.amazon.com/Fundamentals-Software-Architecture-Engineering-Approach-ebook/dp/B0849MPK73)-
 Mark Richards & Neal Ford**
 
-![](/images/blog/architecture.jpg)
+<img src="/images/blog/architecture.jpg" loading="lazy" alt="">
 
 To effectively test your system you need to have a complete understanding of it. During job interviews, I'm often
 surprised by how shallow software testers describe applications they test. A lot of the times even basic questions
@@ -86,7 +87,7 @@ it.
 **[Incerto](https://www.amazon.com/Incerto-Deluxe-Randomness-Procrustes-Antifragile/dp/198481981X)- Nassim Nicholas
 Taleb**
 
-![](/images/blog/incerto.jpg)
+<img src="/images/blog/incerto.jpg" loading="lazy" alt="">
 
 In the first post, I
 recommended [Thinking Fast and Slow](https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555) by David
@@ -110,13 +111,13 @@ etc. In the IT world, you should pay special attention to consultants employed p
 **[Professional Javascript for Web Developers](https://www.amazon.com/Professional-JavaScript-Developers-Matt-Frisbie/dp/1119366445)-
 Matt Frisbie**
 
-![](/images/blog/javascript.jpg)
+<img src="/images/blog/javascript.jpg" loading="lazy" alt="">
 
 A single language book recommendation? You may be wondering why I selected JavaScript instead of other languages. The
 reason is simple: Javascript is running in your browser right now. Every software tester was, is, or will be testing a
 web application. That's the future you should be prepared for.
 
-Atwood’s Law says that any application that canbe written in JavaScript will eventually be written in JavaScript. I'm
+Atwood's Law says that any application that canbe written in JavaScript will eventually be written in JavaScript. I'm
 not convinced entirely, but right now we have Node.js for backend and React Native for mobile. That means your whole
 technology stack can be based on a single programming language.
 
@@ -132,7 +133,7 @@ advanced theory.
 **[Leonardo da Vinci](https://www.amazon.com/Leonardo-Vinci-Walter-Isaacson-ebook/dp/B071Y385Q1/ref=sr_1_1?dchild=1&keywords=Leonardo+da+vinci&qid=1591035104)-
 Walter Isaacson**
 
-![](/images/blog/davinci.jpg)
+<img src="/images/blog/davinci.jpg" loading="lazy" alt="">
 
 Every good tester I know is very curious about how things work. Leonardo da Vinci is perhaps the most curious-driver
 person who ever lived. Apart from painting, he was doing post-mortem examinations, architecture, wetland drying,

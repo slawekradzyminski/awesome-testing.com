@@ -2,6 +2,7 @@
 title: Testing with Ansible
 layout: post
 permalink: /2015/12/testing-with-ansible
+description: "Explores how Ansible, a simple automation agent, supports Continuous Delivery by enabling environment setup, configuration updates, auto-configuration of tools like Jenkins/Selenium Grid, and running smoke tests."
 categories:
   - TestOps
 tags:
@@ -14,7 +15,7 @@ tags:
   - ansible 
 ---
 
-![](/images/blog/CONTINUOUS-DELIVERY-2.png)
+<img src="/images/blog/CONTINUOUS-DELIVERY-2.png" loading="lazy" alt="">
 
 IEEE Spectrum has recently posted an article
 about [Yahoo resigning from the QA team](http://spectrum.ieee.org/view-from-the-valley/computing/software/yahoos-engineers-move-to-coding-without-a-net).

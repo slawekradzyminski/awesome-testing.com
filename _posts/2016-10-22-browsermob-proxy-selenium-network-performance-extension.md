@@ -2,13 +2,14 @@
 title: BrowserMob Proxy Selenium network performance extension
 layout: post
 permalink: /2016/10/browsermob-proxy-selenium-network
+description: "Learn how to integrate BrowserMob Proxy with Selenium to capture network traffic (HAR files) for performance analysis, identify bad HTTP responses, and compare requests. Includes Java/TestNG/FluentLenium examples."
 categories:
   - Selenium
 tags:
   - selenium 
 ---
 
-![](/images/blog/3vg5xk.jpg)
+<img src="/images/blog/3vg5xk.jpg" loading="lazy" alt="">
 
 It's been a while since I published some Java code here, but
 as [Dexter Morgan](http://dexter.wikia.com/wiki/Dexter_Morgan) would say: today is the day. If you want me to post Java
@@ -137,7 +138,7 @@ Our quest for obtaining \*.har network traffic file is completed. The screenshot
 in [Google HTTP Archive Viewer](https://chrome.google.com/webstore/detail/http-archive-viewer/ebbdbdmhegaoooipfnjikefdpeoaidml/related?hl=en)
 extension. It took 239 requests and 9.59 seconds to successfully Google my blog.
 
-![](/images/blog/Screenshot%2B2016-10-04%2B09.17.45.png)
+<img src="/images/blog/Screenshot%2B2016-10-04%2B09.17.45.png" loading="lazy" alt="">
 
 The file can also be accessed using external libraries. In the code below, I convert it JSON format
 using [HarReader](https://github.com/sdstoehr/har-reader). It's not exactly part of the test so I put it in external
