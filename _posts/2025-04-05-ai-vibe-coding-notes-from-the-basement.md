@@ -6,6 +6,7 @@ categories:
   - AI
 tags:
   - AI
+image: /images/blog/aiunderstanding.png
 description: >
   Reflections on "vibe coding", context windows, tips, and the real costs
   of AI-driven development, plus a live case-study building a websocket
