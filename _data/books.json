@@ -382,5 +382,59 @@
     "link": "https://amzn.to/42a6pzo",
     "path": "images/books/Strategy_A_History.jpg",
     "description": "In \"Strategy: A History,\" Sir Lawrence Freedman dives deeply into the broad evolution of strategic thinking, investigating its applications in war, politics, and everyday life. Drawing from diverse sources, from primate groups' tactical practices to classical tales, historical military advances, societal struggles, corporate strategies, and modern social science, Freedman explores the fluid and adaptable nature of strategy. The unpredictability of the environments within which the strategies operate and the ability to adapt and reassess initial approaches when confronted with unforeseen circumstances form the core of his discourse. This profound examination of strategic theories summarises decades of research, encapsulating the essence of strategy from ancient times to the application of game theory in contemporary economics."
+  },
+  {
+    "title": "Beyond Vibe Coding",
+    "link": "https://www.amazon.com/Beyond-Vibe-Coding-Leveraging-AI-Assisted/dp/B0F6S5425Y",
+    "path": "images/books/Beyond_Vibe_Coding.jpg",
+    "description": "In \"Vibe Coding: The Future of Programming\" by Addy Osmani, the transforming influence of AI in software development is explored. The book provides practical strategies for integrating AI and mastering techniques like refining AI-generated code, multi-agent coding systems, and future-proofing your career in the evolving field of software engineering. With in-depth analysis of AI-driven software workflows as utilized in tools like GitHub Copilot and Cursor, this insightful guide offers an essential toolkit for developers, tech leads, and organizations in order to survive and thrive in the face of AI-driven software development."
+  },
+  {
+    "title": "The New Makers of Modern Strategy",
+    "link": "https://www.amazon.com/New-Makers-Modern-Strategy-Ancient/dp/0691204381",
+    "path": "images/books/The_New_Makers_of_Modern_Strategy:_From_the_Ancient_World_to_the_Digital_Age.jpg",
+    "description": "\"The New Makers of Modern Strategy\" offers an in-depth exploration of military and political strategy throughout history up to the present day. This new edition, compiled by an esteemed collection of world-renowned scholars, provides a global view on strategic thinking from past to present, with a focus on both enduring principles and the drastic changes facing strategy-makers in contemporary times. It includes insights from influential strategists, from antiquity to the modern era, emphasizing its relevance amidst rising global disorder."
+  },
+  {
+    "title": "Journey To Ixtlan",
+    "link": "https://www.amazon.com/Journey-Ixtlan-Carlos-Castaneda-ebook/dp/B0078XGIUI",
+    "path": "images/books/Journey_To_Ixtlan_(The_Teachings_of_Don_Juan_Book_3).jpg",
+    "description": "In \"Journey to Ixtlan,\" the third installment of Carlos Castaneda's groundbreaking series, readers embark on a profound journey of self-discovery into the mystical teachings of don Juan, a wise Yaqui Indian spiritual leader. Initially a quest for knowledge about mind-altering plants, the journey evolves into a revelation about reshaping perception to truly understand reality. This narrative blurs the boundaries of anthropology, spirituality, and philosophy, challenging conventional beliefs while offering timeless wisdom. This enlightened read invites readers to question their own perceptions and explore alternate dimensions of thought and awareness.\n"
+  },
+  {
+    "title": "The Art of Learning",
+    "link": "https://www.amazon.com/Art-Learning-Journey-Optimal-Performance/dp/0743277465",
+    "path": "images/books/The_Art_of_Learning:_An_Inner_Journey_to_Optimal_Performance.jpg",
+    "description": "In The Art of Learning, Josh Waitzkin narrates his journey of achieving excellence in two vastly different disciplines - chess and Tai Chi. He shares his understanding and mastery of the learning process, revealing how a principled, systematic approach to learning differentiates between success and failure. Waitzkin draws on his own experiences to explain how to use defeat as a stepping stone, channel emotions into fuel for creativity, and turn challenges into opportunities. From early encounters with chess hustlers to international championships, he provides practical advice for harnessing the everyday method to reach peak performance in any competitive or professional circumstance."
+  },
+  {
+    "title": "The Art of Doing Science and Engineering: Learning to Learn",
+    "link": "https://www.amazon.com/Art-Doing-Science-Engineering-Learning/dp/1732265178",
+    "path": "images/books/The_Art_of_Doing_Science_and_Engineering:_Learning_to_Learn.jpg",
+    "description": "\"The Art of Doing Science and Engineering\" by Richard Hamming is a revolutionary examination into the process behind groundbreaking ideas and the intellectual strides that change the world. Building on his influential 1986 work \"You and Your Research,\" Hamming explores how specific thinking styles foster profound insights, and shares tales of exceptional minds and their achievements as models rather than mere sources of admiration. The book delves into crucial theories and roles such as Shannon\u2019s information theory, Einstein\u2019s theory of relativity, and Grace Hopper\u2019s work on programming, among others. Hamming candidly discusses his own career, offering lessons from his successes and failures alike. First published in 1996 as a progression from Hamming's teachings at the US Naval Postgraduate School, this thought-provoking text is a testament to the universal accessibility of learning and creativity, preparing the next generation for unparalleled discoveries."
+  },
+  {
+    "title": "Peak: Unleashing Your Inner Champion Through Revolutionary Methods for Skill Acquisition",
+    "link": "https://www.amazon.com/Peak-Secrets-New-Science-Expertise-ebook/dp/B011H56MKS",
+    "path": "images/books/Peak:_Unleashing_Your_Inner_Champion_Through_Revolutionary_Methods_for_Skill_Acquisition_and_Performance_Enhancement_in_Work,_Sports,_and_Life.jpg",
+    "description": "\"Peak\" by Anders Ericsson presents a powerful and revolutionary learning strategy derived from three decades of research into the success modes of chess champions, violin virtuosos, star athletes, and memory mavens. Debunking common myths and presenting a science-based approach, the book offers a detailed roadmap to improving in various fields, from athletics and music to workplace efficiencies and academic achievement. With its actionable insights, this transformative guide offers practical applications to enhance any skill that matters to you, fostering continuous personal growth and achievement."
+  },
+  {
+    "title": "Seven Pillars of Wisdom",
+    "link": "https://www.amazon.com/Pillars-Wisdom-Wordsworth-Classics-Literature/dp/1853264695",
+    "path": "images/books/Seven_Pillars_of_Wisdom_(Wordsworth_Classics_of_World_Literature).jpg",
+    "description": "Seven Pillars of Wisdom ranks among the most powerful reflections on the combat experience of the First World War. Lawrence’s own sense of loss was personal—his younger brothers, Frank and Will, fell on the Western Front in 1915—yet his book, drafted between 1919 and 1926, shifts the scene to the very different struggle against the Ottoman Empire in the Middle East. There he depicts brutal reprisals, acts of vengeance, and a grim finale amid the stench and carnage of a makeshift “hospital” in Damascus. Far from a “Boys’ Own” adventure celebrating imperial glory, Seven Pillars of Wisdom is an ambitious, multifaceted work that claims a place in the same literary lineage as Melville and Dostoevsky and stands shoulder-to-shoulder with Yeats, Eliot, and Joyce."
+  },
+  {
+    "title": "System Design on AWS: Building and Scaling Enterprise Solutions",
+    "link": "https://www.amazon.com/System-Design-AWS-Enterprise-Solutions/dp/1098146891",
+    "path": "images/books/System_Design_on_AWS:_Building_and_Scaling_Enterprise_Solutions.jpg",
+    "description": "\"Designing and Scaling Enterprise Software Architecture\" by Jayanth Kumar and Mandeep Singh is a practical guide to using AWS for building and scaling large-scale applications. This book provides software architects and engineers with essential knowledge of AWS and system design, offering insight into making the best decisions to overcome the associated challenges. Delving into specific use cases, it presents an understanding of how these principles and resources can be applied to real-world problems. Readers will learn the basics and best practices of system design, understand key AWS services, and explore engineering patterns that support large-scale systems. The book also provides information on how to design architecture with scalability, operations, and resilience in mind, and what performant and cost-optimized architectures on AWS look like, including the best tools and frameworks for specific use cases."
+  },
+  {
+    "title": "The Narrow Road to the Deep North",
+    "link": "https://www.amazon.com/Narrow-Road-Deep-North/dp/0804171475",
+    "path": "images/books/The_Narrow_Road_to_the_Deep_North.jpg",
+    "description": "A National Bestseller and Man Booker Prize winner, this powerful novel follows the life of Australian surgeon, Dorrigo Evans, through World War II and beyond. Haunted by a past affair, Dorrigo's daily existence becomes a battle for survival in a brutal Japanese POW camp on the Thai-Burma Death Railway. His life takes an unexpected turn when he receives a life-changing letter. This riveting tale explores themes of good and evil, truth, and transcendence as Dorrigo comes of age, achieves prosperity, and confronts the losses of his past. Now a Prime Video series directed by Justin Kurzel."
   }
 ]
