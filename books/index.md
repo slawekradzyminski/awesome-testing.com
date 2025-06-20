@@ -15,7 +15,7 @@ author_profile: true
     <ul id="bookList" style="font-size: 0.85rem;">
       {% assign sorted_books = site.data.books | sort: "title" %}
       {% for book in sorted_books %}
-        <li class="book-item" data-book-id="{{ forloop.index0 }}">{{ book.title }}</li>
+        <li class="book-item" data-book-id="{{ forloop.index0 }}" data-book-slug="{{ book.title | slugify }}">{{ book.title }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -303,24 +303,51 @@ window.addEventListener('load', function() {
       }
     });
     
-    // Show a random book by default
-    if (bookItems.length > 0 && bookDetails.length > 0) {
-      // Generate a random index
-      const randomIndex = Math.floor(Math.random() * bookItems.length);
-      
-      // Select the random book
-      bookItems[randomIndex].classList.add('active');
-      document.getElementById('book-' + randomIndex).style.display = 'block';
-      if (placeholder) placeholder.style.display = 'none';
-      
-      // Scroll the selected book into view in the sidebar
-      bookItems[randomIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // Function to select book by slug
+    function selectBookBySlug(slug) {
+      console.log('Selecting book by slug:', slug);
+      const bookItem = document.querySelector(`[data-book-slug="${slug}"]`);
+      if (bookItem) {
+        const bookId = bookItem.getAttribute('data-book-id');
+        
+        // Update active state
+        bookItems.forEach(i => i.classList.remove('active'));
+        bookItem.classList.add('active');
+        
+        // Show selected book details
+        bookDetails.forEach(detail => detail.style.display = 'none');
+        document.getElementById('book-' + bookId).style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+        
+        // Scroll the selected book into view in the sidebar
+        bookItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Auto-collapse sidebar on mobile after selection
+        if (window.innerWidth <= 768) {
+          sidebar.classList.add('sidebar-collapsed');
+          sidebarToggle.textContent = 'Show Book List';
+        }
+        
+        return true;
+      }
+      console.log('Book not found for slug:', slug);
+      return false;
+    }
+    
+    // Function to generate slug from title
+    function generateSlug(title) {
+      return title.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim('-');
     }
     
     // Handle book selection
     bookItems.forEach(function(item) {
       item.addEventListener('click', function() {
         const bookId = this.getAttribute('data-book-id');
+        const bookSlug = this.getAttribute('data-book-slug');
         
         // Update active state
         bookItems.forEach(i => i.classList.remove('active'));
@@ -331,6 +358,11 @@ window.addEventListener('load', function() {
         document.getElementById('book-' + bookId).style.display = 'block';
         if (placeholder) placeholder.style.display = 'none';
         
+        // Update URL hash
+        if (bookSlug) {
+          window.history.pushState(null, null, '#' + bookSlug);
+        }
+        
         // Auto-collapse sidebar on mobile after selection
         if (window.innerWidth <= 768) {
           sidebar.classList.add('sidebar-collapsed');
@@ -338,6 +370,35 @@ window.addEventListener('load', function() {
         }
       });
     });
+    
+    // Check if there's a hash in the URL, otherwise show random book
+    let bookSelected = false;
+    if (window.location.hash) {
+      const slug = window.location.hash.substring(1);
+      console.log('Hash found in URL:', slug);
+      bookSelected = selectBookBySlug(slug);
+    }
+    
+    // Show a random book by default if no hash or hash didn't match
+    if (!bookSelected && bookItems.length > 0 && bookDetails.length > 0) {
+      console.log('No hash found or book not selected, showing random book');
+      // Generate a random index
+      const randomIndex = Math.floor(Math.random() * bookItems.length);
+      
+      // Select the random book
+      bookItems[randomIndex].classList.add('active');
+      document.getElementById('book-' + randomIndex).style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+      
+      // Scroll the selected book into view in the sidebar
+      bookItems[randomIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Update URL hash to reflect the selected book
+      const selectedSlug = bookItems[randomIndex].getAttribute('data-book-slug');
+      if (selectedSlug) {
+        window.history.replaceState(null, null, '#' + selectedSlug);
+      }
+    }
     
     // Filter functionality
     if (searchInput) {
@@ -362,6 +423,15 @@ window.addEventListener('load', function() {
         }
       });
     }
+    
+    // Handle browser back/forward navigation
+    window.addEventListener('hashchange', function() {
+      const slug = window.location.hash.substring(1);
+      if (slug) {
+        selectBookBySlug(slug);
+      }
+    });
+    
   }, 500);
 });
 </script> 
