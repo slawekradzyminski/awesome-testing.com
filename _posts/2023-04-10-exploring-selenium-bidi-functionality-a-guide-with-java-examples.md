@@ -15,7 +15,7 @@ redirect_from:
   - /selenium-bidi
 ---
 
-![](/images/blog/selenium_logo_square_green.png){:width="100%" loading="lazy"}
+![](/images/blog/selenium_logo_square_green.png){:width="30%" loading="lazy"}
 
 Selenium is a widely-used open-source testing framework designed for automating web browsers and validating web
 applications. Initially, Selenium consisted of Selenium IDE, a plugin for record-and-playback testing, and Selenium
