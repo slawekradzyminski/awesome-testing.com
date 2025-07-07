@@ -11,7 +11,7 @@ tags:
 header:
   og_image: /images/blog/playwrightmcp.png
 description: >
-  How does Playwright MCP work? Theory and use cases.
+  Learn how Playwright MCP combines AI agents, browser automation, and the Model Context Protocol (MCP) to enable intelligent testing, debugging, and documentation. Explore how it works, its architecture, and real-world use cases.
 ---
 
 ![Playwright MCP](/images/blog/playwrightmcp.png)
