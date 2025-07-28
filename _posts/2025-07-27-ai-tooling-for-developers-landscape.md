@@ -19,11 +19,11 @@ At the end of 2024, in [From Live Suggestions to Agents: Exploring AI-Powered ID
 > With the rapid pace of innovation in this field, we can expect even more tools and features to emerge. Major investments from big players signal a bright future for AI-powered IDEs, making it an exciting time to explore and adopt these technologies.
 
 As you can see in the timeline in 2024-2025 we saw the explosion of entirely new groups of tools:
-- Project starters / boot-strappers (like `v0`, `Bolt.new`, `GitHub Spark` or `Lovable`).
-- CLI tools (like `Aider`, `Claude Code` or `Gemini`).
-- Autonomous agents (like `Devin.ai`, `OpenAI Codex` or `Cursor Background Agent`).
+- Project starters / boot-strappers (like [v0.dev](https://v0.dev), [Bolt.new](https://bolt.new), [GitHub Spark](https://githubnext.com/projects/github-spark/) or [Lovable.dev](https://lovable.dev)).
+- CLI tools (like [Aider](https://aider.chat), [Claude Code](https://www.anthropic.com/claude-code) or [Gemini CLI](https://developers.google.com/gemini)).
+- Autonomous agents (like [Devin.ai](https://devin.ai), [OpenAI Codex](https://openai.com/codex) or [Cursor Background Agents](https://cursor.sh)).
 
-Together with traditional AI-powered IDEs/extensions like `Cursor` and `GitHub Copilot` we now have 4 distinct groups of tools which I'd like to describe in more detail in the following sections.
+Together with traditional AI-powered IDEs/extensions like [Cursor](https://cursor.sh) and [GitHub Copilot](https://docs.github.com/en/copilot) we now have 4 distinct groups of tools which I'd like to describe in more detail in the following sections.
 
 Of course this classification is not perfect and there are tools which can be classified in multiple groups. For example `Cursor` is both an AI-powered IDE and aims to become a strong competitor in autonomous agents space.
 
@@ -39,7 +39,7 @@ Here is a typical workflow:
 
 ![Project Starter Workflow](/images/blog/bootstrapworkflow.png)
 
-The entry points vary from UI-based (directly in the browser, as for `v0`), CLI-based to IDE-based. Below you can find a GitHub Spark screenshot from [Simon Willison blog](https://simonwillison.net/2025/Jul/24/github-spark/):
+The entry points vary from UI-based (directly in the browser, as for [v0.dev](https://v0.dev)), CLI-based to IDE-based. Below you can find a GitHub Spark screenshot from [Simon Willison blog](https://simonwillison.net/2025/Jul/24/github-spark/):
 
 ![GitHub Spark](/images/blog/spark-ui.jpg)
 
@@ -47,14 +47,14 @@ The entry points vary from UI-based (directly in the browser, as for `v0`), CLI-
 
 ##### Quick Comparison Table
 
-| Tool | Core Strength | Typical Output | Best Fit |
-|------|---------------|----------------|----------|
-| **Lovable.dev** | Multi-persona chat builds full-stack apps (Supabase/Stripe) | React + Supabase repo pushed to GitHub | Indie hackers & MVPs |
-| **Bolt.new** | Lightning-fast React/Tailwind scaffolds in a StackBlitz IDE | Copy-paste-ready UI / full pages | Front-end devs & designers |
-| **GitHub Spark** | "Prompt-to-micro-app" with managed runtime | Deployed PWA + dashboard | Personal utilities & internal tools |
-| **Claude Artifacts** | Turns any prompt into a shareable interactive app inside Claude | Self-hosted artifact (HTML / React) | Educators & knowledge workers |
-| **Replit Agent** | One-prompt cloud IDE that builds & deploys full apps | Live URL + editable Repl | Beginners, students, rapid prototypes |
-| **Vercel v0** | Chat-to-Next.js components with one-click Vercel deploy | Polished JSX/Tailwind blocks | React/Next.js teams & marketing sites |
+| Tool | Core Strength | Typical Output | Best Fit | Pricing |
+|------|---------------|----------------|----------|---------|
+| **[Lovable.dev](https://lovable.dev)** | Multi-persona chat builds full-stack apps (Supabase/Stripe) | React + Supabase repo pushed to GitHub | Indie hackers & MVPs | 5 msgs/day free; $20/mo ≈ 100 edits |
+| **[Bolt.new](https://bolt.new)** | Lightning-fast React/Tailwind scaffolds in a StackBlitz IDE | Copy-paste-ready UI / full pages | Front-end devs & designers | ~1M free tokens, $20 for 10M |
+| **[GitHub Spark](https://githubnext.com/projects/github-spark/)** | "Prompt-to-micro-app" with managed runtime | Deployed PWA + dashboard | Personal utilities & internal tools | Bundled with Copilot Pro+ ($19/mo) |
+| **[Claude Artifacts](https://www.anthropic.com/news/build-artifacts)** | Turns any prompt into a shareable interactive app inside Claude | Self-hosted artifact (HTML / React) | Educators & knowledge workers | Available on all Claude tiers, even Free |
+| **[Replit Agent](https://replit.com/)** | One-prompt cloud IDE that builds & deploys full apps | Live URL + editable Repl | Beginners, students, rapid prototypes | Usage-based pricing |
+| **[Vercel v0](https://v0.dev)** | Chat-to-Next.js components with one-click Vercel deploy | Polished JSX/Tailwind blocks | React/Next.js teams & marketing sites | 200 free credits, plans from $10/mo |
 
 ##### Detailed Tool Reviews
 
@@ -65,18 +65,21 @@ Lovable lets you brainstorm with a chat staffed by virtual personas (PM, Designe
 **Pros:**
 - End-to-end flow: prompt → design → code → deploy, entirely in-browser
 - Real code export avoids lock-in; you own the repo
+- Opinionated React + Supabase stack for consistency
 
 **Trade-offs:**
 - Security / responsiveness issues need manual polish
 - Free token limits can interrupt longer sessions
+- No in-app code editor; requires external IDE for modifications
 
 ###### [Bolt.new](https://bolt.new) — Frontend lightning in a browser
 
-Born from StackBlitz, Bolt.new spins up a VS-Code-style web IDE and, from a single prompt, creates clean React + Tailwind components or full pages with live preview.
+Born from StackBlitz, Bolt.new spins up a VS-Code-style web IDE and, from a single prompt, creates clean React + Tailwind components or full pages with live preview. Uses WebContainer tech (runs Node in-browser, no cloud VM).
 
 **Pros:**
 - Instant visual feedback and editable code in the browser
 - Perfect for dashboards or marketing pages; Netlify/Vercel deploy buttons included
+- Token-based pricing (~1M free, $20 for 10M)
 
 **Trade-offs:**
 - Front-end only – you must supply your own back-end
@@ -84,11 +87,12 @@ Born from StackBlitz, Bolt.new spins up a VS-Code-style web IDE and, from a sing
 
 ###### [GitHub Spark](https://githubnext.com/projects/github-spark/) — "Prompt-to-micro-app" in a managed runtime
 
-Spark is a GitHub Next experiment that lets you describe a "spark" in plain English and receive a fully hosted, installable PWA—no local build or deploy steps.
+Spark is a GitHub Next experiment that lets you describe a "spark" in plain English and receive a fully hosted, installable PWA—no local build or deploy steps. Bundled with Copilot Pro+ ($19/mo).
 
 **Pros:**
-- NL editor, revision history, and model picker (GPT-4o, Claude Sonnet, etc.)
+- NL editor, revision history, and model picker (GPT-4o, Claude Sonnet 4, etc.)
 - Share or remix sparks; access control down to read-only vs. read-write
+- On-canvas model picker for different AI models
 
 **Trade-offs:**
 - Designed for micro apps; complex SaaS still needs a traditional stack
@@ -96,11 +100,12 @@ Spark is a GitHub Next experiment that lets you describe a "spark" in plain Engl
 
 ###### [Claude Artifacts](https://www.anthropic.com/news/build-artifacts) — Conversational app-in-a-box
 
-Anthropic's Claude side-panel now promotes large outputs into artifacts: interactive apps, documents, or visualisations you can edit, fork, and share—all without leaving chat.
+Anthropic's Claude side-panel now promotes large outputs into artifacts: interactive apps, documents, or visualisations you can edit, fork, and share—all without leaving chat. Now interactive, shareable, and available on all Claude tiers, even Free.
 
 **Pros:**
 - Zero setup; any Claude chat can turn into a live widget or mini-site
 - Billing shifts to each artifact's user, so creators don't pay ongoing API costs
+- Available on all Claude tiers, including Free
 
 **Trade-offs:**
 - No external API calls or persistent DB (yet); runs in Claude's sandbox
@@ -125,6 +130,7 @@ v0.dev is Vercel's AI UI builder: chat a request, get a live preview plus produc
 **Pros:**
 - Generates pixel-perfect shadcn/ui components that slot straight into existing repos
 - One-click deploy inherits Vercel's edge functions, SSR, image opt, etc.
+- Multi-framework output (React, Vue, Svelte, plain HTML)
 
 **Trade-offs:**
 - Front-end focus—no DB or auth scaffolding
@@ -134,7 +140,7 @@ v0.dev is Vercel's AI UI builder: chat a request, get a live preview plus produc
 
 | Tool | Quick Pitch | Source |
 |------|-------------|--------|
-| **Dyad** | Free, local, open-source Lovable alternative (no sign-up) | [dyad.sh](https://dyad.sh) |
+| **[Dyad](https://dyad.sh)** | Free, local, open-source Lovable alternative (no sign-up) | [dyad.sh](https://dyad.sh) |
 | **Townie AI (Val Town)** | Claude-powered assistant that builds & edits serverless apps from chat | [blog.val.town](https://blog.val.town) |
 
 ##### Key Takeaways
@@ -153,7 +159,7 @@ Used wisely, these project starters compress weeks of boilerplate into minutes, 
 
 > Note: I've covered AI-powered IDEs extensively in [From Live Suggestions to Agents: Exploring AI-Powered IDEs](https://www.awesome-testing.com/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides) blog post. For detailed coding guide see [AI Vibe Coding Notes from the Basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement).
 
-This remains the most important category because, in professional settings, we ultimately have to review the code generated by AI, improve it, and make it production-ready. Even when we bootstrap a project using a starter template, add features via CLI tools, or use autonomous agents, it’s still up to us to refine and polish the code inside actual IDE.
+This remains the most important category because, in professional settings, we ultimately have to review the code generated by AI, improve it, and make it production-ready. Even when we bootstrap a project using a starter template, add features via CLI tools, or use autonomous agents, it's still up to us to refine and polish the code inside actual IDE.
 
 AI IDE or AI extensions give us 3 main features:
 - **Autocomplete** - when we type, we get suggestions for the next line, function or even a whole block of code.
@@ -166,13 +172,13 @@ AI IDE or AI extensions give us 3 main features:
 
 | Tool | Core Pitch | Sonnet 4 Access | Typical Usage Pattern |
 |------|------------|-----------------|---------------------|
-| **Cursor** | VS-Code-fork that embeds chat, tab-complete & background agents | Built-in on paid plans | Inline suggestions, project-wide refactors, dev-container agents |
-| **Windsurf** | "Flow-state" AI IDE with dual chat/completion panes | Built-in for Pro/Teams | Cascade tasks, multi-file edits, sandboxes for code execution |
-| **GitHub Copilot** | Universal extension + chat that taps GitHub's code graph | Built-in across all paid Copilot plans | Autocomplete, chat, PR reviews, terminal/CLI helper |
-| **IntelliJ Junie** | JetBrains agent that can plan, code, run tests in IDE | Built-in — switch Sonnet 3.7 ↔ 4 in Settings → Tools → Junie → Models | Delegate a task, watch Junie patch & run project tests |
-| **Roo Code** | Open-source VS Code plugin; orchestrates multiple AI agents | BYOK (Anthropic key or via OpenRouter) | Multi-agent "dev team" inside VS Code; diff-based commits |
-| **Cline** | Transparent, open-source coding agent with Plan/Act modes | Built-in default (or BYOK) since v3.18 | Generates plans, executes terminal commands, edits repo files |
-| **Trae** | Free all-in-one AI IDE from ByteDance with MCP tool plugins | Built-in (and free) since June 2025 | Builder mode scaffolds features; Agent mode auto-fixes bugs |
+| **[Cursor](https://cursor.sh)** | VS-Code-fork that embeds chat, tab-complete & background agents | Built-in on paid plans | Inline suggestions, project-wide refactors, dev-container agents |
+| **[Windsurf](https://windsurf.com)** | "Flow-state" AI IDE with dual chat/completion panes | Built-in for Pro/Teams | Cascade tasks, multi-file edits, sandboxes for code execution |
+| **[GitHub Copilot](https://docs.github.com/en/copilot)** | Universal extension + chat that taps GitHub's code graph | Built-in across all paid Copilot plans | Autocomplete, chat, PR reviews, terminal/CLI helper |
+| **[IntelliJ Junie](https://www.jetbrains.com/help/idea/junie.html)** | JetBrains agent that can plan, code, run tests in IDE | Built-in — switch Sonnet 3.7 ↔ 4 in Settings → Tools → Junie → Models | Delegate a task, watch Junie patch & run project tests |
+| **[Roo Code](https://roocode.com)** | Open-source VS Code plugin; orchestrates multiple AI agents | BYOK (Anthropic key or via OpenRouter) | Multi-agent "dev team" inside VS Code; diff-based commits |
+| **[Cline](https://cline.sh)** | Transparent, open-source coding agent with Plan/Act modes | Built-in default (or BYOK) since v3.18 | Generates plans, executes terminal commands, edits repo files |
+| **[Trae](https://trae.dev)** | Free all-in-one AI IDE from ByteDance with MCP tool plugins | Built-in (and free) since June 2025 | Builder mode scaffolds features; Agent mode auto-fixes bugs |
 
 ##### Detailed Tool Reviews
 
@@ -187,6 +193,7 @@ Cursor extends VS Code with token-aware completions ("Tab"), a sidebar chat, and
 
 **Trade-offs:**
 - Requires adaptation to new IDE workflow
+- Free vs Pro ($20/mo) limits on some features
 
 ###### [Windsurf](https://windsurf.com) — "Flow-state" AI IDE
 
@@ -196,6 +203,7 @@ Marketed as "the first agentic IDE," Windsurf offers cascade-style tasks and bui
 - Cascade-style task execution
 - Built-in sandboxes for code execution
 - Dual chat/completion panes for better workflow
+- Cascade agent chain and MCP plugin store
 
 **Trade-offs:**
 - Requires adaptation to new IDE workflow
@@ -211,15 +219,17 @@ Copilot's docs list Claude Sonnet 4 and Opus 4 among chat models for every paid 
 
 **Trade-offs:**
 - Ecosystem lock-in with GitHub
+- Autocomplete only; no agentic multi-file edits
 
 ###### [IntelliJ Junie](https://www.jetbrains.com/help/idea/junie.html) — JetBrains AI agent
 
-Junie lives inside JetBrains IDEs as a higher-autonomy agent. Use can toggle between Sonnet 3.7 and Sonnet 4.0 in settings.
+Junie lives inside JetBrains IDEs as a higher-autonomy agent. Users can toggle between Sonnet 3.7 and Sonnet 4.0 in settings. Now available to all licensed IDE users (free daily quota).
 
 **Pros:**
 - Can plan, edit, and run tests end-to-end
 - Deep JetBrains IDE integration
 - Built-in Sonnet 4 access
+- Planning + test-running ability and Claude/Gemini model toggle
 
 **Trade-offs:**
 - Limited to JetBrains IDEs
@@ -295,10 +305,10 @@ Developers typically use the CLI to quickly prompt the model, then return to the
 
 | Tool | Built-in Model(s) | How it Edits Code | Autonomy Defaults | Ideal For |
 |------|-------------------|-------------------|-------------------|-----------|
-| **Aider** | BYOK – integrates with Claude Sonnet 4, GPT-4o, Gemini 2.5, DeepSeek, local Llama via Ollama | Generates git-aware diffs then applies them; auto-runs tests if configured | Prompt-by-prompt (asks before each commit) | Devs who want an open, hackable tool that speaks every model |
-| **Claude Code** | Claude Sonnet 4 / Opus | Plans tasks, rewrites files, compiles & tests inside a sandbox; shows reasoning log | Semi-auto: will refactor & run tests on its own, pauses at risky ops | Large mono-repos needing refactor/analysis, users on Anthropic API |
-| **Gemini CLI** | Gemini 2.5 Pro / Flash | ReAct loop calls shell, git & unit-test tools; stores plan in .gemini dir | Ask-once-then-act (will iterate until tests green) | Teams in Google ecosystem or devs who want a free-tier frontier model |
-| **Qwen CLI** | Qwen 3-Coder (open-source 72B & 32B) | Fork of Gemini CLI; adds richer parser & diff printer for Chinese/English codebases | Same as Gemini CLI; can be tightened via `--confirm` flag | OSS contributors & mainland-China devs wanting local weights |
+| **[Aider](https://aider.chat)** | BYOK – integrates with Claude Sonnet 4, GPT-4o, Gemini 2.5, DeepSeek, local Llama via Ollama | Generates git-aware diffs then applies them; auto-runs tests if configured | Prompt-by-prompt (asks before each commit) | Devs who want an open, hackable tool that speaks every model |
+| **[Claude Code](https://www.anthropic.com/claude-code)** | Claude Sonnet 4 / Opus | Plans tasks, rewrites files, compiles & tests inside a sandbox; shows reasoning log | Semi-auto: will refactor & run tests on its own, pauses at risky ops | Large mono-repos needing refactor/analysis, users on Anthropic API |
+| **[Gemini CLI](https://developers.google.com/gemini)** | Gemini 2.5 Pro / Flash | ReAct loop calls shell, git & unit-test tools; stores plan in .gemini dir | Ask-once-then-act (will iterate until tests green) | Teams in Google ecosystem or devs who want a free-tier frontier model |
+| **[Qwen CLI](https://github.com/QwenLM/Qwen-Coder)** | Qwen 3-Coder (open-source 72B & 32B) | Fork of Gemini CLI; adds richer parser & diff printer for Chinese/English codebases | Same as Gemini CLI; can be tightened via `--confirm` flag | OSS contributors & mainland-China devs wanting local weights |
 
 ##### Detailed Tool Reviews
 
@@ -373,13 +383,15 @@ Qwen Code started as a fork of Gemini CLI, optimized for Qwen3-Coder-72B & 32B w
 
 - **Common best practice**: keep `git diff --staged` open — even the smartest agent occasionally deletes the wrong env file!
 
+Consider [Open Interpreter](https://openinterpreter.com/) as a community-driven alternative for local development.
+
 These terminal companions don't just suggest code; they run commands, write files, and validate results while giving you granular control over each step. Pick one that matches your model budget, autonomy comfort, and cloud allegiance.
 
 ### Autonomous agents
 
 Autonomous Coding Agents are a relatively new but exciting category: these are AI systems that can take high-level development tasks and carry them out with minimal supervision, effectively acting as junior developers (or even an entire dev team for well-scoped problems). Unlike IDE or CLI helpers, autonomous agents chain together planning, coding, execution, and iteration. 
 
-Given a goal (e.g. “implement a feature” or “find and fix a bug”), an agent will:
+Given a goal (e.g. "implement a feature" or "find and fix a bug"), an agent will:
 - plan a solution
 - write or modify code across the codebase
 - run tests or scripts to verify
@@ -397,12 +409,12 @@ Agents are usually rather slow, but considering you spawn them asynchronously, y
 
 ##### Quick Comparison Table
 
-| Tool | Typical Inputs | What the Agent Actually Does | Default Autonomy | Best Fit |
-|------|----------------|------------------------------|------------------|----------|
-| **Google Jules** | Repo + natural-language ticket | Clones repo into secure VM, writes/fixes code, runs tests, opens PR, posts audio changelog | Async "fire-and-forget"; pings you when done | Teams who want a hands-off background coder |
-| **OpenAI Codex** | GitHub issue / chat prompt | Plans for ≤30 min, edits code in sandbox, runs unit tests, pushes branch + PR | Timed autonomous bursts, then hands back | Cloud users already in ChatGPT ecosystem |
-| **Devin AI** | High-level task or migration spec | Spins up cloud workspace, shells/browsers/scripts its way to solution, self-tests, produces multi-PR roadmap | Multi-day, multi-agent swarms; human only approves PRs | Large refactors or backlog grind (e.g. Nubank ETL split) |
-| **Cursor Background Agents** | In-IDE command or Slack message | Launches remote container, edits & runs code, reports via sidebar/Slack, can be taken over live | Parallel async helpers; ask-then-act loops | Devs who already live in Cursor but want tasks off-loaded |
+| Tool | Typical Inputs | What the Agent Actually Does | Default Autonomy | Time Budget | Best Fit |
+|------|----------------|------------------------------|------------------|-------------|----------|
+| **[Google Jules](https://jules.google)** | Repo + natural-language ticket | Clones repo into secure VM, writes/fixes code, runs tests, opens PR, posts audio changelog | Async "fire-and-forget"; pings you when done | Hours to days | Teams who want a hands-off background coder |
+| **[OpenAI Codex](https://openai.com/codex)** | GitHub issue / chat prompt | Plans for ≤30 min, edits code in sandbox, runs unit tests, pushes branch + PR | Timed autonomous bursts, then hands back | 30-minute bursts | Cloud users already in ChatGPT ecosystem |
+| **[Devin AI](https://devin.ai)** | High-level task or migration spec | Spins up cloud workspace, shells/browsers/scripts its way to solution, self-tests, produces multi-PR roadmap | Multi-day, multi-agent swarms; human only approves PRs | Multi-day swarms | Large refactors or backlog grind (e.g. Nubank ETL split) |
+| **[Cursor Background Agents](https://cursor.sh)** | In-IDE command or Slack message | Launches remote container, edits & runs code, reports via sidebar/Slack, can be taken over live | Parallel async helpers; ask-then-act loops | Hours | Devs who already live in Cursor but want tasks off-loaded |
 
 ##### Detailed Tool Reviews
 
@@ -415,6 +427,7 @@ Google Labs unveiled Jules as an asynchronous coding agent: you assign a GitHub 
 - Self-healing plans (iterates if tests fail)
 - Audio changelog narrates what it did
 - Can work while you're away from your laptop
+- "Fire-and-forget" in a secure VM
 
 **Trade-offs:**
 - Can burn through CI minutes if left unchecked
@@ -481,18 +494,10 @@ Cursor added Background Agents so developers can off-load tasks (e.g., "convert 
 
 In practice, autonomous agents excel at repetitive, well-scoped engineering chores—tests, refactors, dependency bumps, or large-scale code mods—while still needing humans for architecture, security, and taste. Pick the agent whose runtime model, sandbox policy, and pricing suit your workflow, then keep that review button close at hand.
 
-## Conclusion
+## Future
 
-The AI tooling landscape for developers has evolved rapidly, with four distinct categories emerging:
+It seems likely that the next iteration of tools will be based on multiple AI Agents (see Claude's [Subagents](https://docs.anthropic.com/en/docs/claude-code/sub-agents)), each focused on a specific task.
 
-1. **Project starters/boot-strappers** - Tools that can create entire projects from scratch, ideal for rapid prototyping and experimentation.
+Imagine a bootstrapper agent that can create a new project from scratch, a backend code editor which optimises initial output, a DB specialist which creates a schema, a frontend code editor which fixes React components and a QA which verifies the whole thing. 
 
-2. **AI-powered IDEs/IDE extensions** - The most mature category, providing autocomplete, code generation, and agentic features within familiar development environments.
-
-3. **CLI tools** - Command-line interfaces that bring AI capabilities to your terminal, offering flexibility in model choice and autonomy levels.
-
-4. **Autonomous agents** - The most advanced category, capable of working independently on complex development tasks with minimal human supervision.
-
-Each category serves different needs and workflows, and the best approach is often to combine tools from multiple categories based on your specific requirements, budget, and comfort level with AI autonomy.
-
-Will AI replace developers? It hasn't yet. Is it getting closer?
+The agents can work together to review their respective outputs and improve the overall quality of the project. Perhaps additional PM AI agent can act as a entity which decide whether given outcome is good enough or not. Each Merge Request can be reviewed by a dedicated agents focused on various characteristics of software (e.g. security, performance, etc.).
