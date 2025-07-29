@@ -426,13 +426,11 @@ Google Labs unveiled Jules as an asynchronous coding agent: you assign a GitHub 
 - Completely off-device operation
 - Self-healing plans (iterates if tests fail)
 - Audio changelog narrates what it did
-- Can work while you're away from your laptop
 - "Fire-and-forget" in a secure VM
 
 **Trade-offs:**
 - Can burn through CI minutes if left unchecked
 - Limited to Google's cloud infrastructure
-- Requires detailed prompts for best results
 
 ###### [OpenAI Codex](https://openai.com/codex) — 30-minute "virtual coworker" inside ChatGPT
 
@@ -442,12 +440,9 @@ The new Codex agent (distinct from 2021's model) lives in ChatGPT Pro/Enterprise
 - 30-minute autonomous bursts
 - Available in ChatGPT and as CLI
 - Streams logs for transparency
-- Can handle production bugs effectively
 
 **Trade-offs:**
 - Limited external network access for security
-- Heavy package-install tasks may stall
-- Requires manual nudges for complex tasks
 - Limited to OpenAI's ecosystem
 
 ###### [Devin AI](https://devin.ai) — "Hire an army of junior engineers in the cloud"
@@ -463,8 +458,6 @@ Cognition Labs' Devin markets itself as the first AI software engineer and now p
 **Trade-offs:**
 - Enterprise pricing model
 - Bills per-agent container
-- Requires human approval for PRs
-- May be overkill for small tasks
 
 ###### [Cursor Background Agents](https://cursor.sh) — Mini-Devin for Cursor users
 
@@ -479,7 +472,6 @@ Cursor added Background Agents so developers can off-load tasks (e.g., "convert 
 **Trade-offs:**
 - Limited to Cursor ecosystem
 - Runs in Cursor's cloud infrastructure
-- Occasional infrastructure issues
 - Charges per agent-hour
 
 ##### Key Insights
