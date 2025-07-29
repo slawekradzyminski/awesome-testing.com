@@ -219,6 +219,8 @@ AI IDE or AI extensions give us 3 main features:
 - **Contextless code generation** - we can ask AI to generate / refactor a selected function, class, module, etc.
 - **Agentic, context-aware feature generation** - AI IDEs are getting better and better at understanding our codebase and we can ask them to generate a new feature, fix a bug, etc.
 
+![cursor](/images/blog/cursor.png)
+
 #### Tools
 
 ##### Quick Comparison Table
