@@ -7,7 +7,7 @@ categories:
 tags:
   - AI
 header:
-  og_image: /images/blog/aiagentshistory.png
+  og_image: /images/blog/cursoragent.png
 description: >
   A landscape of AI tooling for developers.
 ---
@@ -62,79 +62,132 @@ The entry points vary from UI-based (directly in the browser, as for [v0.dev](ht
 
 Lovable lets you brainstorm with a chat staffed by virtual personas (PM, Designer, Engineer) that iterate toward a working full-stack app. The generator can wire up Supabase for data and Stripe for payments, then push the code to a private GitHub repo so real developers can take over.
 
-**Pros:**
-- End-to-end flow: prompt → design → code → deploy, entirely in-browser
-- Real code export avoids lock-in; you own the repo
-- Opinionated React + Supabase stack for consistency
-
-**Trade-offs:**
-- Security / responsiveness issues need manual polish
-- Free token limits can interrupt longer sessions
-- No in-app code editor; requires external IDE for modifications
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>End-to-end flow: prompt → design → code → deploy, entirely in-browser</li>
+      <li>Real code export avoids lock-in; you own the repo</li>
+      <li>Opinionated React + Supabase stack for consistency</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Security / responsiveness issues need manual polish</li>
+      <li>Free token limits can interrupt longer sessions</li>
+      <li>No in-app code editor; requires external IDE for modifications</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Bolt.new](https://bolt.new) — Frontend lightning in a browser
 
 Born from StackBlitz, Bolt.new spins up a VS-Code-style web IDE and, from a single prompt, creates clean React + Tailwind components or full pages with live preview. Uses WebContainer tech (runs Node in-browser, no cloud VM).
 
-**Pros:**
-- Instant visual feedback and editable code in the browser
-- Perfect for dashboards or marketing pages; Netlify/Vercel deploy buttons included
-- Token-based pricing (~1M free, $20 for 10M)
-
-**Trade-offs:**
-- Front-end only – you must supply your own back-end
-- Daily free-token ceiling; heavy users hit paywall quickly
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Instant visual feedback and editable code in the browser</li>
+      <li>Perfect for dashboards or marketing pages; Netlify/Vercel deploy buttons included</li>
+      <li>Token-based pricing (~1M free, $20 for 10M)</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Front-end only – you must supply your own back-end</li>
+      <li>Daily free-token ceiling; heavy users hit paywall quickly</li>
+    </ul>
+  </div>
+</div>
 
 ###### [GitHub Spark](https://githubnext.com/projects/github-spark/) — "Prompt-to-micro-app" in a managed runtime
 
 Spark is a GitHub Next experiment that lets you describe a "spark" in plain English and receive a fully hosted, installable PWA—no local build or deploy steps. Bundled with Copilot Pro+ ($19/mo).
 
-**Pros:**
-- NL editor, revision history, and model picker (GPT-4o, Claude Sonnet 4, etc.)
-- Share or remix sparks; access control down to read-only vs. read-write
-- On-canvas model picker for different AI models
-
-**Trade-offs:**
-- Designed for micro apps; complex SaaS still needs a traditional stack
-- Closed runtime (storage & LLM billing handled inside GitHub Cloud)
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>NL editor, revision history, and model picker (GPT-4o, Claude Sonnet 4, etc.)</li>
+      <li>Share or remix sparks; access control down to read-only vs. read-write</li>
+      <li>On-canvas model picker for different AI models</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Designed for micro apps; complex SaaS still needs a traditional stack</li>
+      <li>Closed runtime (storage & LLM billing handled inside GitHub Cloud)</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Claude Artifacts](https://www.anthropic.com/news/build-artifacts) — Conversational app-in-a-box
 
 Anthropic's Claude side-panel now promotes large outputs into artifacts: interactive apps, documents, or visualisations you can edit, fork, and share—all without leaving chat. Now interactive, shareable, and available on all Claude tiers, even Free.
 
-**Pros:**
-- Zero setup; any Claude chat can turn into a live widget or mini-site
-- Billing shifts to each artifact's user, so creators don't pay ongoing API costs
-- Available on all Claude tiers, including Free
-
-**Trade-offs:**
-- No external API calls or persistent DB (yet); runs in Claude's sandbox
-- Versioning and team collab still basic compared with GitHub repositories
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Zero setup; any Claude chat can turn into a live widget or mini-site</li>
+      <li>Billing shifts to each artifact's user, so creators don't pay ongoing API costs</li>
+      <li>Available on all Claude tiers, including Free</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>No external API calls or persistent DB (yet); runs in Claude's sandbox</li>
+      <li>Versioning and team collab still basic compared with GitHub repositories</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Replit Agent](https://replit.com/) — One-prompt cloud dev environment
 
 Replit upgrades its cloud IDE with Agent, a chat that scaffolds, runs, and deploys code in the same browser tab; every project gets hosting, DB, and auth out-of-the-box.
 
-**Pros:**
-- End-to-end flow (idea → URL) with mobile editing support
-- Multi-model "power-up" modes for tougher tasks
-
-**Trade-offs:**
-- Platform lock-in — exporting to your own infra is possible but non-trivial
-- High-profile incident shows agents still need safeguards (rogue [DB deletion saga](https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/))
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>End-to-end flow (idea → URL) with mobile editing support</li>
+      <li>Multi-model "power-up" modes for tougher tasks</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Platform lock-in — exporting to your own infra is possible but non-trivial</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Vercel v0](https://v0.dev) — Chat-to-Next.js components & sites
 
 v0.dev is Vercel's AI UI builder: chat a request, get a live preview plus production-ready Next.js + Tailwind code, then hit Deploy → Vercel to go live.
 
-**Pros:**
-- Generates pixel-perfect shadcn/ui components that slot straight into existing repos
-- One-click deploy inherits Vercel's edge functions, SSR, image opt, etc.
-- Multi-framework output (React, Vue, Svelte, plain HTML)
-
-**Trade-offs:**
-- Front-end focus—no DB or auth scaffolding
-- Opinionated toward Tailwind and Next.js; other stacks need adapters
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Generates pixel-perfect shadcn/ui components that slot straight into existing repos</li>
+      <li>One-click deploy inherits Vercel's edge functions, SSR, image opt, etc.</li>
+      <li>Multi-framework output (React, Vue, Svelte, plain HTML)</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Front-end focus—no DB or auth scaffolding</li>
+      <li>Opinionated toward Tailwind and Next.js; other stacks need adapters</li>
+    </ul>
+  </div>
+</div>
 
 ##### Other Notable Starters
 
@@ -186,40 +239,64 @@ AI IDE or AI extensions give us 3 main features:
 
 Cursor extends VS Code with token-aware completions ("Tab"), a sidebar chat, and optional background agents. Paid tiers include first-party Sonnet 4; free users can drop an Anthropic key under Settings → Models.
 
-**Pros:**
-- Large 120k-token window for whole-project refactors
-- Background agents for autonomous development
-- Familiar VS Code interface with AI enhancements
-
-**Trade-offs:**
-- Requires adaptation to new IDE workflow
-- Free vs Pro ($20/mo) limits on some features
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Large 120k-token window for whole-project refactors</li>
+      <li>Background agents for autonomous development</li>
+      <li>Familiar VS Code interface with AI enhancements</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Requires adaptation to new IDE workflow</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Windsurf](https://windsurf.com) — "Flow-state" AI IDE
 
 Marketed as "the first agentic IDE," Windsurf offers cascade-style tasks and built-in sandboxes. In July 2025 it regained direct Sonnet 4 access for all paying users — and even free users via BYOK.
 
-**Pros:**
-- Cascade-style task execution
-- Built-in sandboxes for code execution
-- Dual chat/completion panes for better workflow
-- Cascade agent chain and MCP plugin store
-
-**Trade-offs:**
-- Requires adaptation to new IDE workflow
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Cascade-style task execution</li>
+      <li>Built-in sandboxes for code execution</li>
+      <li>Dual chat/completion panes for better workflow</li>
+      <li>Cascade agent chain and MCP plugin store</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Requires adaptation to new IDE workflow</li>
+    </ul>
+  </div>
+</div>
 
 ###### [GitHub Copilot](https://docs.github.com/en/copilot) — Universal AI coding assistant
 
 Copilot's docs list Claude Sonnet 4 and Opus 4 among chat models for every paid plan. The new model picker in VS Code and JetBrains lets developers switch between GPT-4o, Sonnet 4, Gemini 2.5 Pro, and others depending on the task.
 
-**Pros:**
-- Deep GitHub ecosystem integration
-- Universal extension works across IDEs
-- Built-in Sonnet 4 access across all paid plans
-
-**Trade-offs:**
-- Ecosystem lock-in with GitHub
-- Autocomplete only; no agentic multi-file edits
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Deep GitHub ecosystem integration</li>
+      <li>Universal extension works across IDEs</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Ecosystem lock-in with GitHub</li>
+    </ul>
+  </div>
+</div>
 
 ###### [IntelliJ Junie](https://www.jetbrains.com/help/idea/junie.html) — JetBrains AI agent
 
@@ -239,44 +316,71 @@ Junie lives inside JetBrains IDEs as a higher-autonomy agent. Users can toggle b
 
 Roo Code is a FOSS VS Code extension positioned as "a whole dev team of AI agents." Supports Sonnet 4 (plus Thinking variants).
 
-**Pros:**
-- Open-source and transparent
-- Multi-agent "dev team" approach
-- Supports custom MCP tools for power users
-
-**Trade-offs:**
-- Requires BYOK for Sonnet 4 access
-- More complex setup than single-agent solutions
-- Can be expensive
-- Limited to VS Code
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Open-source and transparent</li>
+      <li>Multi-agent "dev team" approach</li>
+      <li>Supports custom MCP tools for power users</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Requires BYOK for Sonnet 4 access</li>
+      <li>More complex setup than single-agent solutions</li>
+      <li>Can be expensive</li>
+      <li>Limited to VS Code</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Cline](https://cline.sh) — Transparent coding agent
 
 Cline markets "open, uncompromised coding." Use Sonnet 4 as the default for best diff-edit reliability.
 
-**Pros:**
-- Open-source and transparent
-- Exposes every decision and action
-- Plan/Act modes for structured development
-- Supports custom MCP tools
-
-**Trade-offs:**
-- Requires BYOK for optimal Sonnet 4 access
-- May require more technical setup
-- Less polished than commercial alternatives
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Open-source and transparent</li>
+      <li>Exposes every decision and action</li>
+      <li>Plan/Act modes for structured development</li>
+      <li>Supports custom MCP tools</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Requires BYOK for optimal Sonnet 4 access</li>
+      <li>May require more technical setup</li>
+      <li>Less polished than commercial alternatives</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Trae](https://trae.dev) — Free AI IDE from ByteDance
 
 ByteDance's free IDE ships with Claude 4 out-of-the-box.
 
-**Pros:**
-- Completely free with built-in Sonnet 4
-- All-in-one solution with MCP tool plugins
-- Builder mode for feature scaffolding
-- Agent mode for auto-fixing bugs
-
-**Trade-offs:**
-- May have privacy concerns for some users (free Sonnet 4 is rather suspicious)
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Completely free with built-in Sonnet 4</li>
+      <li>All-in-one solution with MCP tool plugins</li>
+      <li>Builder mode for feature scaffolding</li>
+      <li>Agent mode for auto-fixing bugs</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>May have privacy concerns for some users (free Sonnet 4 is rather suspicious)</li>
+    </ul>
+  </div>
+</div>
 
 ##### Key Insights
 
@@ -316,60 +420,95 @@ Developers typically use the CLI to quickly prompt the model, then return to the
 
 Aider maps your codebase, lets you chat about changes, produces a unified diff, then applies and commits it. It supports almost any model — Claude Sonnet 4 and GPT-4o are recommended, but release v0.32 added Gemini 2.5 and OpenAI o3-pro support.
 
-**Pros:**
-- Supports almost any model (BYOK approach)
-- Git-aware diffs with safety-first approach
-- Large-context editing (8k-token local LLMs or 120k Claude)
-- Community plugins for Emacs/Neovim integration
-
-**Trade-offs:**
-- Prompt-by-prompt workflow (asks before each commit)
-- Requires explicit `!` for shell commands
-- More manual control means slower workflow
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Supports almost any model (BYOK approach)</li>
+      <li>Git-aware diffs with safety-first approach</li>
+      <li>Large-context editing (8k-token local LLMs or 120k Claude)</li>
+      <li>Community plugins for Emacs/Neovim integration</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Prompt-by-prompt workflow (asks before each commit)</li>
+      <li>Requires explicit `!` for shell commands</li>
+      <li>More manual control means slower workflow</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Claude Code](https://www.anthropic.com/claude-code) — Anthropic's agentic coder
 
 Claude Code reads an entire repo in seconds, builds a dependency graph, and then lets Sonnet 4 (or Opus) plan multi-step refactors. The tool's reason-and-act logs show every decision, giving users a chance to halt or tweak mid-flight.
 
-**Pros:**
-- Bundled Sonnet 4/Opus access
-- Automatic codebase tour for onboarding
-- Sandboxed test execution
-- Detailed reasoning logs
-
-**Trade-offs:**
-- Anthropic ecosystem lock-in
-- Requires cautious-mode on prod repos
-- Limited write scope to avoid over-eager deletions
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Bundled Sonnet 4/Opus access</li>
+      <li>Automatic codebase tour for onboarding</li>
+      <li>Sandboxed test execution</li>
+      <li>Detailed reasoning logs</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Anthropic ecosystem lock-in</li>
+      <li>Limited write scope to avoid over-eager deletions</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Gemini CLI](https://developers.google.com/gemini) — Google's open-source terminal agent
 
 Released as part of Gemini Code Assist in June 2025, this MIT-licensed CLI taps Gemini 2.5 Pro/Flash for free (login via Google account) or lets enterprises plug in Vertex AI keys.
 
-**Pros:**
-- Gemini 2.5 Pro/Flash
-- Open-source and extensible
-- ReAct loop with built-in tools (git, npm, pytest, Docker)
-- Session persistence in `.gemini/work` folder
-
-**Trade-offs:**
-- Google ecosystem dependency
-- Ask-once-then-act autonomy may be too aggressive
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Gemini 2.5 Pro/Flash</li>
+      <li>Open-source and extensible</li>
+      <li>ReAct loop with built-in tools (git, npm, pytest, Docker)</li>
+      <li>Session persistence in `.gemini/work` folder</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Google ecosystem dependency</li>
+      <li>Ask-once-then-act autonomy may be too aggressive</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Qwen CLI](https://github.com/QwenLM/Qwen-Coder) — Alibaba's fork for the Qwen 3-Coder model
 
 Qwen Code started as a fork of Gemini CLI, optimized for Qwen3-Coder-72B & 32B weights. It includes parser tweaks that boost diff-edit accuracy and multilingual variable-name handling.
 
-**Pros:**
-- Open-source weights (Apache 2)
-- Optimized for Chinese/English codebases
-- 50k-token contexts on single A100 GPU
-- VS Code "Qwen Tasks" extension included
-
-**Trade-offs:**
-- Limited to Qwen models
-- Requires `--confirm` flag for safety
-- Smaller community compared to others
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Open-source weights (Apache 2)</li>
+      <li>Optimized for Chinese/English codebases</li>
+      <li>50k-token contexts on single A100 GPU</li>
+      <li>VS Code "Qwen Tasks" extension included</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Limited to Qwen models</li>
+      <li>Requires `--confirm` flag for safety</li>
+      <li>Smaller community compared to others</li>
+    </ul>
+  </div>
+</div>
 
 ##### Key Insights
 
@@ -422,57 +561,93 @@ Agents are usually rather slow, but considering you spawn them asynchronously, y
 
 Google Labs unveiled Jules as an asynchronous coding agent: you assign a GitHub repo and a detailed prompt, then Jules vanishes into a secure cloud VM to work on bug fixes, version bumps, or feature branches.
 
-**Pros:**
-- Completely off-device operation
-- Self-healing plans (iterates if tests fail)
-- Audio changelog narrates what it did
-- "Fire-and-forget" in a secure VM
-
-**Trade-offs:**
-- Can burn through CI minutes if left unchecked
-- Limited to Google's cloud infrastructure
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Completely off-device operation</li>
+      <li>Self-healing plans (iterates if tests fail)</li>
+      <li>Audio changelog narrates what it did</li>
+      <li>"Fire-and-forget" in a secure VM</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Can burn through CI minutes if left unchecked</li>
+      <li>Limited to Google's cloud infrastructure</li>
+    </ul>
+  </div>
+</div>
 
 ###### [OpenAI Codex](https://openai.com/codex) — 30-minute "virtual coworker" inside ChatGPT
 
 The new Codex agent (distinct from 2021's model) lives in ChatGPT Pro/Enterprise and as an open-source CLI. Give it a GitHub issue or repo link; Codex launches a sandbox, creates a plan, codes for up to 30 minutes, runs tests, and pushes a branch with a pull-request description.
 
-**Pros:**
-- 30-minute autonomous bursts
-- Available in ChatGPT and as CLI
-- Streams logs for transparency
-
-**Trade-offs:**
-- Limited external network access for security
-- Limited to OpenAI's ecosystem
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>30-minute autonomous bursts</li>
+      <li>Available in ChatGPT and as CLI</li>
+      <li>Streams logs for transparency</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Limited external network access for security</li>
+      <li>Limited to OpenAI's ecosystem</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Devin AI](https://devin.ai) — "Hire an army of junior engineers in the cloud"
 
 Cognition Labs' Devin markets itself as the first AI software engineer and now powers multi-agent "cloud factories." Devin opens a full Linux workspace (shell + editor + browser), decomposes tasks, searches docs, writes code, runs integration tests, and learns from failures.
 
-**Pros:**
-- Full Linux workspace with shell, editor, and browser
-- Multi-agent swarm capabilities
-- Can handle large-scale migrations
-- Learns from failures and iterates
-
-**Trade-offs:**
-- Enterprise pricing model
-- Bills per-agent container
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Full Linux workspace with shell, editor, and browser</li>
+      <li>Multi-agent swarm capabilities</li>
+      <li>Can handle large-scale migrations</li>
+      <li>Learns from failures and iterates</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Enterprise pricing model</li>
+      <li>Bills per-agent container</li>
+    </ul>
+  </div>
+</div>
 
 ###### [Cursor Background Agents](https://cursor.sh) — Mini-Devin for Cursor users
 
 Cursor added Background Agents so developers can off-load tasks (e.g., "convert our CSS-modules to Tailwind") without leaving the editor. A sidebar button spawns a remote container, where the agent clones your repo, edits files, runs tests, and updates status live.
 
-**Pros:**
-- Integrated into Cursor IDE
-- Can be taken over live at any time
-- Slack integration for notifications
-- PR-template support and conflict handling
-
-**Trade-offs:**
-- Limited to Cursor ecosystem
-- Runs in Cursor's cloud infrastructure
-- Charges per agent-hour
+<div style="display: flex; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%); border-left: 4px solid #28a745; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #155724; font-size: 16px; font-weight: 600;">✅ Pros</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #155724;">
+      <li>Integrated into Cursor IDE</li>
+      <li>Can be taken over live at any time</li>
+      <li>Slack integration for notifications</li>
+      <li>PR-template support and conflict handling</li>
+    </ul>
+  </div>
+  <div style="flex: 1; background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); border-left: 4px solid #dc3545; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h4 style="margin: 0 0 10px 0; color: #721c24; font-size: 16px; font-weight: 600;">⚠️ Trade-offs</h4>
+    <ul style="margin: 0; padding-left: 20px; color: #721c24;">
+      <li>Limited to Cursor ecosystem</li>
+      <li>Runs in Cursor's cloud infrastructure</li>
+      <li>Charges per agent-hour</li>
+    </ul>
+  </div>
+</div>
 
 ##### Key Insights
 
