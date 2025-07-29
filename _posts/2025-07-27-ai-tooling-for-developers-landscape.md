@@ -27,6 +27,8 @@ Together with traditional AI-powered IDEs/extensions like [Cursor](https://curso
 
 Of course this classification is not perfect and there are tools which can be classified in multiple groups. For example `Cursor` is both an AI-powered IDE and aims to become a strong competitor in autonomous agents space.
 
+> Please note that my Pros and Trade-offs sections are not exhaustive and are based on my personal experience and observations. Additionally, it can already be outdated by the time you read this. Please treat them more as a starting point for your own evaluation.
+
 ## AI tools for developers
 
 ### Project starters / boot-strappers
