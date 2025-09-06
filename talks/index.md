@@ -75,4 +75,14 @@ author_profile: true
     </div>
     <h2 class="video-title">[2023] Prompt engineering – the Future of Testing?</h2>
   </div>
+
+  <div class="video-card">
+    <div class="video-meta">
+      <span>🇵🇱 Polish</span>
+    </div>
+    <div class="video-wrapper">
+      {% include video id="ckTcv1ptdUY" provider="youtube" %}
+    </div>
+    <h2 class="video-title">[2025] Testing Station podcast: O testowaniu z użyciem AI, Playwright MCP i pracy z Cursorem</h2>
+  </div>
 </div> 

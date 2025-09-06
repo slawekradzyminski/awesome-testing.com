@@ -269,7 +269,7 @@ Generate API test plan in api-test-coverage.md for all endpoints listed in the f
 
 Make the plan trackable, keep the progress.
 
-Login is already covered by @login.ui.spec.ts 
+Login is already covered by @login.api.spec.ts 
 
 Track endpoint coverage.
 Save the plan in api-test-coverage.md
