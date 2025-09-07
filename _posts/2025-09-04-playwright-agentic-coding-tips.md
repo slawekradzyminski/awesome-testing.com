@@ -298,7 +298,7 @@ Use Playwright MCP to see all the screens.
 You can login as admin/admin and open localhost:8081 where frontend is running.
 
 Check the screens and create ui-test-coverage.md based on api-test-coverage.md.
-Note that login and register screens are already covered by @login.ui.spec.ts 
+Login screen is already covered by @login.ui.spec.ts 
 ```
 
 ### 2. Enforce desired project structure
