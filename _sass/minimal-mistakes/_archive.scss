@@ -6,6 +6,20 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
+  /* paragraph indents */
+  p {
+    margin: 0 0 $indent-var;
+    text-align: justify; /* Enable justified text for all paragraphs */
+
+    /* sibling indentation*/
+    @if $paragraph-indent == true {
+      & + p {
+        text-indent: $indent-var;
+        margin-top: -($indent-var);
+      }
+    }
+  }
+
   @include breakpoint($large) {
     float: right;
     width: calc(100% - #{$right-sidebar-width-narrow});
@@ -40,6 +54,17 @@
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
+  }
+}
+
+/* Author profile styling */
+.sidebar .author__bio p {
+  margin: 0 0 $indent-var;
+  text-align: justify; /* Enable justified text for all paragraphs */
+
+  /* Responsive text alignment - disable justification on mobile */
+  @include breakpoint($small) {
+    text-align: left; /* Better readability on mobile */
   }
 }
 

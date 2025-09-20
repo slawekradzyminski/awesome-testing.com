@@ -114,6 +114,7 @@ body {
   /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
+    text-align: justify; /* Enable justified text for all paragraphs */
 
     /* sibling indentation*/
     @if $paragraph-indent == true {

@@ -4,7 +4,9 @@ classes: wide
 author_profile: true
 ---
 
-{{ content }}
+<section class="page__content" itemprop="text">
+  {{ content }}
+</section>
 {%- include page__taxonomy.html -%}
 {%- include social-share.html -%}
 {%- if site.commentbox.id -%}

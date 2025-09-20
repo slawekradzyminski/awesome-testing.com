@@ -95,6 +95,11 @@ defaults:
       show_date: true
       comments: true
 google_analytics: "G-S9LYTKEDYY"
+
+analytics:
+  google:
+    tracking_id: "GTM-MDWQ8CSL"
+    anonymize_ip: false
 category_archive:
   type: liquid
   path: /categories/
