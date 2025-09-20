@@ -21,6 +21,41 @@
 {% include analytics.html %}
 {% include /comments-providers/scripts.html %}
 
+<!-- Mermaid support -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Mermaid
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true
+      }
+    });
+    
+    // Convert code blocks to mermaid divs
+    const codeBlocks = document.querySelectorAll('pre code.language-mermaid');
+    codeBlocks.forEach(function(codeBlock, index) {
+      const mermaidCode = codeBlock.textContent.trim();
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = mermaidCode;
+      
+      // Replace the entire pre block
+      const preBlock = codeBlock.closest('pre');
+      if (preBlock && preBlock.parentNode) {
+        preBlock.parentNode.replaceChild(mermaidDiv, preBlock);
+      }
+    });
+    
+    // Re-initialize Mermaid to process new divs
+    mermaid.init();
+  });
+</script>
+
 {% if site.after_footer_scripts %}
   {% for script in site.after_footer_scripts %}
     <script src="{{ script | relative_url }}"></script>

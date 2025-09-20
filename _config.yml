@@ -42,6 +42,8 @@ feed:
 paginate_path: "/blog/page:num"
 kramdown:
   syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
 author_profile: true
 author:
   name     : "Sławomir Radzymiński"
