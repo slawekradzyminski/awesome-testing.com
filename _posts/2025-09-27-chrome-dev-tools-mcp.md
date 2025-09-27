@@ -212,9 +212,6 @@ While actions like navigation, DOM inspection, console checks and basic UI testi
 
 [Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with) is Google's automated auditing tool that runs lab checks for Performance, Accessibility, SEO and more. It measures Core Web Vitals like LCP (loading), CLS (visual stability), INP (Interaction to Next Paint) and uses TBT (Total Blocking Time) as a lab proxy for responsiveness. Traditionally we ran Lighthouse in DevTools, CI, or via PageSpeed Insights to get a score and a list of opportunities.
 
-#### Core Web Vitals update (INP vs TBT)
-INP (Interaction to Next Paint) replaced FID as a Core Web Vital in 2024. INP is a **field** metric captured from real user input; TBT is a **lab** proxy for responsiveness. In practice, use DevTools MCP to reduce TBT (long tasks, script execution), and instrument INP in RUM to validate real-world gains.
-
 ### What Changes with DevTools MCP?
 
 Instead of a one-off audit, you can orchestrate: record a DevTools trace, get insights, apply a code change, and re-trace—all inside the same agent session. This tight feedback loop moves performance work from "report then manually fix" to "investigate → change → re-measure" with the browser and agent in lock-step.
