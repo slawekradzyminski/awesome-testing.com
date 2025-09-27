@@ -1,5 +1,5 @@
 ---
-title: "Chrome DevTools MCP: new MCP server for testing and debugging"
+title: "Chrome DevTools MCP for Performance: tracing, insights, and fixes with an AI agent"
 layout: post
 permalink: /2025/09/chrome-dev-tools-mcp
 categories:
@@ -10,14 +10,14 @@ tags:
 header:
   og_image: /images/blog/devtoolsmcp.png
 description: >
-    How Chrome DevTools MCP can be used to test, improve and debug web applications.
+    How DevTools MCP enables AI agents to record real performance traces (LCP/CLS/TBT), analyse them, and apply fixes—bringing Lighthouse-style audits into an iterative debugging session.
 ---
 
 ![Chrome DevTools MCP](/images/blog/devtoolsmcp.png){:width="60%"}
 
 Google has released a potentially significant tool for AI-driven web development and testing: an official [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) integration. In plain terms, Chrome DevTools can now hook into AI coding assistants via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). Let's look at what it is and how it works.
 
-For a long time, AI code assistants had no way to see the live application running in a browser. We copy-pasted DOM fragments, console errors, or relied on UI tests and their messages. It was "programming with a blindfold on," unable to verify behaviour in a real browser. The release of [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) changed that. With Playwright MCP, an AI agent can access the actual Accessibility Tree, perform actions, or execute JS to find CSS selectors. In this sense, Chrome DevTools MCP is similar. AI agents can now spin up a real Chrome instance, inspect elements, check network calls, run performance audits—essentially do everything we do in DevTools, but on our behalf. The blindfold is gone. Where Playwright MCP is tightly integrated with Playwright, Chrome DevTools MCP is integrated with [Puppeteer](https://pptr.dev/).
+Chrome DevTools MCP is a new MCP server that exposes Chrome's debugging and performance surface to AI assistants. Beyond the usual "click, navigate, inspect" flows (which are very similar to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp)), the standout feature is performance work: an agent can start a DevTools trace, capture Core Web Vitals signals, and return concrete improvement suggestions—directly from a real Chrome session.
 
 This post is a personal tour of what Chrome's MCP integration is, how it fits into the fast-evolving AI tooling space (as surveyed in my [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape) article), and—most importantly—the new workflows and use cases it unlocks for developers and testers.
 
@@ -66,6 +66,20 @@ Now, Chrome DevTools MCP is essentially [Chrome DevTools Protocol](https://chrom
 
 In practice, this means an AI can launch Chrome, open pages, click around, inspect elements, read console logs, record performance metrics—basically everything you and I do in DevTools, but automated.
 
+## Why Performance is the Unique Angle Here
+
+While actions like navigation, DOM inspection, console checks and basic UI testing map closely to Playwright MCP (see my earlier deep dives), DevTools MCP goes further on performance: it exposes trace recording and analysis primitives (`performance_start_trace`, `performance_stop_trace`, `performance_analyze_insight`) so an agent can collect evidence and interpret it in one loop.
+
+Further reading on Playwright MCP and agentic testing flows: my articles on [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) and [Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips). These workflows carry over; the key difference here is the built-in performance tooling.
+
+## Lighthouse in Brief
+
+Lighthouse is Google's automated auditing tool that runs lab checks for Performance, Accessibility, SEO and more. It measures Core Web Vitals like LCP (loading), CLS (visual stability) and uses TBT as a lab proxy for responsiveness. Traditionally we ran Lighthouse in DevTools, CI, or via PageSpeed Insights to get a score and a list of opportunities.
+
+**What changes with DevTools MCP?**
+
+Instead of a one-off audit, you can orchestrate: record a DevTools trace, get insights, apply a code change, and re-trace—all inside the same agent session. This tight feedback loop moves performance work from "report then manually fix" to "investigate → change → re-measure" with the browser and agent in lock-step.
+
 ## Chrome DevTools MCP Tool Overview
 
 Before diving into practical examples, let's explore the actual capabilities available in Chrome DevTools MCP. The integration provides 26 specific tools across 6 categories, giving AI assistants precise control over browser automation and debugging.
@@ -75,6 +89,12 @@ Here's the complete visual breakdown of available tools:
 ```mermaid
 flowchart LR
   A[Chrome DevTools MCP]
+
+  subgraph PF[Performance]
+    PF1[performance_analyze_insight]
+    PF2[performance_start_trace]
+    PF3[performance_stop_trace]
+  end
 
   subgraph IA[Input automation]
     IA1[click]
@@ -102,12 +122,6 @@ flowchart LR
     EM3[resize_page]
   end
 
-  subgraph PF[Performance]
-    PF1[performance_analyze_insight]
-    PF2[performance_start_trace]
-    PF3[performance_stop_trace]
-  end
-
   subgraph NW[Network]
     NW1[get_network_request]
     NW2[list_network_requests]
@@ -120,20 +134,22 @@ flowchart LR
     DB4[take_snapshot]
   end
 
+  A --> PF
   A --> IA
   A --> NA
   A --> EM
-  A --> PF
   A --> NW
   A --> DB
 
   %% Optional subtle styling
   classDef hub fill:#f7f7ff,stroke:#6366f1,stroke-width:2px,rx:8,ry:8;
   classDef group fill:#f8fafc,stroke:#cbd5e1,rx:10,ry:10;
+  classDef perf fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,rx:10,ry:10;
   classDef item fill:#ffffff,stroke:#94a3b8,rx:6,ry:6;
 
   class A hub;
-  class IA,NA,EM,PF,NW,DB group;
+  class PF perf;
+  class IA,NA,EM,NW,DB group;
   class IA1,IA2,IA3,IA4,IA5,IA6,IA7,NA1,NA2,NA3,NA4,NA5,NA6,NA7,EM1,EM2,EM3,PF1,PF2,PF3,NW1,NW2,DB1,DB2,DB3,DB4 item;
 ```
 
@@ -156,126 +172,146 @@ Configuration is straightforward. It can be enabled by adding the following to y
 
 Note that we are always using the latest version of the Chrome DevTools MCP server hence the number of tools may change over time. That's the actual benefit of MCP - we can use the latest server implementation without any updates on client side.
 
-## AI-Assisted Development & Debugging in the Browser
+## Performance-First Debugging with DevTools MCP
 
-With the MCP server active, you can treat an AI assistant as a co-pilot in Chrome. You describe what you want (in natural language) and the AI decides which DevTools tools to use. Possible use cases are similar to Playwright MCP examples.
+Use these prompt patterns (they mirror the Chrome team's guidance) to shift from generic checks to trace-driven performance work:
 
-**Verify code changes in real-time**: After fixing a bug, you can ask: 
-```text
-Use Chrome DevTools MCP to verify that my change works.
-Frontend is running on local port 8081
-```
-
- The AI can open Chrome, navigate to the affected page, and interact with it. By calling things like `click` and `evaluate_script`, it can check that the UI now behaves as expected. In seconds you have confirmation that the bug was resolved. This is like having a colleague instantly checking the local application every time you fix something.
-
-**Diagnose errors with context**: Suppose images on localhost:8080 aren't loading. Instead of guesswork, you can ask AI: 
-```text
-Use Chrome DevTools MCP to diagnose why images on localhost:8080 are not loading.
-```
-The agent can use `list_network_requests` to find the image URL and see a 404 status. It then can use `list_console_messages` to check the Console and noted a CORS warning. it can report the broken URL, CORS policy errors or suggest typos in the image URL. In the past an AI might have just given generic advice; now it can observe the network and console to give a factual diagnosis.
-
-**Smart DOM inspection (CSS and layout bugs)**:
-
-I can try:
+**Automate a page-load trace**
 
 ```text
-Use Chrome DevTools MCP to diagnose why the submit button is not visible on the page.
+Start a performance trace for /path, reload, and analyse LCP, CLS and TBT. List the top main-thread long tasks and render-blocking resources.
 ```
 
-Under the hood, the AI can use `evaluate_script` to query the DOM and `getComputedStyle` on that element. It can find that the button has `display: none` due to a media query for small screens. It also can check parent elements in case of `visibility: hidden` or zero opacity. The answer would be:
+**Compare device/network profiles**
 
 ```text
-The <button> is hidden by CSS: a rule in styles.css at
-line 42 sets display:none on .submit-btn for viewport
-width under 600px.
+Repeat the trace with mid-tier mobile CPU emulation and Slow 4G. Summarise deltas in LCP and TBT, and point to the culprit scripts.
 ```
 
-This kind of answer comes from actually pulling CSS info via DevTools, not just an educated guess.
-
-**Reproduce and debug user flows**: I can ask the AI: 
-```text
-Walk through the signup flow and let me know why it fails at the end.
-```
-
-The agent can open Chrome, use `navigate_page` to load the signup page, then `fill` or `fill_form` to enter test data. It can click the submit button, then watch for changes. By calling `list_console_messages` afterwards, it can spot a JavaScript error in the signup script. The response can be concrete: 
+**Actionable follow-ups**
 
 ```text
-The signup fails because a TypeError occurs: Cannot read property 'email'
-of undefined in signup.js. This is preventing form submission.
+Suggest code-level changes to cut TBT by 30% (splits, defer, scheduler.postTask). Then re-run the trace and show before/after numbers.
 ```
 
-It even can reference the source file name. Previously an AI only saw my code statically; now it can follow the interactive flow and catch the exception where it occurred. It's the difference between a textbook answer and a lab experiment.
+These are powered by DevTools MCP tools like `performance_start_trace`, `performance_stop_trace`, and `performance_analyze_insight`, plus standard navigation/DOM utilities when you need context.
 
-In each case, the AI simply can use DevTools tools to gather evidence. For example, to answer "why is X hidden?", it can run an `evaluate_script` like:
+**What I run day-to-day:**
 
-```javascript
-let elem = document.querySelector('#submit');
-window.getComputedStyle(elem);
-```
+- **Baseline trace**: start a trace, reload, report LCP/CLS/TBT and the critical path.
+- **Bottlenecks**: list long tasks, blocking CSS/JS, and image decode costs; attach a screenshot of the LCP element.
+- **Hypotheses & patches**: propose specific code-splits, defer/async, preload/inline critical CSS, and font loading fixes; commit a small patch.
+- **Re-measure**: repeat the trace on mid-tier mobile + Slow 4G to ensure the win holds for users.
 
-and also see if any CSS style sheets contain a related rule. Or to diagnose an image load error, it can fetch the network log entry for that URL.
+## Primer: What to Look at in Traces
 
-Under the hood, these interactions might look like a sequence of MCP calls (in JSON form). For instance:
+**LCP**: keep ≤2.5s; identify render-blocking CSS, image decode/size, and main-thread tasks delaying paint.
 
-```json
-{"tool":"DevTools","action":"navigate_page","params":{"url":"http://localhost:3000"}}
-{"tool":"DevTools","action":"list_network_requests","params":{}}
-{"tool":"DevTools","action":"get_network_request","params":{"id":"request123"}}
-{"tool":"DevTools","action":"list_console_messages","params":{}}
-```
+**CLS**: should be ≤0.1; watch for late-loading fonts/ads/images causing shifts.
+
+**TBT** (lab proxy for responsiveness): reduce long tasks >50 ms; split bundles, lazy-initialise work, offload to workers.
+
+**Network waterfall**: critical chain length, blocking CSS/JS, preloads. DevTools Performance docs have a good reference for reading these tracks.
 
 ## AI-Enhanced Functional Testing Workflows
 
-Chrome DevTools MCP also supercharges UI testing. By giving an AI agent full control of the browser, we can generate, execute, and maintain automated tests in a much more fluid way. Possible use cases are similar to Playwright MCP examples.
+Chrome DevTools MCP also enables UI testing workflows that are functionally similar to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp). The agent can generate tests, execute them, and maintain them adaptively. The key differences are that DevTools MCP uses [Puppeteer](https://pptr.dev/) under the hood instead of Playwright, and adds the performance tooling capabilities we've discussed.
 
-**Generate and execute tests on the fly**: I prompted my AI: "Test the login process and confirm the dashboard shows the logged-in username." The agent can use `navigate_page`, `fill` (for username/password fields), and `click` to submit. It then can wait (`wait_for`) a dashboard element to appear. Using `take_snapshot`, it can capture the DOM and checked that the username text is present. Instantly it can report the result. Then, as I requested, it can translate this run into a Playwright test script in code form. (For example, after performing the steps via MCP, it output Playwright commands like `page.fill('#user', 'test')`, `page.click('#login')`, and an `expect()` on the dashboard text.) Essentially, the AI created and ran a working UI test with zero boilerplate from me. This shows how you can describe a scenario in plain language and get an automated test and report back.
+For detailed examples of functional testing, exploratory testing, and AI-driven test maintenance workflows, see my [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) and [Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips) articles. The patterns transfer directly—the real differentiator here is the integrated performance analysis.
 
-**AI-driven test execution and maintenance**: Once tests exist, the same agent can run them repeatedly and adapt them if they break. In one experiment, I changed an element's ID in my app so a selector would normally break. The AI's next run failed to find #submitButton, but it didn't give up: it switched to using a different selector (`button[type=submit]`) by reasoning about the button's text. It then updated the test steps accordingly. In essence, the AI "self-healed" the test. In practice, this could mean far less flaky tests. The AI can also enrich tests by checking more than just the explicit assertions: after each step it might call `list_console_messages` to see if any hidden errors occurred, or take screenshots to compare, effectively turning each test step into a mini exploratory audit.
+## Example: Real Performance Analysis Session
 
-**Exploratory testing on demand**: One of the coolest uses is simply asking the AI to poke around and report issues. I can try: "Explore the app and let me know if anything looks broken." The agent can systematically opened pages, clicked through menus, filled a few forms with random data, and watched for errors or anomalies. It can take screenshots at key moments. The result can be a brief report: "On the product page, there's a missing image (404), and on the filter list page, a console error appears ('Undefined is not a function'). Also noticed that the load time on the checkout page is unusually high. See attached screenshot for the filter page." This felt like a diligent QA tester running wild on the site. In demos and early tests, agents have indeed caught regressions (broken links, JS errors, visual glitches) that manual checks missed. And crucially, it did this without me writing any script up front. It's powerful for sanity-checking a new deployment: just point the AI at your staging URL and ask it to find issues.
+Here's a detailed write-up of an actual session analyzing `/register` on localhost:8081 using DevTools MCP. This demonstrates the performance-first approach in action:
 
-**Contextual assertions and rich reports**: Traditional tests only check what you program them to check. An AI-powered test can have a broader view. For example, after logging in, a normal test might only assert the welcome message. The AI test, however, looked around and noted that the user avatar image failed to load (it saw the broken image URL). Or after submitting a form, even if success happened, it pointed out a console warning about a deprecated API. This is because after each action the AI can inspect everything: DOM state, CSS layout, console, network. It can say "overall, the primary function worked, but I noticed this minor issue." That's incredibly valuable for regression testing where small defects creep in.
+### The Prompt
+```text
+Using Dev Tools MCP analyse the performance of http://localhost:8081/register page. 
+Are there any suggestions how to improve it?
+```
 
-Behind the scenes, this works because the MCP tools cover all the actions a tester might do. The agent can simulate real user input (clicks, typing, file uploads), handle dialogs, and manipulate navigation. It can list pages and switch contexts in case of multi-tab flows. For state inspection, it can query CSS computed styles (`evaluate_script('getComputedStyle(...)')`) to understand UI, or use the Clipboard, etc. And with `take_screenshot` and `take_snapshot`, it can capture the entire app state for comparison or evidence.
+### Performance Metrics Captured
+- **LCP (Largest Contentful Paint): 271ms** - Under the 2.5s threshold ✅
+- **CLS (Cumulative Layout Shift): 0.00** - Perfect, no layout shifts ✅  
+- **TTFB (Time to First Byte): 8ms** - Very fast server response ✅
 
-The net effect is that test automation becomes more adaptive and accessible. Teams with minimal automation can have an AI spin up a baseline test suite from high-level descriptions. Teams with existing suites can offload maintenance: the agent notices when a locator breaks or a step fails. In CI/CD, imagine the agent automatically running after each build and posting an annotated report of any anomalies it finds. The coverage and reliability of UI tests could significantly improve.
+### Key Insight: Render Delay Bottleneck
+The agent identified that **97.2% of LCP time (264ms)** was spent on element render delay, while only **2.8% (8ms)** was server response time. This immediately pointed to client-side rendering as the main bottleneck—not the backend.
 
-So far, the biggest wins are in regression testing and quick scenario coverage. Having an AI agent explore changes (even overnight) can catch subtle UI regressions. And generating new tests from simple prompts (e.g. "test the shopping cart flow") saves tons of manual coding. This is not hype—I've tried it, and it works surprisingly well. Of course, for production use you'd validate the generated code and integrate it, but the AI does the heavy lifting of interaction and initial script drafting. The Playwright MCP article covers similar ideas: treat the AI as a perpetual, intelligent tester that never tires.
+### Detailed Findings
+**Render-blocking resources:**
+- CSS file `index-C3W9awP0.css` taking 77ms total duration
+- 45ms spent on main thread processing
+- Critical path latency: 93ms (HTML → JS + CSS)
 
-## Performance Analysis and Tuning
+**Console issues:**
+- Missing `autocomplete` attribute on password field
 
-Web performance is another area where DevTools MCP shines. Performance profiling traditionally involves capturing a trace or loading a page with throttling, then manually inspecting the waterfall, CPU profile, etc. An AI agent can automate this process on demand and even interpret the results.
+### AI-Generated Recommendations
+The agent provided specific, actionable fixes:
 
-Using the `performance_start_trace` and `performance_stop_trace` tools, you can tell the AI: "Record a performance profile while loading the homepage." The agent can start the trace, navigate to your page, wait for load, then end the trace. It now has a Chrome Trace JSON blob (including timings for scripting, rendering, network, etc.). The agent can either analyse this JSON itself (if it's been trained on trace formats) or use the convenience tool `performance_analyze_insight` which returns a summarised report (like a mini-Lighthouse). In one test, I had a demo page known to be slow: the AI reported "LCP is 4.2s, which is high. The trace shows a 2.1s long task on the main thread caused by a heavy script execution. Also, five large images (each >500KB) were loaded without compression, contributing to slow load." It even suggested lazy-loading
+**High Impact:**
+```html
+<!-- Preload critical CSS -->
+<link rel="preload" href="/assets/index-C3W9awP0.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/index-C3W9awP0.css"></noscript>
+```
 
-Beyond single loads, the agent can simulate conditions. For example: "How does the homepage perform on a mid-tier mobile device?" The AI could respond by re-running the trace with `emulate_cpu` (slowing the CPU) and `emulate_network` (e.g. slow 3G). It would then compare metrics: maybe LCP jumps to 8s, and it finds a new slow long task that was hidden on desktop. This is like having an automated performance lab in your CI.
+**Medium Impact:**
+```html
+<!-- Add resource hints -->
+<link rel="preconnect" href="http://localhost:8081">
+<link rel="dns-prefetch" href="http://localhost:8081">
 
-Because the agent controls the browser, it knows exactly when events happen. It can correlate user actions with performance costs. For instance, after clicking a button, it might see "there was a 1.2s lag before any UI response—checking the network log shows a fetch took 1.1s, explaining the delay." Such end-to-end reasoning (action → network → rendering) helps pinpoint where optimisations are needed.
+<!-- Fix accessibility warning -->
+<input type="password" autocomplete="current-password" />
+```
 
-In practice, these insights come with one prompt: "The page is slow, why?" or "Make this page load faster." The assistant then uses DevTools performance APIs to gather data and surface bottlenecks. This lowers the barrier to performance tuning—even devs unfamiliar with interpreting traces can rely on the AI's analysis. It's like having an on-call performance expert that never sleeps.
+**Strategic suggestions:**
+- Code splitting to reduce initial bundle size
+- Consider SSR for faster initial paint
+- Implement performance monitoring
 
-## Conversational Debugging: Talking to DevTools
+### Why This Matters
+This isn't just a performance report—it's a **live debugging session** where the agent:
+1. Recorded a real DevTools trace
+2. Analyzed Core Web Vitals automatically  
+3. Identified the root cause (render delay vs server response)
+4. Provided specific code fixes
+5. Could immediately re-test changes in the same session
 
-Perhaps the most futuristic feeling aspect is conversational debugging. Instead of clicking around in DevTools yourself, you can ask the AI questions about the live page. Here are a few examples:
+This is the Lighthouse-style diagnosis, but **integrated into an iterative debugging loop**—trace → analyze → fix → re-trace—all without leaving the agent conversation.
 
-"Why is the <nav> element not visible on mobile?" The AI might respond: "I inspected the <nav> and found a CSS media query in main.css (line 120) that sets `display:none` for `.site-nav` at widths < 768px. That's why it's hidden on your phone viewport." It got this by calling DevTools tools to retrieve the matched CSS rules and computed style of that element. You could follow up: "What rule is making it hidden?" and it would drill down with more DevTools queries.
 
-"I clicked the 'Add to Cart' button, but nothing happens. Do you see an error?" The AI would simulate that click, then check the Console and network. It might reply: "Yes, there is an uncaught TypeError in cart.js (see console). The error is `price.toFixed is not a function`. This likely means the item price is undefined. The network request for adding the item returned 500." This answer might cite the exact console message and even line of code (if source maps are available). It correlates the UI action to backend response and JS error seamlessly.
+## Conversational Debugging
 
-"Is any element overlapping or off-screen?" The AI can run `evaluate_script` to check element positions or even take a full-page screenshot to analyse layout. It could answer: "The footer overlaps the content on narrow screens—I see `position: fixed` on the footer pushing it up." This kind of visual/CSS question can be handled by querying DOM geometry or even by visually comparing screenshots, if the agent has vision (some AI models can reason about images).
+DevTools MCP also enables conversational debugging workflows that are similar to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp)—you can ask questions about the live page state and get data-driven answers. The agent can inspect CSS rules, check console errors, analyze network requests, and correlate user actions with backend responses, all using Puppeteer under the hood.
 
-The common thread is: you treat DevTools as another expert in the room. You ask a question about the application state, and the AI "asks" DevTools for data, then synthesises the answer in plain English. This dialogue-driven approach can accelerate root-cause analysis. In effect, DevTools becomes a knowledge base that the AI can query using natural language, via the MCP bridge.
+For detailed debugging workflow examples, see my [Playwright MCP article](https://www.awesome-testing.com/2025/07/playwright-mcp). The key difference with DevTools MCP is the integrated performance analysis capabilities demonstrated above.
 
-For developers, this means you can discover issues by conversation. Instead of sifting through logs yourself, you say "debug this" and get a concise explanation. If the AI's answer mentions a code location or a specific file (for example, "styles.css:42 hides the button"), you can click that suggestion or navigate there. The AI can even suggest a fix: "Remove that rule or adjust the media query". I've found this really streamlines the cognitive load of debugging—the mental context of the live page is managed by the AI.
+## Side-by-Side: Playwright MCP vs DevTools MCP
 
-Technically, all of this conversation happens because the AI knows what tools to call. When you ask a question, the underlying system (via MCP) proposes a plan of calls (e.g., `evaluate_script` then `list_console_messages`) to gather facts, and then returns an answer. It's a new user interface to DevTools: instead of panels, we have chat.
+**Shared (broad parity)**: navigation, clicks, form-fill, JS eval, console/network inspection, screenshots—your [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) mental model transfers well.
+
+**Technical difference**: DevTools MCP uses [Puppeteer](https://pptr.dev/) under the hood, while Playwright MCP uses Playwright's automation framework.
+
+**DevTools MCP edge**: first-class performance tracing & insights from Chrome's Performance panel surface—the unique value for perf engineering.
+
+If readers want the Playwright angle, check my two pieces on [theory](https://www.awesome-testing.com/2025/07/playwright-mcp) and [agentic execution tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips).
 
 ## Conclusion
 
-Chrome DevTools MCP marks a significant step toward truly AI-augmented development. By letting AI tools "see" the running application, we bridge the gap between code suggestions and real-world behaviour. The AI is no longer blind—it has a microscope (the Elements panel) and a lab (the Console/Network/Performance panels). The end result is smarter debugging, faster test automation, and a smoother feedback loop for changes.
+Chrome DevTools MCP turns performance optimisation into a conversational loop with Chrome: trace → analyse → change → re-trace. By letting AI agents "see" the running application through structured performance data, we bridge the gap between generic advice and actionable insights. The AI is no longer guessing—it has direct access to Core Web Vitals, network waterfalls, and long task analysis from a real Chrome session.
 
-For technical readers eager to leverage this: explore the official DevTools MCP tool reference and Chrome's documentation for setup. Experiment with prompts like "Open example.com, log in, and tell me if there are any errors." The responses you get will likely surprise you with their detail and accuracy. Over the coming months, expect this integration to mature and expand. It's part of a broader trend (my AI tooling landscape article describes the big picture) where AI agents become full collaborators in our development environments.
+For technical readers eager to leverage this: explore the official [DevTools MCP tool reference](https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md) and [Chrome's documentation](https://developer.chrome.com/blog/chrome-devtools-mcp) for setup. Experiment with prompts like:
 
-In my own workflow, I've started treating the AI as a debugging companion that sits inside Chrome. It's not perfect—complex logic still sometimes trips it up—but it already saves time on routine checks. And each month it improves. I, for one, welcome this new kind of co-debugger. After all, I prefer focusing on creative architecture rather than hunting down every trivial bug myself. With DevTools MCP, I finally have an AI that's well-equipped to help.
+```text
+Use Chrome DevTools MCP to start a performance trace on http://localhost:8081/register,
+reload, then analyse LCP/CLS/TBT and list top long tasks (>50ms). Propose code changes
+and re-run the trace to validate improvements.
+```
 
-Give it a try: launch your site, enable DevTools MCP, and ask "Are there any issues on this page?" You might just find a helpful insight from your new AI assistant. Happy debugging!
+The responses you get will likely surprise you with their detail and accuracy. Over the coming months, expect this integration to mature and expand. It's part of a broader trend (my [AI tooling landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape) article describes the big picture) where AI agents become full collaborators in our development environments.
+
+In my own workflow, I've started treating the AI as a performance companion that sits inside Chrome. It's not perfect—complex optimisations still sometimes require human insight—but it already saves time on routine analysis and catches issues I might miss. And each month it improves. I, for one, welcome this new kind of co-optimiser. After all, I prefer focusing on creative architecture rather than manually parsing every trace myself. With DevTools MCP, I finally have an AI that's well-equipped to help.
+
+Give it a try: launch your site, enable DevTools MCP, and ask "Record a performance trace and tell me the top 3 bottlenecks." You might just find actionable insights from your new AI performance assistant.
