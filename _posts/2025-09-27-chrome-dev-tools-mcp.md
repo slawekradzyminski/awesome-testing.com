@@ -227,7 +227,8 @@ Use these prompt patterns to shift from generic checks to trace-driven performan
 
 ```text
 Start a performance trace for /path, reload, and analyse LCP, CLS, and TBT.
-List the top main-thread long tasks and render-blocking resources, mapping each to scripts or styles.
+List the top main-thread long tasks and render-blocking resources,
+mapping each to scripts or styles.
 Explain which tasks most affect responsiveness (TBT) and propose concrete splits/defer.
 ```
 
