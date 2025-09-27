@@ -13,7 +13,7 @@ description: >
     How DevTools MCP enables AI agents to record real performance traces (LCP/CLS/TBT), analyse them, and apply fixes—bringing Lighthouse-style audits into an iterative debugging session.
 ---
 
-![Chrome DevTools MCP](/images/blog/devtoolsmcp.png){:width="60%"}
+![Chrome DevTools MCP logo featuring an AI bot icon](/images/blog/devtoolsmcp.png){:width="60%"}
 
 Google has released a potentially significant tool for AI-driven web development and testing: an official [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) integration. In plain terms, Chrome DevTools can now hook into AI coding assistants via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). 
 
@@ -203,7 +203,7 @@ Out of the box, DevTools MCP is closer to how a developer works (direct selector
 
 While actions like navigation, DOM inspection, console checks and basic UI testing map closely to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp), DevTools MCP goes further on performance: it exposes trace recording and analysis primitives (`performance_start_trace`, `performance_stop_trace`, `performance_analyze_insight`) so an agent can collect evidence and interpret it in one loop.
 
-## Lighthouse in Brief
+### Lighthouse in Brief
 
 [Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with) is Google's automated auditing tool that runs lab checks for Performance, Accessibility, SEO and more. It measures Core Web Vitals like LCP (loading), CLS (visual stability) and uses TBT as a lab proxy for responsiveness. Traditionally we ran Lighthouse in DevTools, CI, or via PageSpeed Insights to get a score and a list of opportunities.
 
@@ -211,7 +211,7 @@ While actions like navigation, DOM inspection, console checks and basic UI testi
 
 Instead of a one-off audit, you can orchestrate: record a DevTools trace, get insights, apply a code change, and re-trace—all inside the same agent session. This tight feedback loop moves performance work from "report then manually fix" to "investigate → change → re-measure" with the browser and agent in lock-step.
 
-## Performance-First Debugging with DevTools MCP
+### Performance-First Debugging with DevTools MCP
 
 Use these prompt patterns (they mirror the Chrome team's guidance) to shift from generic checks to trace-driven performance work:
 
@@ -238,10 +238,9 @@ Then re-run the trace and show before/after numbers.
 
 These are powered by DevTools MCP tools like `performance_start_trace`, `performance_stop_trace`, and `performance_analyze_insight`, plus standard navigation/DOM utilities when you need context.
 
-## Example: Live AI Agent Session
+### Example: Live AI Agent Session
 
-
-**User**
+**Me**
 
 > Using Dev Tools MCP analyse the performance of http://localhost:8081/register page. Are there any suggestions how to improve it?
 
@@ -352,3 +351,36 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
 
 > The page performs reasonably well overall, but there's significant room for improvement in client-side rendering optimization. The main focus should be on reducing the render delay through CSS optimization and JavaScript bundle improvements.
 
+## Unique Use Cases for Chrome DevTools MCP
+
+Chrome DevTools MCP shines in scenarios that involve performance tuning and low-level debugging within Chrome. Some use cases where it's the superior tool include:
+
+**Performance analysis and optimisation:** Recording and analysing real Chrome performance traces. An AI agent can use `performance_start_trace` and `performance_analyze_insight` to capture metrics like LCP, CLS, TBT and get actionable insights in one loop. This turns an AI into a performance engineer – identifying bottlenecks and suggesting fixes based on actual trace data from Chrome's Performance panel.
+
+**Emulating slow devices and networks:** Simulating adverse conditions to test robustness. DevTools MCP can throttle CPU and network via `emulate_cpu` and `emulate_network`, making Chrome behave like a low-end mobile device or a slow 3G connection. This helps an AI agent observe how a site performs under strain (e.g. increased load times, main-thread jank) and pinpoint weaknesses.
+
+**Targeted network request inspection:** Deep-diving into specific HTTP requests. Using `get_network_request`, an agent can retrieve detailed information for any resource (headers, status codes, payload, timing). This is invaluable for diagnosing issues like failing API calls, CORS errors, or large unoptimised assets, all directly through Chrome's network debugging interface.
+
+**Interactive debugging sessions:** Performing live debugging steps as a developer would. The agent can execute custom JavaScript in the page context with `evaluate_script`, retrieve console output via `list_console_messages`, and even snapshot the DOM state with `take_snapshot` for offline analysis. This means the AI can inspect and manipulate the page on the fly – checking variables, reading error logs, or capturing the DOM at a point in time – enabling a conversational debugging experience.
+
+**Iterative performance fixing loops:** Engaging in a Lighthouse-style measure → fix → re-measure cycle entirely within one session. For example, an agent might record a baseline trace, identify that a large JavaScript bundle is causing a long Total Blocking Time, then suggest code-splitting that bundle. The agent can apply the change (if integrated with a codebase or by instructing a developer), reload the page, and immediately collect a new trace to verify the improvement. DevTools MCP's tight integration (trace → suggest → tweak → trace again) enables this kind of iterative optimisation workflow that was previously manual and time-consuming.
+
+## Use Cases Better Suited for Playwright MCP
+
+Playwright MCP comes into its own in scenarios focused on cross-browser validation and scalable test automation. It is often the better choice for:
+
+**Cross-browser functional testing:** Ensuring a web application works correctly across all major browsers and platforms. With Playwright MCP, an AI can run the same test flow in Chromium, Firefox, and WebKit, catching browser-specific issues and ensuring a consistent user experience for all users. This breadth makes Playwright MCP invaluable for QA scenarios where coverage is key.
+
+**Generating end-to-end test scripts:** Creating maintainable automated test cases from natural language descriptions or exploratory sessions. Playwright MCP provides tools like `start_codegen_session` / `end_codegen_session` and one-shot `browser_generate_playwright_test` to record user interactions and output real Playwright test code. This allows an AI assistant to effectively become a test author – you can prompt it to "record a login flow and produce a reusable test," and get a ready-to-run script. Chrome DevTools MCP currently has no equivalent capability.
+
+**Continuous integration and regression testing:** Running suites of tests in CI/CD pipelines for ongoing validation. Playwright's robust and deterministic automation is designed for repeated execution, making it suitable for an AI to execute nightly regression tests or integrate into a DevOps workflow. Because Playwright MCP is built on the same engine as the Playwright testing framework, it can leverage features like parallel test execution and report generation, which are essential for large test suites. In contrast, DevTools MCP is more targeted for interactive debugging sessions than high-volume test runs.
+
+**Trace and video-assisted debugging:** Diagnosing test failures using rich artifacts. Playwright's ecosystem supports a Trace Viewer and video recording out-of-the-box. An AI agent can run a scenario with tracing enabled (`--trace`) and have Playwright produce a complete trace log of the session, or record a video of the browser interactions (`--record-video`). These artifacts provide a timeline of actions, network events, screenshots, and console logs, which the AI (or a human) can review to pinpoint what went wrong. This is extremely helpful for complex test scenarios – the AI can generate a trace, analyze it, and even present the developer with a visual report of a failure. Such features are part of Playwright's tooling ecosystem and not present in DevTools MCP.
+
+## Conclusion
+
+Chrome DevTools MCP and Playwright MCP are complementary tools rather than strictly competing ones. Each has a clear role: DevTools MCP offers unparalleled depth of analysis within Chrome's environment, effectively letting your AI agent act like a developer with Chrome DevTools – ideal for diagnosing, debugging, and optimizing complex front-end issues in a live Chrome context. Playwright MCP offers superior breadth across different browsers and workflows, enabling an AI agent to behave like a QA engineer using an automation framework – perfect for validating functionality, generating tests, and ensuring cross-browser consistency.
+
+A simple rule-of-thumb emerges: choose Chrome DevTools MCP when you need your AI to think and act like a developer debugging a problem in Chrome's inspector, and choose Playwright MCP when you need your AI to act like a tester or QA engineer exercising an app's features across browsers. In many cases, teams may even use both tools in tandem. For example, an AI assistant could leverage DevTools MCP to pinpoint and fix a performance issue in the Chrome version of an app, then switch to Playwright MCP to run a battery of cross-browser tests ensuring the fix holds on Firefox and Safari as well. In complex workflows, using the right tool for each job – or chaining them – allows the AI to maximize effectiveness.
+
+Ultimately, as the MCP ecosystem evolves, these two platforms represent two powerful but complementary paths toward AI-assisted web development and testing. Chrome DevTools MCP will likely continue expanding its specialised debugging and performance toolkit in the Chrome ecosystem, while Playwright MCP will keep enhancing its automation suite for broad regression coverage. By understanding their differences and strengths, developers and testers can strategically harness both – using the deep-diving Chrome DevTools MCP when a problem calls for surgical investigation, and the wide-ranging Playwright MCP when the goal is comprehensive, automated verification across environments. Each plays a distinct role, and together they significantly broaden what's possible with AI-driven web tooling.
