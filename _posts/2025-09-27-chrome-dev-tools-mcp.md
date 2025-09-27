@@ -1,23 +1,26 @@
 ---
-title: "Chrome DevTools MCP for Performance: tracing, insights, and fixes with an AI agent"
+title: "AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance"
 layout: post
 permalink: /2025/09/chrome-dev-tools-mcp
 categories:
   - AI
+  - Performance
 tags:
   - AI
   - MCP
+  - Chrome DevTools
+  - Performance
 header:
   og_image: /images/blog/devtoolsmcp.png
 description: >
-    How DevTools MCP enables AI agents to record real performance traces (LCP/CLS/TBT), analyse them, and apply fixes—bringing Lighthouse-style audits into an iterative debugging session.
+    How DevTools MCP enables AI agents to record real performance traces (LCP/CLS/TBT), analyse them, and apply fixes—bringing Lighthouse-style audits into an iterative debugging session. Notes on INP (field) vs TBT (lab) included.
 ---
 
-![Chrome DevTools MCP logo featuring an AI bot icon](/images/blog/devtoolsmcp.png){:width="60%"}
+![Diagram showing an AI assistant connected via MCP to Chrome DevTools for tracing and analysis](/images/blog/devtoolsmcp.png){:width="60%"}
 
 Google has released a potentially significant tool for AI-driven web development and testing: an official [Chrome DevTools MCP](https://github.com/ChromeDevTools/chrome-devtools-mcp) integration. In plain terms, Chrome DevTools can now hook into AI coding assistants via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). 
 
-Chrome DevTools MCP is a new MCP server that exposes Chrome's debugging and performance surface to AI assistants. Beyond the usual "click, navigate, inspect" flows (which are very similar to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp)), the standout feature is performance work: an agent can start a DevTools trace, capture [Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals) signals, and return concrete improvement suggestions—directly from a real Chrome session.
+Chrome DevTools MCP is a new MCP server that exposes Chrome's debugging and performance surface to AI assistants. Beyond the usual "click, navigate, inspect" flows (which are very similar to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp)), the standout feature is performance work: an agent can start a DevTools trace, capture [Core Web Vitals](https://developers.google.com/search/docs/appearance/core-web-vitals) (LCP, CLS, INP) signals (TBT is a lab proxy), and return concrete improvement suggestions—directly from a real Chrome session.
 
 This post is a personal tour of what Chrome's MCP integration is, how it fits into the fast-evolving AI tooling space (as surveyed in my [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape) article), and—most importantly—the new workflows and use cases it unlocks for developers and testers.
 
@@ -139,6 +142,8 @@ flowchart LR
 
 For the complete technical reference and detailed tool specifications, see the official Chrome DevTools MCP [tool reference](https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/main/docs/tool-reference.md).
 
+The server's tool surface evolves; the examples here reflect the documented set at the time of writing (no breakpoint/step APIs). Check the tool reference for updates.
+
 The real power comes from how these tools work together. An AI agent can chain multiple operations: navigate to a page, wait for elements to load, inspect the DOM, check for errors, analyse performance, and even simulate user interactions—all while providing contextual insights based on the actual browser state.
 
 Configuration is straightforward. It can be enabled by adding the following to your application:
@@ -163,12 +168,12 @@ Both Chrome DevTools MCP and Playwright MCP cover the basics of browser automati
 | Dimension | Chrome DevTools MCP | Playwright MCP |
 |-----------|---------------------|----------------|
 | **Performance tooling** | First-class performance profiling tools (e.g. `performance_start_trace` / `performance_analyze_insight`) for real-time Core Web Vitals trace analysis. | No built-in performance audit capability – can capture basic traces, but lacks on-the-fly Lighthouse-style analysis of metrics. |
-| **Test generation** | No native test script generation feature (focuses on live analysis/debugging rather than producing code templates). | Provides automated test generation tools (e.g. `start_codegen_session`, `browser_generate_playwright_test`) to convert user actions or scenarios into Playwright test code. |
+| **Test generation** | No native test script generation feature (focuses on live analysis/debugging rather than producing code templates). | Highly effective for Playwright JS/TS tests due to the same underlying automation engine. |
 | **Network analysis** | Detailed network request inspection via DevTools: includes `list_network_requests` (to list all requests) and `get_network_request` (to fetch detailed info for a specific request). This allows examining headers, status, payload, etc. for any request. | Exposes network logs through `browser_network_requests` (e.g. exportable as HAR) to review overall traffic. Lacks a fine-grained per-request query tool (the agent must parse a HAR or use logs for details). |
 | **Emulation capabilities** | Can simulate different device conditions: `emulate_cpu` and `emulate_network` throttle the browser's CPU speed or network to mimic slow devices/connections. Useful for performance testing under stress. | No dedicated CPU/network throttling commands (no equivalent to DevTools' emulation tools). Instead, Playwright's strength lies in multi-browser coverage rather than device condition simulation. |
 | **Cross-browser support** | Chrome-only (built on the Chrome DevTools Protocol and Puppeteer, it controls a Chromium-based browser exclusively). | Multi-browser and multi-platform: can drive Chromium, WebKit (Safari), and Firefox engines by specifying the browser type, enabling cross-browser testing from one framework. |
 | **DOM interaction model** | Selector-driven: actions typically require explicit CSS/XPath selectors for target elements (e.g. `fill({ selector: '#password', ... })`). A special `take_snapshot` tool can generate a DOM snapshot with unique element IDs for the agent to reference if needed. | Accessibility-driven: automatically captures a structured DOM snapshot via the accessibility tree, allowing the agent to refer to elements by human-friendly descriptions (e.g. `browser_type({ target: 'Password field', ... })`) without specifying selectors. This makes natural-language element references possible out-of-the-box. |
-| **Debugging depth** | Deep debugging capabilities, tapping into Chrome's devtools: supports setting breakpoints and stepping through code execution (`set_breakpoint`, `step_over`), giving the AI full code-level debugging control. Also allows evaluating scripts and inspecting console logs in real time. | No low-level code debugging (no breakpoint/step features). Playwright automation is more black-box – debugging relies on logging, assertions, and capturing traces/videos after test runs rather than interacting with running code. Both systems support script evaluation and console log retrieval, but only DevTools MCP offers true interactive debugging of page scripts. |
+| **Debugging depth** | Deep page introspection via DevTools Protocol: evaluate scripts, read console logs, screenshots, DOM snapshots. | No low-level code debugging; relies on logs, assertions, traces, and videos for post-run diagnosis. |
 
 ### Shared Capabilities
 Both MCP implementations handle fundamental UI automation tasks such as page loading, DOM queries, user input simulation, and state inspection in similar ways. An agent can navigate pages, click buttons, fill forms, execute JavaScript, and capture page state using either tool.
@@ -205,7 +210,10 @@ While actions like navigation, DOM inspection, console checks and basic UI testi
 
 ### Lighthouse in Brief
 
-[Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with) is Google's automated auditing tool that runs lab checks for Performance, Accessibility, SEO and more. It measures Core Web Vitals like LCP (loading), CLS (visual stability) and uses TBT as a lab proxy for responsiveness. Traditionally we ran Lighthouse in DevTools, CI, or via PageSpeed Insights to get a score and a list of opportunities.
+[Lighthouse](https://www.awesome-testing.com/2018/03/five-minutes-performance-report-with) is Google's automated auditing tool that runs lab checks for Performance, Accessibility, SEO and more. It measures Core Web Vitals like LCP (loading), CLS (visual stability), INP (Interaction to Next Paint) and uses TBT (Total Blocking Time) as a lab proxy for responsiveness. Traditionally we ran Lighthouse in DevTools, CI, or via PageSpeed Insights to get a score and a list of opportunities.
+
+#### Core Web Vitals update (INP vs TBT)
+INP (Interaction to Next Paint) replaced FID as a Core Web Vital in 2024. INP is a **field** metric captured from real user input; TBT is a **lab** proxy for responsiveness. In practice, use DevTools MCP to reduce TBT (long tasks, script execution), and instrument INP in RUM to validate real-world gains.
 
 ### What Changes with DevTools MCP?
 
@@ -213,13 +221,14 @@ Instead of a one-off audit, you can orchestrate: record a DevTools trace, get in
 
 ### Performance-First Debugging with DevTools MCP
 
-Use these prompt patterns (they mirror the Chrome team's guidance) to shift from generic checks to trace-driven performance work:
+Use these prompt patterns to shift from generic checks to trace-driven performance work:
 
 **Automate a page-load trace**
 
 ```text
-Start a performance trace for /path, reload, and analyse LCP, CLS and TBT.
-List the top main-thread long tasks and render-blocking resources.
+Start a performance trace for /path, reload, and analyse LCP, CLS, and TBT.
+List the top main-thread long tasks and render-blocking resources, mapping each to scripts or styles.
+Explain which tasks most affect responsiveness (TBT) and propose concrete splits/defer.
 ```
 
 **Compare device/network profiles**
@@ -234,6 +243,12 @@ Summarise deltas in LCP and TBT, and point to the culprit scripts.
 ```text
 Suggest code-level changes to cut TBT by 30% (splits, defer, scheduler.postTask).
 Then re-run the trace and show before/after numbers.
+```
+
+```text
+After the page is idle, simulate a realistic interaction (e.g. open menu, type in search).
+Report any long tasks during interaction and suggest ways to lower input delay
+(e.g. code-splitting handlers, yielding with scheduler APIs).
 ```
 
 These are powered by DevTools MCP tools like `performance_start_trace`, `performance_stop_trace`, and `performance_analyze_insight`, plus standard navigation/DOM utilities when you need context.
@@ -302,6 +317,14 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
    - Consider code splitting to load only essential code initially
    - The current bundle includes React, query libraries, and utilities
    - Implement lazy loading for non-critical components
+   - Where handlers do heavy work, break it up using the Scheduler API:
+
+     ```js
+     import { scheduler } from 'scheduler-polyfill';
+     await scheduler.yield(); // let rendering catch up
+     // or schedule non-urgent tasks:
+     scheduler.postTask(() => heavyWork(), { priority: 'background' });
+     ```
 
 >  3. **Optimize Critical Rendering Path**
    - Inline critical CSS for above-the-fold content
@@ -313,9 +336,10 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
 > 4. **Add Resource Hints**
 
 ```html
-   <!-- Add to <head> -->
-   <link rel="preconnect" href="http://localhost:8081">
-   <link rel="dns-prefetch" href="http://localhost:8081">
+   <!-- Cross-origin example: fonts/CDN -->
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
 ```
 
 > 5. **Improve Form Accessibility & Performance**
@@ -334,6 +358,23 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
    - Implement Core Web Vitals tracking
    - Monitor real user metrics (RUM)
    - Set up performance budgets
+
+```html
+<script type="module">
+  import { onLCP, onCLS, onINP } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.umd.js';
+
+  const send = (name, metric) => {
+    // Replace with your analytics endpoint
+    navigator.sendBeacon('/rum', JSON.stringify({ name, value: metric.value, attribution: metric.attribution }));
+  };
+
+  onLCP((m) => send('LCP', m));
+  onCLS((m) => send('CLS', m));
+  onINP((m) => send('INP', m));
+</script>
+```
+
+Use this in staging/production to validate that TBT improvements translate to better INP for real users.
 
 > ### Overall Assessment
 
