@@ -204,6 +204,8 @@ One notable difference stemming from these architectures is how each approach id
 
 Out of the box, DevTools MCP is closer to how a developer works (direct selectors), while Playwright MCP makes the AI's view of the page more semantic and high-level from the start.
 
+_Since DevTools MCP provides a more user-friendly and semantic model for interacting with elements, it may also support UI automation in tools beyond Playwright, such as Cypress or Selenium. I haven’t yet confirmed this, so I’m keeping it in italics for now — but it could be a good idea for a future blog post._
+
 ## Why Performance is the Unique Angle Here
 
 While actions like navigation, DOM inspection, console checks and basic UI testing map closely to [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp), DevTools MCP goes further on performance: it exposes trace recording and analysis primitives (`performance_start_trace`, `performance_stop_trace`, `performance_analyze_insight`) so an agent can collect evidence and interpret it in one loop.
@@ -257,6 +259,8 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
 
 > Using Dev Tools MCP analyse the performance of http://localhost:8081/register page. Are there any suggestions how to improve it?
 
+
+![Cursor Performance Analysis Live Session in Cursor](/images/blog/cursorperf.png)
 
 **Cursor 1.6.42 + Sonnet 4.0**
 
@@ -317,12 +321,12 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
    - Implement lazy loading for non-critical components
    - Where handlers do heavy work, break it up using the Scheduler API:
 
-     ```js
+```javascript
      import { scheduler } from 'scheduler-polyfill';
      await scheduler.yield(); // let rendering catch up
      // or schedule non-urgent tasks:
      scheduler.postTask(() => heavyWork(), { priority: 'background' });
-     ```
+```
 
 >  3. **Optimize Critical Rendering Path**
    - Inline critical CSS for above-the-fold content
