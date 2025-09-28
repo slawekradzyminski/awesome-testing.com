@@ -168,7 +168,7 @@ Both Chrome DevTools MCP and Playwright MCP cover the basics of browser automati
 | Dimension | Chrome DevTools MCP | Playwright MCP |
 |-----------|---------------------|----------------|
 | **Performance tooling** | First-class performance profiling tools (e.g. `performance_start_trace` / `performance_analyze_insight`) for real-time Core Web Vitals trace analysis. | No built-in performance audit capability – can capture basic traces, but lacks on-the-fly Lighthouse-style analysis of metrics. |
-| **Test generation** | No native test script generation feature (focuses on live analysis/debugging rather than producing code templates). | Highly effective for Playwright JS/TS tests due to the same underlying automation engine. |
+| **Test generation** | No native test script generation feature (focuses on live analysis/debugging rather than producing code templates). | Highly effective for Playwright JS/TS tests due to the same underlying automation engine and dedicated tool `browser_generate_playwright_test`. |
 | **Network analysis** | Detailed network request inspection via DevTools: includes `list_network_requests` (to list all requests) and `get_network_request` (to fetch detailed info for a specific request). This allows examining headers, status, payload, etc. for any request. | Exposes network logs through `browser_network_requests` (e.g. exportable as HAR) to review overall traffic. Lacks a fine-grained per-request query tool (the agent must parse a HAR or use logs for details). |
 | **Emulation capabilities** | Can simulate different device conditions: `emulate_cpu` and `emulate_network` throttle the browser's CPU speed or network to mimic slow devices/connections. Useful for performance testing under stress. | No dedicated CPU/network throttling commands (no equivalent to DevTools' emulation tools). Instead, Playwright's strength lies in multi-browser coverage rather than device condition simulation. |
 | **Cross-browser support** | Chrome-only (built on the Chrome DevTools Protocol and Puppeteer, it controls a Chromium-based browser exclusively). | Multi-browser and multi-platform: can drive Chromium, WebKit (Safari), and Firefox engines by specifying the browser type, enabling cross-browser testing from one framework. |
@@ -262,137 +262,45 @@ These are powered by DevTools MCP tools like `performance_start_trace`, `perform
 
 ![Cursor Performance Analysis Live Session in Cursor](/images/blog/cursorperf.png)
 
-**Cursor 1.6.42 + Sonnet 4.0**
+**Cursor 1.6.42 + Sonnet 4.0 Session Excerpt**
 
-> I'll help you analyze the performance of the register page using Chrome DevTools MCP. Let me start by setting up the browser and navigating to the page, then perform a performance trace analysis.
+<details>
+<summary>📊 Complete AI Performance Analysis Session (click to expand)</summary>
 
-> Now let me start a performance trace recording with a page reload to capture the full loading experience:
+<p><em>The AI assistant automatically navigated to the page, started performance tracing, analyzed the results, and provided detailed recommendations:</em></p>
 
-> Great! I have the initial performance data. Now let me get detailed insights about the specific performance issues:
+<p><strong>Performance Metrics Found:</strong></p>
+<ul>
+<li><strong>LCP</strong>: 271ms (good, under 2.5s threshold)</li>
+<li><strong>CLS</strong>: 0.00 (excellent, no layout shifts)</li>
+<li><strong>TTFB</strong>: 8ms (very fast server response)</li>
+</ul>
 
-> Now let me gather information about network requests and console messages to get a complete picture:
+<p><strong>Key Issues Identified:</strong></p>
+<ul>
+<li>97.2% of LCP time spent on render delay (264ms)</li>
+<li>CSS file <code>index-C3W9awP0.css</code> is render-blocking (77ms)</li>
+<li>45ms main thread processing time</li>
+<li>Missing <code>autocomplete</code> attribute on password field</li>
+</ul>
 
-> Let me also take a snapshot to see the current page structure:
+<p><strong>Top Recommendations:</strong></p>
+<ol>
+<li><strong>Optimize CSS delivery</strong> - preload critical styles, inline above-the-fold CSS</li>
+<li><strong>Code splitting</strong> - lazy load non-critical components, use Scheduler API for heavy work</li>
+<li><strong>Resource hints</strong> - add preconnect/preload for external resources</li>
+<li><strong>Performance monitoring</strong> - implement Core Web Vitals tracking</li>
+</ol>
 
-> ## Performance Analysis Results
+<pre><code class="language-javascript">// Example optimization suggested:
+import { scheduler } from 'scheduler-polyfill';
+await scheduler.yield(); // let rendering catch up
+scheduler.postTask(() => heavyWork(), { priority: 'background' });
+</code></pre>
 
-> Based on the Chrome DevTools performance analysis of the register page at `http://localhost:8081/register`, here's what I found:
+<p><strong>Assessment:</strong> Page performs reasonably well but has significant room for client-side rendering optimization. Main focus should be reducing the 97% render delay through CSS and JavaScript bundle improvements.</p>
 
-> ### Performance Metrics
-- **LCP (Largest Contentful Paint): 271ms** - This is actually quite good! (under 2.5s threshold)
-- **CLS (Cumulative Layout Shift): 0.00** - Excellent, no layout shifts
-- **TTFB (Time to First Byte): 8ms** - Very fast server response
-
-> ### Key Findings
-
-> #### 1. **Render Delay Issue** ⚠️
-- **97.2% of LCP time (264ms)** is spent on element render delay
-- Only **2.8% (8ms)** is TTFB
-- This suggests the main bottleneck is client-side rendering, not server response
-
-> #### 2. **Render Blocking Resources**
-- **CSS file**: `index-C3W9awP0.css` is render-blocking (77ms total duration)
-- **45ms spent on main thread processing** of the CSS
-- Status 304 (Not Modified) indicates good caching
-
-> #### 3. **Network Dependency Chain**
-- Critical path latency: **93ms**
-- Chain: HTML → JS (93ms) + CSS (92ms)
-- All resources are properly cached (304 responses)
-
-> #### 4. **Console Warning**
-- Missing `autocomplete` attribute on password input field
-
-> ### Performance Improvement Recommendations
-
-> #### 🚀 **High Impact Optimizations**
-
-> 1. **Optimize CSS Delivery**
-
-```html
-   <!-- Consider inlining critical CSS or using preload -->
-   <link rel="preload" href="/assets/index-C3W9awP0.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-   <noscript><link rel="stylesheet" href="/assets/index-C3W9awP0.css"></noscript>
-```
-
-> 2. **Reduce JavaScript Bundle Size**
-   - Consider code splitting to load only essential code initially
-   - The current bundle includes React, query libraries, and utilities
-   - Implement lazy loading for non-critical components
-   - Where handlers do heavy work, break it up using the Scheduler API:
-
-```javascript
-     import { scheduler } from 'scheduler-polyfill';
-     await scheduler.yield(); // let rendering catch up
-     // or schedule non-urgent tasks:
-     scheduler.postTask(() => heavyWork(), { priority: 'background' });
-```
-
->  3. **Optimize Critical Rendering Path**
-   - Inline critical CSS for above-the-fold content
-   - Defer non-critical JavaScript execution
-   - Use `async` or `defer` attributes on script tags
-
-> #### 🔧 **Medium Impact Optimizations**
-
-> 4. **Add Resource Hints**
-
-```html
-   <!-- Cross-origin example: fonts/CDN -->
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
-```
-
-> 5. **Improve Form Accessibility & Performance**
-
-```html
-   <!-- Fix the console warning -->
-   <input type="password" autocomplete="current-password" />
-```
-
-> 6. **Consider Server-Side Rendering (SSR)**
-   - Since most time is spent on render delay, SSR could significantly improve initial paint times
-
-> #### 📊 **Monitoring Recommendations**
-
-> 7. **Add Performance Monitoring**
-   - Implement Core Web Vitals tracking
-   - Monitor real user metrics (RUM)
-   - Set up performance budgets
-
-```html
-<script type="module">
-  import { onLCP, onCLS, onINP } from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.umd.js';
-
-  const send = (name, metric) => {
-    // Replace with your analytics endpoint
-    navigator.sendBeacon('/rum', JSON.stringify({ name, value: metric.value, attribution: metric.attribution }));
-  };
-
-  onLCP((m) => send('LCP', m));
-  onCLS((m) => send('CLS', m));
-  onINP((m) => send('INP', m));
-</script>
-```
-
-Use this in staging/production to validate that TBT improvements translate to better INP for real users.
-
-> ### Overall Assessment
-
-> ✅ **Strengths:**
-- Very fast server response (8ms TTFB)
-- Good caching strategy (all 304 responses)
-- No layout shifts (CLS = 0)
-- LCP under acceptable thresholds
-
-> ⚠️ **Areas for Improvement:**
-- High render delay (97% of LCP time)
-- Render-blocking CSS
-- Missing resource preloading
-- Bundle optimization opportunities
-
-> The page performs reasonably well overall, but there's significant room for improvement in client-side rendering optimization. The main focus should be on reducing the render delay through CSS optimization and JavaScript bundle improvements.
+</details>
 
 ## Unique Use Cases for Chrome DevTools MCP
 
@@ -414,7 +322,7 @@ Playwright MCP comes into its own in scenarios focused on cross-browser validati
 
 **Cross-browser functional testing:** Ensuring a web application works correctly across all major browsers and platforms. With Playwright MCP, an AI can run the same test flow in Chromium, Firefox, and WebKit, catching browser-specific issues and ensuring a consistent user experience for all users. This breadth makes Playwright MCP invaluable for QA scenarios where coverage is key.
 
-**Generating end-to-end test scripts:** Creating maintainable automated test cases from natural language descriptions or exploratory sessions. Playwright MCP provides tools like `start_codegen_session` / `end_codegen_session` and one-shot `browser_generate_playwright_test` to record user interactions and output real Playwright test code. This allows an AI assistant to effectively become a test author – you can prompt it to "record a login flow and produce a reusable test," and get a ready-to-run script. Chrome DevTools MCP currently has no equivalent capability.
+**Generating end-to-end test scripts:** Creating maintainable automated test cases from natural language descriptions or exploratory sessions. Playwright MCP provides the `browser_generate_playwright_test` tool to automatically generate Playwright test scripts based on actions the AI performs during a session. This allows an AI assistant to effectively become a test author – you can prompt it to "explore the login flow and produce a reusable test," and it will navigate through the flow, then output a ready-to-run TypeScript test script using Playwright's best practices (role-based locators, auto-retrying assertions). Chrome DevTools MCP currently has no equivalent capability.
 
 **Continuous integration and regression testing:** Running suites of tests in CI/CD pipelines for ongoing validation. Playwright's robust and deterministic automation is designed for repeated execution, making it suitable for an AI to execute nightly regression tests or integrate into a DevOps workflow. Because Playwright MCP is built on the same engine as the Playwright testing framework, it can leverage features like parallel test execution and report generation, which are essential for large test suites. In contrast, DevTools MCP is more targeted for interactive debugging sessions than high-volume test runs.
 
