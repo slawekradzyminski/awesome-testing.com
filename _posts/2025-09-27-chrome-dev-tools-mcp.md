@@ -204,7 +204,7 @@ One notable difference stemming from these architectures is how each approach id
 
 Out of the box, DevTools MCP is closer to how a developer works (direct selectors), while Playwright MCP makes the AI's view of the page more semantic and high-level from the start.
 
-_Since DevTools MCP provides a more user-friendly and semantic model for interacting with elements, it may also support UI automation in tools beyond Playwright, such as Cypress or Selenium. I haven’t yet confirmed this, so I’m keeping it in italics for now — but it could be a good idea for a future blog post._
+_Since DevTools MCP provides a more css selector-based model for interacting with elements (similar to cy.get('selector') or driver.findElement(By.cssSelector('selector'))), it may also be used to support UI automation in tools beyond Playwright, such as Cypress or Selenium. I haven’t yet confirmed this, so I’m keeping it in italics for now — but it could be a good idea for a future blog post._
 
 ## Why Performance is the Unique Angle Here
 
