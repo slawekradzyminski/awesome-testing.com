@@ -10,3 +10,5 @@ main:
     url: /books/
   - title: "Contact"
     url: /contact/
+  - title: "Consulting"
+    url: /consulting/

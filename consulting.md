@@ -1,41 +1,52 @@
 ---
-title: Consulting
+title: "Consulting & Mentoring Services"
 layout: page
 permalink: /consulting/
 ---
 
-Welcome to the Consulting page, where you can explore the range of services I offer to help both companies and
-individuals excel in the realm of software testing. My consulting services are tailored to meet your unique needs,
-ensuring you receive the guidance and support required to achieve your goals. Allow me to introduce the two main types
-of consulting services I provide: Company Consulting and 1-on-1 Consultation.
+As a Senior Staff Test Engineer with extensive experience in test automation and AI-driven testing, I offer specialized consulting and mentoring services to help teams and individuals excel in software quality assurance.
 
-- **Company Consulting**
+## Service Offerings
 
-For organizations seeking to enhance their software testing processes and overall quality assurance, my Company
-Consulting services offer tailored solutions to address your specific challenges. I work closely with your team to
-identify areas for improvement, implement best practices, and optimize workflows for maximum efficiency. My extensive
-experience and in-depth knowledge of the industry enable me to provide valuable insights and actionable recommendations
-that drive results, ensuring your company stays at the forefront of software quality assurance.
+### 1-on-1 Mentoring
+**250 PLN / 60€ / £50 per hour**
 
-- **1-on-1 Consultation**
+Personalized career development and skill enhancement tailored to your professional goals:
 
-For individuals looking to advance their skills and grow their careers in software testing, my 1-on-1 Consultation
-services offer personalized guidance and mentorship. I will work with you to identify your strengths and areas for
-improvement, set achievable goals, and develop a customized plan to help you reach your full potential. Through ongoing
-support and collaboration, we will tackle your challenges together, ensuring you gain the knowledge, confidence, and
-expertise needed to excel in your software testing career. Reach out today and let's embark on this journey towards
-success together.
+- **Career Guidance**: Strategic advice on advancing your testing career
+- **Skill Development**: Focused training on specific testing tools and methodologies
+- **Best Practices**: Learn industry-leading testing approaches and patterns
+- **Code Reviews**: Detailed feedback on your testing code and automation scripts
+- **Interview Preparation**: Practice sessions for technical interviews and career transitions
 
-If you're interested in learning more about my consulting services or have any questions, I encourage you to get in
-touch. Simply email me on [slawomir.radzyminski@gmail.com](mailto:slawomir.radzyminski@gmail.com) or visit
-the [Contact page](/contact.md) to connect with me directly. I'm eager to hear from you and
-discuss how I can help you achieve your software testing goals. Don't hesitate—reach out today and let's start working
-together towards your success!
+### Technical Consultation
+**250 PLN / 60€ / £50 per hour**
 
-## Feedback
+Expert technical advice and problem-solving for your testing challenges:
 
-Don't just take my word for it—see what others have to say about my services and expertise. I'm proud to share a
-collection of glowing testimonials from satisfied clients and colleagues, available for viewing
-via [LinkedIn](https://www.linkedin.com/in/slawekradzyminski/).
+- **Test Automation Strategy**: Design and implementation of comprehensive automation frameworks
+- **CI/CD Integration**: Optimize your continuous integration and delivery pipelines
+- **Performance Testing**: Load testing, stress testing, and performance optimization
+- **Architecture Reviews**: Evaluate and improve your testing infrastructure
+- **AI-Driven Testing**: Implement machine learning and AI techniques in your testing processes
+
+### Private Training Programs
+**250 PLN / 60€ / £50 per hour**
+
+Customized training sessions designed specifically for your needs:
+
+- **Individual Training**: One-on-one intensive learning sessions
+- **Flexible Scheduling**: Sessions arranged around your availability
+- **Custom Curriculum**: Content specifically designed for your technology stack and requirements
+
+## Testimonials
+
+Don't just take my word for it—see what others have to say about my services and expertise. I'm proud to share testimonials from satisfied clients and colleagues via [LinkedIn](https://www.linkedin.com/in/slawekradzyminski/).
 
 ![](/images/testimonials.png)
+
+## Get Started
+
+Ready to elevate your testing capabilities? [Contact me](/contact/) to discuss your specific needs and schedule a consultation.
+
+All rates are in Polish Złoty (PLN), Euros (€), and British Pounds (£) per hour. Travel expenses may apply for on-site consultations outside of Kraków.

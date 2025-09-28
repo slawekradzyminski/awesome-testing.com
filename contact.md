@@ -6,7 +6,16 @@ permalink: /contact/
 
 Hi there! :)
 
-If you’re looking for expert help with test automation, continuous integration, or performance testing, you’re in the right place. As an experienced software engineer in test, I’ll tailor my approach to fit your exact needs. Whether you want one-on-one sessions, consulting for your company, or full training on API testing, UI testing, Performance testing, AI, or CI/CD, I’m here to help. Let’s work together to help you thrive in the world of software testing—don’t hesitate to get in touch!
+Looking for expert guidance in test automation, continuous integration, or performance testing? I offer professional consulting and mentoring services tailored to your needs.
+
+**Services include:**
+- **1-on-1 Mentoring** for career development and skill enhancement
+- **Technical Consultation** for automation strategies and problem-solving
+- **Private Training Programs** customized to your requirements
+
+[View detailed services and pricing →](/consulting/)
+
+Let's work together to elevate your software testing capabilities—don't hesitate to get in touch!
 
 <form
   action="https://formspree.io/mayzlawg"
