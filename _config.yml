@@ -60,6 +60,9 @@ author:
     - label: GitHub
       icon: "fab fa-fw fa-github"
       url: "https://github.com/slawekradzyminski"
+    - label: RSS
+      icon: "fas fa-fw fa-rss"
+      url: /feed.xml
 footer:
   links:
     - label: Email
@@ -71,6 +74,9 @@ footer:
     - label: GitHub
       icon: "fab fa-fw fa-github"
       url: "https://github.com/slawekradzyminski"
+    - label: RSS
+      icon: "fas fa-fw fa-rss"
+      url: /feed.xml
 defaults:
   # _posts
   - scope:
