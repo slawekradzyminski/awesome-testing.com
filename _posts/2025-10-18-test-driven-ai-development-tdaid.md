@@ -107,19 +107,21 @@ Once the plan is in place, the loop works much like classic TDD — just at AI s
 
 Most of the time, unless we use [asynchronous background agents](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape) or CLI tools in [headless mode](https://docs.claude.com/en/docs/claude-code/headless), we pause after each phase to manually verify correctness and intent alignment.
 
-Watch out for LLMs (especially Claude Sonnet) trying to "cheat" the tests by:
+<div class="tip-box" style="background: #f8f9fa; border-left: 4px solid #007acc; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+  <h4 style="margin-top: 0; color: #007acc;">💡 Tip: Watch for AI Test Cheating</h4>
+  <p>LLMs (especially Claude Sonnet) may try to "cheat" the tests by:</p>
+  <ul>
+    <li>Removing them altogether</li>
+    <li>Leaving assertions empty</li>
+    <li>Ignoring them</li>
+    <li>Generating code that passes tests instead of fixing the code</li>
+  </ul>
+</div>
 
-- removing them altogether
-- leaving assertions empty
-- ignoring them
-- generating code that passes tests instead of fixing the code to make them pass
-
-To stay in control, I make a local commit after each phase:
-
-```commandline
-git add .
-git commit -m "AI Phase 1 done"
-```
+To stay in control
+- Make local commits after each TDD phase
+- Manually verify test intent and implementation
+- Ensure AI agent runs the tests / static code checks after each phase
 
 I also like to let the agent mark completed phases in the original plan with a ✅ emoji — a small thing, but it keeps sessions resumable and transparent.
 
@@ -244,8 +246,34 @@ That's why the role of test engineers is more critical than ever. Teams succeed 
 
 - and engineering principles are consistently applied.
 
-We'll need to optimise suites, refine processes, and uphold strong standards for human-in-the-loop validation. But it's also a rare opportunity: test engineers now sit at the centre of AI-powered delivery pipelines — ensuring the system learns the right lessons from its feedback loops.
-
-Adopting TDD, or its evolution as Test-Driven AI Development, is one of the most impactful moves we can make. It gives structure to agentic chaos, protects against regression, and re-establishes software quality as the guiding force behind automation.
+We'll need to optimise suites, refine processes, and uphold strong standards for human-in-the-loop validation. But it's also a rare opportunity: test engineers now sit at the centre of AI-powered delivery pipelines. Adopting TDD, or its evolution as Test-Driven AI Development, is one of the most impactful moves we can make.
 
 It's in our best interest to understand AI deeply enough to make it our ally, not our adversary.
+
+## YouTube Videos
+
+### TDD, AI agents and coding with Kent Beck
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px 0;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/aSXaxOdVtAQ"
+    title="TDD, AI agents and coding with Kent Beck"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+### Test-Driven AI Development Discussion
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px 0;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/TGqSpHgRris"
+    title="Test-Driven AI Development Discussion"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
