@@ -228,7 +228,7 @@ From my experience and others in the field, we should therefore insist on:
 
 - Controlled regression gates — treat the test suite as the contract that the agent must satisfy, and use it to detect drift or unintended changes.
 
-There huge mission ahead of test engineers to ensure the above principles are followed by the team.
+There is a huge mission ahead for test engineers to ensure that the above principles are followed by the team.
 
 ## Conclusion
 

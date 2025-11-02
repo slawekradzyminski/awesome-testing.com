@@ -11,7 +11,7 @@ tags:
   - LLM
   - Quality Assurance
 header:
-  og_image: /images/blog/llm-testing.png
+  og_image: /images/blog/3pillars.png
 description: >
   Learn practical strategies to test and validate Large Language Model (LLM) systems. Discover how to ensure reliability, evaluate AI outputs, and maintain quality in real-world LLM-powered applications.
 ---
