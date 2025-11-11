@@ -162,7 +162,7 @@ The client renders a clean, structured table of test cases, each linked to relev
 
 ## How to use Test Case Generator
 
-There are two practical ways to put the app to work: first, use it directly to generate grounded test ideas for your product; second, treat it as a compact example app for exercising the three pillars from my (Testing LLM-based Systems)[https://www.awesome-testing.com/2025/11/testing-llm-based-systems] post.
+There are two practical ways to put the app to work: first, use it directly to generate grounded test ideas for your product; second, treat it as a compact example app for exercising the three pillars from my [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems) post.
 
 ### Use it directly
 
