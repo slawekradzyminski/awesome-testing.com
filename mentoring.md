@@ -1,15 +1,15 @@
 ---
-title: "Consulting & Mentoring Services"
+title: "Mentoring Services"
 layout: page
-permalink: /consulting/
+permalink: /mentoring/
 ---
 
-As a Senior Staff Test Engineer with extensive experience in test automation and AI-driven testing, I offer specialized consulting and mentoring services to help teams and individuals excel in software quality assurance.
+As a Senior Staff Test Engineer with extensive experience in test automation, I offer specialized consulting and mentoring services to help teams and individuals excel in software quality assurance.
 
 ## Service Offerings
 
 ### 1-on-1 Mentoring
-**250 PLN / 60€ / £50 per hour**
+**300 PLN / 75€ / £65 / $85 per hour**
 
 Personalized career development and skill enhancement tailored to your professional goals:
 
@@ -20,7 +20,6 @@ Personalized career development and skill enhancement tailored to your professio
 - **Interview Preparation**: Practice sessions for technical interviews and career transitions
 
 ### Technical Consultation
-**250 PLN / 60€ / £50 per hour**
 
 Expert technical advice and problem-solving for your testing challenges:
 
@@ -28,10 +27,8 @@ Expert technical advice and problem-solving for your testing challenges:
 - **CI/CD Integration**: Optimize your continuous integration and delivery pipelines
 - **Performance Testing**: Load testing, stress testing, and performance optimization
 - **Architecture Reviews**: Evaluate and improve your testing infrastructure
-- **AI-Driven Testing**: Implement machine learning and AI techniques in your testing processes
 
 ### Private Training Programs
-**250 PLN / 60€ / £50 per hour**
 
 Customized training sessions designed specifically for your needs:
 
@@ -47,6 +44,8 @@ Don't just take my word for it—see what others have to say about my services a
 
 ## Get Started
 
-Ready to elevate your testing capabilities? [Contact me](/contact/) to discuss your specific needs and schedule a consultation.
+Ready to elevate your testing capabilities and take your career to the next level? Don't wait—reach out today to transform your testing approach and unlock your full potential!
 
-All rates are in Polish Złoty (PLN), Euros (€), and British Pounds (£) per hour. Travel expenses may apply for on-site consultations outside of Kraków.
+[Contact me now](/contact/) to discuss your specific needs and schedule a consultation. Let's start building something amazing together!
+
+All rates are in Polish Złoty (PLN), Euros (€), British Pounds (£), and US Dollars ($) per hour. Travel expenses may apply for on-site consultations outside of Kraków.

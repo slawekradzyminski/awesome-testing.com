@@ -2,6 +2,8 @@
 main:
   - title: "Blog"
     url: /blog/
+  - title: "Mentoring"
+    url: /mentoring/
   - title: "Tips"
     url: /tips/
   - title: "Public Speaking"
@@ -10,5 +12,3 @@ main:
     url: /books/
   - title: "Contact"
     url: /contact/
-  - title: "Consulting"
-    url: /consulting/
