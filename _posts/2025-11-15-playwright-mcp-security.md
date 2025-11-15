@@ -32,16 +32,6 @@ In earlier posts I walked through what [Playwright MCP](https://www.awesome-test
 
 When you enable Playwright MCP and let an LLM drive the browser, you’re no longer “just running tests”. You’ve created a new kind of agent that can see your app, read its content, and then decide what to do next based on whatever it just saw. That’s powerful, but with great power comes great responsibility.
 
-### Supply chain & “npx @latest”
-
-One risk vector doesn’t live in your app at all – it lives in the Playwright MCP server you’re downloading. Many quick-start snippets ship with `"args": ["@playwright/mcp@latest"]`. That’s convenient, but it also means “every time the IDE spins up, run whatever version npm serves right now”. Two things happen immediately:
-
-- **Uncontrolled behaviour changes**. A maintainer ships new defaults or a regression? Your guardrails change underneath you, even if you never touched the config.
-- **Expanded supply-chain surface**. If the npm package (or any transitive dep) gets compromised, everyone using `npx …@latest` pulls the malicious build on the very next start. This is the exact scenario [OWASP’s npm guidance]
-(https://cheatsheetseries.owasp.org/cheatsheets/Pinning_Cheat_Sheet.html) warns about when they say “pin versions and control how updates land”.
-
-If untrusted content can steer the agent, untrusted updates can change what the agent even is. Treat both as part of the same threat model.
-
 ### Prompt Injection
 
 Traditional apps treat user input as data. You validate it, store it, maybe render it back out. With LLM agents, that distinction starts to blur: text is not only data, it’s also instructions. If you connect an LLM to tools (like Playwright MCP), any text the model reads can quietly override your original plan.
@@ -194,7 +184,7 @@ Once you make **“MCP always lives in a container”** your default, a lot of t
 
 ### Pin and review your MCP versions
 
-Containerising isn’t enough if you still reinstall whatever `@latest` happens to be. Treat the MCP server like any other dependency: pin the version, review upgrades, and only roll them out intentionally.
+Containerising isn’t enough if you still reinstall whatever `@latest` happens to be. Treat the MCP server like any other dependency: pin the version, review upgrades, and only roll them out intentionally so a surprise release (or a compromised publish) can’t silently change your guardrails. This addresses the OWASP's [Pinning Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Pinning_Cheat_Sheet.html) recommendation.
 
 ```json
 {
