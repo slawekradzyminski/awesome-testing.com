@@ -13,7 +13,7 @@ tags:
   - Testing
   - Automation
 header:
-  og_image: /images/blog/playwright-mcp-security.png
+  og_image: /images/blog/lethaltrifecta.png
 description: >
     Comprehensive guide to securing your Playwright MCP test automation, covering authentication handling, credential management, secure test data practices, and protecting against common security vulnerabilities in automated testing.
 ---
