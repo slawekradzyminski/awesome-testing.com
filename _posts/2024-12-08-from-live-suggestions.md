@@ -276,3 +276,20 @@ With the rapid pace of innovation in this field, we can expect even more tools a
 ## Conclusion
 
 AI-powered IDEs are reshaping how we approach software development, combining speed, efficiency, and contextual awareness to create smarter workflows. From live suggestions and RAG integration to chat-based support and agents, these tools are designed to enhance every stage of the development process. We are entering the era of AI-Driven Development.
+
+## AI posts archive
+
+  - [The rise of AI-Driven Development](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development)
+  - [From Live Suggestions to Agents: Exploring AI-Powered IDEs](https://www.awesome-testing.com/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides)
+  - [AI Vibe Coding Notes from the Basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
+  - [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
+  - [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
+  - [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
+  - [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
+  - [Mermaid Diagrams - When AI Meets Documentation](https://www.awesome-testing.com/2025/09/mermaid-diagrams)
+  - [AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance](https://www.awesome-testing.com/2025/09/chrome-dev-tools-mcp)
+  - [Test Driven AI Development (TDAID)](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid)
+  - [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems)
+  - [Building RAG with Gemini File Search](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag)
+  - [Playwright MCP Security](https://www.awesome-testing.com/2025/11/playwright-mcp-security)
+

@@ -335,3 +335,20 @@ Chrome DevTools MCP and Playwright MCP are complementary tools rather than stric
 A simple rule-of-thumb emerges: choose Chrome DevTools MCP when you need your AI to think and act like a developer debugging a problem in Chrome's inspector, and choose Playwright MCP when you need your AI to act like a tester or QA engineer exercising an app's features across browsers. In many cases, teams may even use both tools in tandem. For example, an AI assistant could leverage DevTools MCP to pinpoint and fix a performance issue in the Chrome version of an app, then switch to Playwright MCP to run a battery of cross-browser tests ensuring the fix holds on Firefox and Safari as well. In complex workflows, using the right tool for each job – or chaining them – allows the AI to maximize effectiveness.
 
 Ultimately, as the MCP ecosystem evolves, these two platforms represent two powerful but complementary paths toward AI-assisted web development and testing. Chrome DevTools MCP will likely continue expanding its specialised debugging and performance toolkit in the Chrome ecosystem, while Playwright MCP will keep enhancing its automation suite for broad regression coverage. By understanding their differences and strengths, developers and testers can strategically harness both – using the deep-diving Chrome DevTools MCP when a problem calls for surgical investigation, and the wide-ranging Playwright MCP when the goal is comprehensive, automated verification across environments. Each plays a distinct role, and together they significantly broaden what's possible with AI-driven web tooling.
+
+## AI posts archive
+
+  - [The rise of AI-Driven Development](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development)
+  - [From Live Suggestions to Agents: Exploring AI-Powered IDEs](https://www.awesome-testing.com/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides)
+  - [AI Vibe Coding Notes from the Basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
+  - [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
+  - [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
+  - [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
+  - [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
+  - [Mermaid Diagrams - When AI Meets Documentation](https://www.awesome-testing.com/2025/09/mermaid-diagrams)
+  - [AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance](https://www.awesome-testing.com/2025/09/chrome-dev-tools-mcp)
+  - [Test Driven AI Development (TDAID)](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid)
+  - [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems)
+  - [Building RAG with Gemini File Search](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag)
+  - [Playwright MCP Security](https://www.awesome-testing.com/2025/11/playwright-mcp-security)
+

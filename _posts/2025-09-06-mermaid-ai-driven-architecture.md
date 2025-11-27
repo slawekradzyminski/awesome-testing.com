@@ -619,3 +619,20 @@ Mermaid sits right at that intersection. It takes human-readable text (whether w
 As you experiment with incorporating AI into your development or testing workflow, give Mermaid a try. Sketch out your next feature or test plan with a Mermaid diagram — maybe even let the AI draft it for you — and iterate from there. You might be surprised at how quickly you can crystallize an idea when you can literally see it and share it. In a world where we increasingly converse with machines and expect instant results, tools like Mermaid ensure our high-level thinking doesn’t get lost in translation. Instead, our ideas become things we can version, discuss, and refine — just like code.
 
 **My recommendation:** if you're an engineer who hasn't played with Mermaid and AI-assisted docs yet, set aside an hour to experiment. Generate a diagram from a prompt, tweak the text, integrate it into your repo. Once you see how effortlessly you can maintain diagrams as code (with a little help from our AI friends), you won’t want to go back. Happy diagramming! :)
+
+## AI posts archive
+
+  - [The rise of AI-Driven Development](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development)
+  - [From Live Suggestions to Agents: Exploring AI-Powered IDEs](https://www.awesome-testing.com/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides)
+  - [AI Vibe Coding Notes from the Basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement)
+  - [How I use AI](https://www.awesome-testing.com/2025/06/how-i-use-ai)
+  - [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp)
+  - [AI Tooling for Developers Landscape](https://www.awesome-testing.com/2025/07/ai-tooling-for-developers-landscape)
+  - [Playwright Agentic Coding Tips](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips)
+  - [Mermaid Diagrams - When AI Meets Documentation](https://www.awesome-testing.com/2025/09/mermaid-diagrams)
+  - [AI + Chrome DevTools MCP: Trace, Analyse, Fix Performance](https://www.awesome-testing.com/2025/09/chrome-dev-tools-mcp)
+  - [Test Driven AI Development (TDAID)](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid)
+  - [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems)
+  - [Building RAG with Gemini File Search](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag)
+  - [Playwright MCP Security](https://www.awesome-testing.com/2025/11/playwright-mcp-security)
+
