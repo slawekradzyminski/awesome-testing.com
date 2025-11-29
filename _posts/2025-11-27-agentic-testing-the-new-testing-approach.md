@@ -11,12 +11,14 @@ tags:
   - Agentic
   - Automation
 header:
-  og_image: /images/blog/
+  og_image: /images/blog/testingagent.png
 description: >
     
 ---
 
-Over the last year or so, **agentic coding** has gone from novelty to serious contender for “default way of working” in many engineering teams. Tools like Claude Code, Cursor, Copilot or Codex are no longer just autocomplete toys – they’re starting to write whole features, fix bugs, wire up tests and keep up with reviews. Plenty of companies are now asking a very practical question: how do we adopt this safely and at scale, without breaking everything or annoying our engineers?
+![Testing Agent](/images/blog/testingagent.png)
+
+Over the last year or so, [**agentic coding**](https://www.awesome-testing.com/2025/09/playwright-agentic-coding-tips) has gone from novelty to serious contender for “default way of working” in many engineering teams. Tools like Claude Code, Cursor, Copilot or Codex are no longer just autocomplete toys – they’re starting to write whole features, fix bugs, wire up tests and keep up with reviews. Plenty of companies are now asking a very practical question: how do we adopt this safely and at scale, without breaking everything or annoying our engineers?
 
 What’s interesting is that these tools are already doing far more than writing code. Anthropic’s own internal report on how their [teams use Claude Code](https://www-cdn.anthropic.com/58284b19e702b49db9302d5b6f135ad8871e7658.pdf) shows it being used across data infrastructure, security, product, marketing and even legal – debugging Kubernetes clusters from screenshots, navigating huge codebases for new hires, and automating complex data workflows for non-technical colleagues. In other words, these "coding agents" are already behaving like **general-purpose engineering agents** that happen to live in an IDE, CLI or in the cloud.
 
@@ -36,15 +38,17 @@ The goal is not to sell a magic replacement for your existing regression suite, 
 
 Most of us still think about testing through the classic pyramid: lots of cheap checks at the bottom, fewer expensive ones at the top. At the base, you have static checks and compilation. This is where AI already helps set up linters, configure sensible rules, and wire them into your editor so they act as a fast feedback loop while you type, rather than as a noisy afterthought in CI.
 
-A step up, at the unit level, AI makes it much easier to work in a TDD-ish way. You describe the behaviour you want, and the agent can sketch out test cases, propose edge conditions and turn them into executable tests. It’s surprisingly good at nudging you towards effective tests instead of a pile of trivial “assert true” noise.
+A step up, at the unit level, AI makes it much easier to work in a [TDD-ish](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid) way. You describe the behaviour you want, and the agent can sketch out test cases, propose edge conditions and turn them into executable tests. It’s surprisingly good at nudging you towards effective tests instead of a pile of trivial “assert true” noise.
 
 Higher up, around the API layer, you can hand the agent your OpenAPI spec or docs and ask it to actually hit the service. It can sit in a terminal and drive `curl` commands, try different payloads, inspect responses and tell you where the behaviour diverges from the documentation.
 
-At the top, on the UI side, the same idea applies but with a browser. Give the agent Playwright MCP or Chrome DevTools MCP as tools and it can open your app, click through flows, fill forms and report what it sees. In other words, the pyramid stays the same, but AI is already quietly embedded at every level, from linters through TDD to API and UI checks. Agentic testing is just the next step: instead of asking AI to help us write tests, we start letting it run them.
+At the top, on the UI side, the same idea applies but with a browser. Give the agent [Playwright MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) or [Chrome DevTools MCP](https://www.awesome-testing.com/2025/09/chrome-devtools-mcp) as tools and it can open your app, click through flows, fill forms and report what it sees.
+
+In other words, the pyramid stays the same, but AI is already quietly embedded at every level, from linters through TDD to API and UI checks. Agentic testing is just the next step: instead of asking AI to help us write tests, we start letting it run them.
 
 ## Coding agents are already testing agents in disguise
 
-Most marketing around Claude Code, Codex, Cursor, Copilot and the other top tools still frames them as coding assistants. They sit in your editor, suggest snippets, write boilerplate and occasionally generate half a feature. But if you actually use them day to day, you quickly notice something else: they’re weirdly good at general computer work, not just code.
+Most marketing around Claude Code, Codex, Cursor, Copilot and the other top tools still frames them as coding assistants. They sit in your editor/CLI and suggest snippets, write boilerplate and occasionally generate half a feature. But if you actually use them day to day, you quickly notice something else: they’re weirdly good at general computer work, not just code.
 
 ![Coding agents are already testing agents in disguise](/images/blog/oroszadobe.png)
 
@@ -110,9 +114,9 @@ I ran a white-box agentic testing session on my `test-secure-backend` [project](
 
 The agent scanned the Maven build and source trees, concluding that most coverage came from `@SpringBootTest` integration tests with almost no focused unit tests for services, security components or repositories. It also noticed no coverage tooling was configured.
 
-From there it created an `IMPROVEMENT_PLAN.md`, wired in JaCoCo (fixing Java 25 compatibility along the way), updated the `Jenkinsfile` to archive coverage reports, and started closing gaps. It wrote unit tests for all core services, security classes (`JwtTokenProvider`, `JwtTokenFilter`, `WebSecurityConfig`), exception handlers, and repositories with `@DataJpaTest`. Each time it adjusted fixtures to satisfy real code constraints and re-ran `./mvnw verify`.
+From there it created an `IMPROVEMENT_PLAN.md`, wired in [JaCoCo](https://github.com/slawekradzyminski/test-secure-backend/actions/runs/19781545779) (fixing Java 25 compatibility along the way), updated the `.github/workflows/ci.yml` to archive coverage reports, and started closing gaps. It wrote unit tests for all core services, security classes (`JwtTokenProvider`, `JwtTokenFilter`, `WebSecurityConfig`), exception handlers, and repositories with `@DataJpaTest`. Each time it adjusted fixtures to satisfy real code constraints and re-ran `./mvnw verify`.
 
-By the end: JaCoCo integrated into CI, ~78% line coverage, and much better protection around business rules and security – all driven by the agent reading code, reasoning about risks, and implementing tests to match.
+By the end: JaCoCo integrated into CI, ~94% line coverage, and much better protection around business rules and security – all driven by the agent reading code, reasoning about risks, and implementing tests to match.
 
 ### Example 2 - React frontend application
 
@@ -122,11 +126,11 @@ By the end: JaCoCo integrated into CI, ~78% line coverage, and much better prote
 
 ## Black-box agentic testing: what makes it possible
 
-Before we talk about how an agent can test a running system, it’s worth looking at what actually makes that possible in the first place. In practice, most coding agents today have two main ways of touching your application: the terminal, and MCP servers.
+Before we talk about how an agent can test a running system, it’s worth looking at what actually makes that possible in the first place. In practice, most agents today have two main ways of touching your application: the terminal, and MCP servers.
 
 ```mermaid
 flowchart TB
-    A[AI coding agent]:::agent
+    A[AI agent]:::agent
 
     subgraph L[ ]
         B[[Terminal access]]:::terminal
