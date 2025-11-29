@@ -13,7 +13,7 @@ tags:
 header:
   og_image: /images/blog/testingagent.png
 description: >
-    
+  Discover agentic testing: how AI agents can test applications through white-box code analysis and black-box exploration using Playwright MCP, Chrome DevTools MCP, and terminal tools. Learn practical examples with Java Spring Boot and React, explore benefits and challenges, and see how coding agents are becoming testing agents.
 ---
 
 ![Testing Agent](/images/blog/testingagent.png)
