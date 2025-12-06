@@ -85,3 +85,29 @@ Speaking from experience, building tools — including systems like Gitlab Code 
 The Builder Path matters. But it is most effective when built on top of the other two paths. **Theory provides the mental models; usage provides the insight; building provides the leverage.** When those foundations are in place, you build with intent, not hype — creating systems that genuinely improve workflows rather than adding more noise to an already crowded ecosystem.
 
 ## Who is actually teaching us about AI?
+
+It’s worth pausing to ask a deceptively simple question: who is shaping the way we learn AI? The answer explains why the User Path — the one most employers quietly depend on — remains consistently overshadowed by the Builder’s path.
+
+Right now, two groups dominate the conversation.
+
+First, the **long-established ML community**. These are researchers and engineers who understood neural networks long before transformers became mainstream. They know the maths, the training dynamics, the tooling ecosystem. Naturally, they frame AI through a builder’s lens: here’s how the model works, here’s how to construct systems around it, here’s how to train or fine-tune something new. Their perspective is invaluable — but it also biases the educational material towards creation over application.
+
+Second, **the early LLM adopters — the programmers who dove in after ChatGPT launched**. I’m part of this group. People who got curious, poked at the models, strengthened their theoretical footing, and experimented with agents and automation. Many of them became internal champions in their companies: demonstrating planning prompts, repository-wide refactors, research workflows, and all the tricks that make LLMs feel like leverage instead of novelty. Even here, though, the gravitational pull is similar. With enough tinkering, it’s easy to drift towards building wrappers, tools, or servers — **because it is easier than solving real business problems.** 
+
+_I've been guilty of this myself, but don't tell anyone._
+
+Together, these groups produce most of today’s books, blog posts, courses, and talks. Because both groups lean — for different reasons — towards system construction, the User Path is rarely given the attention it deserves.
+
+That imbalance matters. Most organisations don’t need every employee to write an agent framework or implement an MCP server. **They need people who can turn existing AI tools into real, business outcomes.** People who can plan a workflow, break work into structured steps, validate output, and consistently deliver value with the tools that already exist.
+
+Yet this is precisely the skill set that receives the least structured teaching.
+
+The irony is hard to miss:
+the most broadly useful path is the one least represented in the public learning ecosystem.
+
+The result is predictable. Many professionals assume they must become builders to be “doing AI properly,” when in reality the highest-leverage skill — the one that compounds fastest and benefits the most roles — is becoming a skilled, intentional User. Someone who understands the system well enough to collaborate with it, guide it, and extract consistent value without needing to reinvent its infrastructure.
+
+If the Student Path gives you mental models, and the Builder Path gives you tools, **the User Path is where those investments actually pay off** — quietly, repeatedly, in the day-to-day work that organisations rely on.
+
+## Books
+
