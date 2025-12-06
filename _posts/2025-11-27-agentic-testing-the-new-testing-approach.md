@@ -292,3 +292,5 @@ So my recommendation is simple: treat agentic testing as an experimental superpo
   - [Testing LLM-based Systems](https://www.awesome-testing.com/2025/11/testing-llm-based-systems)
   - [Building RAG with Gemini File Search](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag)
   - [Playwright MCP Security](https://www.awesome-testing.com/2025/11/playwright-mcp-security)
+  - [Agentic Testing - The New Testing Approach](https://www.awesome-testing.com/2025/11/agentic-testing)
+  - [Learning AI](https://www.awesome-testing.com/2025/12/learning-ai)
