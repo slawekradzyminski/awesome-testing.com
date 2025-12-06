@@ -9,12 +9,12 @@ tags:
 header:
   og_image: /images/blog/ailearning.png
 description: >
-  Exploring the convergence of learning AI through three distinct paths: as a student learning, as a user in daily tasks, and as a builder creating systems. Discover how these paths merge into a unified journey of AI mastery.
+  Learn AI faster with three paths: theory-first student, power-user workflows, and builder tooling. Understand LLM fundamentals, prompting, agents, and how to connect them.
 ---
 
 ![Learning AI - Convergence Point](/images/blog/ailearning.png)
 
-Recent LLM releases such as Opus 4.5 and GPT-5.1 Codex (used via Codex CLI) have once again pushed the boundaries of what we thought possible. These models generate remarkably high-quality code and demonstrate capabilities that would have seemed out of reach not long ago. Combined with modern agentic workflows built on function calling, they can now support — or even automate — almost any engineering task we can imagine.
+Recent LLM releases such as Opus 4.5 and GPT-5.1 Codex (used via Codex CLI) have once again pushed the boundaries of what we thought possible. These models generate remarkably high-quality code and demonstrate capabilities that would have seemed out of reach not long ago. Combined with modern agentic workflows built on function calling, they can now support — or even automate — almost any engineering task we can imagine, [including testing](https://www.awesome-testing.com/2025/11/agentic-testing).
 
 Unsurprisingly, companies and organisations have taken notice. There is growing pressure on engineers of every kind to keep up: to experiment, explore new use cases, understand the theory behind these systems, and adopt the practices that allow us to use them effectively. Many employers now expect their teams to stay close to the cutting edge, track breakthroughs, and pay active attention to emerging tools and techniques. Multiple studies proved already that productivity boost isn't guaranteed, it requires a lot of effort and time to learn and adopt to new tools and techniques.
 
@@ -26,7 +26,7 @@ In this post, I’ll walk through each of these paths, explain how they fit toge
 
 ## The Three Paths of AI Learning
 
-Before diving deeper, it’s worth acknowledging something upfront: learning AI is not a single, linear route. It naturally branches into three distinct paths, each with its own mindset, skill set, and outcomes. The opening image captures this well — three roads that ultimately converge at the same point: becoming genuinely fluent in AI.
+Before diving deeper, it’s worth acknowledging something upfront: learning AI, through software engineering lens, is not a single, linear route. It naturally branches into three distinct paths, each with its own mindset, skill set, and outcomes. The opening image captures this well — three roads that ultimately converge at the same point: becoming genuinely fluent in AI.
 
 ### The Student Path — understanding how AI works
 
@@ -58,7 +58,7 @@ At its core, the User Path is about practical mastery. It’s the ability to use
 
 Users who excel on this path approach AI with intention. They start with a plan, outline the steps, and break a task into smaller components the system can handle. They iterate, refine prompts, and provide examples when necessary. They know when a problem calls for a capable model versus a cheaper one — perhaps a local model for a lightweight classification task, and something like GPT-5.1 Codex for more complex reasoning or code generation. They understand that LLMs come with cost and latency trade-offs, and they adjust their workflow accordingly.
 
-This path also includes the growing number of people who rely on AI coding tools such as Codex, Cursor, Cloud Code, or repository-level agents. These tools can significantly accelerate software development, analysis, and refactoring — but like all LLM-powered systems, they require substantial infrastructure, which makes them more expensive than traditional tools. That’s simply part of the reality of working with state-of-the-art AI today. Personally, I prefer to invest in these tools over entertainment subscriptions; they provide leverage that compounds over time.
+This path also includes the growing number of people who rely on AI coding tools such as Codex, Cursor, Cloude Code, or repository-level agents. These tools can significantly accelerate software development, analysis, and refactoring — but like all LLM-powered systems, they require substantial infrastructure, which makes them more expensive than traditional tools. That’s simply part of the reality of working with state-of-the-art AI today. Personally, I prefer to invest in these tools over entertainment subscriptions; they provide leverage that compounds over time.
 
 Crucially, strong Users understand why their tools behave the way they do. This is where the Student Path feeds directly into the User Path. A high-level mental model of how LLMs and agents work makes day-to-day usage dramatically more predictable. You instinctively grasp why context matters, why the model forgets information, why structured prompts improve reliability, and when an agent needs explicit instructions versus a free-form task. Theory becomes a practical asset.
 
@@ -102,8 +102,7 @@ That imbalance matters. Most organisations don’t need every employee to write 
 
 Yet this is precisely the skill set that receives the least structured teaching.
 
-The irony is hard to miss:
-the most broadly useful path is the one least represented in the public learning ecosystem.
+The irony is hard to miss: the most broadly useful path from software engineering perspective is the one least represented in the public learning ecosystem.
 
 The result is predictable. Many professionals assume they must become builders to be “doing AI properly,” when in reality the highest-leverage skill — the one that compounds fastest and benefits the most roles — is becoming a skilled, intentional User. Someone who understands the system well enough to collaborate with it, guide it, and extract consistent value without needing to reinvent its infrastructure.
 
@@ -157,7 +156,7 @@ This is the Builder Path: not necessary for everyone, but essential if you want 
 
 ## Practice
 
-To really understand what these systems can do — and what they stubbornly refuse to do — you need to walk the User Path and the Builder Path as well. You need your hands on the tools, not just the diagrams.
+To really understand what LLMs and agents can do — and what they stubbornly refuse to do — you need to walk the User Path and the Builder Path as well. You need your hands on the tools, not just the diagrams.
 
 That’s why I invest in my own learning. I keep active subscriptions: Cursor (where I mostly use Opus 4.5) and Chat GPT Plus (which gives me access to Codex). I also push to use these tools at work — and yes, I’ll say it openly: you should lobby for that too. This is the direction the industry is moving. AI coding isn’t disappearing; it’s evolving. Those who learn to collaborate with AI, rather than fear it or ignore it, will shape what comes next.
 
