@@ -17,6 +17,14 @@ description: >
 
 We built IDEs to get away from the terminal. They gave us autocomplete, refactors, visual debugging, and a sense that “modern development” means clicking around in a rich interface instead of typing commands like it’s 1999. That’s why the current wave of AI-powered CLI tools feels a bit paradoxical: after decades of tooling designed to pull us out of the command line, we’re voluntarily going back in.
 
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">Tweet from Gergely Orosz on the pull
+  back toward CLI and AI tooling</p>
+  &mdash; Gergely Orosz (@GergelyOrosz)
+  <a href="https://twitter.com/GergelyOrosz/status/1984586103978885180">November 1, 2025</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 My claim is simple: this isn’t nostalgia, and it isn’t about preferring terminals over web UIs. The reason AI CLI tools are exploding is that they push the most important part of engineering to the front — **high-level thinking**.
 
 Working in the terminal feels a bit like being a general on a hill (Napoleon if you like the mental image): you’re not micromanaging every soldier’s boots and buttons. You’re surveying the terrain, choosing a strategy, and issuing orders to semi-autonomous units. In our world, those units are repositories and services. A CLI agent naturally operates at the business level, workflow level, and architectural level: what we’re trying to achieve, what needs to change, in what order, and how we’ll verify it.
