@@ -86,10 +86,13 @@ Then the agent becomes a verifier. Not in a mystical “it knows the truth” se
 
 You can paste prompts like these into a session:
 ```
-Is this plan coherent end-to-end? Where are the weak links?
+Is this plan coherent end-to-end?
+Where are the weak links?
 What assumptions am I making that could be wrong?
-What’s the riskiest part of this design and how do we de-risk it?
-What should we test first to validate the architecture?
+What’s the riskiest part of this design and how do
+we de-risk it?
+What should we test first to validate the
+architecture?
 ```
 
 This is where I think senior engineers often leave value on the table. We’re used to being the ones who review other people’s plans — but we don’t always run our own thinking through a tight feedback loop. A CLI agent is an always-on reviewer/architect that can keep you honest, propose alternatives, and sanity-check your reasoning across backend, frontend, and infra without you having to context-switch between tools or teams.
@@ -109,17 +112,25 @@ Example prompt you can paste:
 
 ```
 I’m about to implement [feature] across multiple repos.
-First, help me write a one-page brief. Ask me the questions you need to clarify requirements, edge cases, security constraints, non-goals, success criteria, rollout/rollback, and how we’ll validate this in a production-like environment.
-Do not propose code yet — stay at the level of intent and verification. I want to build a common understanding on what we will build together.
+First, help me write a one-page brief. Ask me the
+questions you need to clarify requirements, edge
+cases, security constraints, non-goals, success
+criteria, rollout/rollback, and how we’ll validate
+this in a production-like environment.
+Do not propose code yet — stay at the level of
+intent and verification. I want to build a common
+understanding on what we will build together.
 ```
 
 If you want to force business-first thinking:
 
 ```
-Challenge my framing. Restate the problem in business terms, list hidden assumptions, then propose success criteria that are measurable.
+Challenge my framing. Restate the problem in business
+terms, list hidden assumptions, then propose success
+criteria that are measurable.
 ```
 
-This phase is not a formality. It’s where most bugs die before they’re born.
+This phase is not a formality. It’s where most bugs die before they’re born. Good test engineers help the team by discovering gaps in the plan and requirements. This phase is dedicated to discover, document and clarify them before we get our hands dirty.
 
 ### Step 2: High-level implementation plan (system view first)
 
@@ -129,37 +140,57 @@ Some tools offer a dedicated planning mode. You can use it, but I usually don’
 
 Example prompt:
 ```
-We have these repos: backend/, frontend/, infra/, llm-mock/ (and any shared libs you notice).
-Propose an architecture and a phased implementation plan for [feature].
-Include an API contract (with example requests/responses), data/model changes, migration strategy, test strategy (unit/integration/e2e), rollout and rollback, plus the exact validation commands we should run after each phase.
-Output this as a numbered plan. Don’t modify code yet.
+We have these repos: backend/, frontend/, infra/,
+llm-mock/ (and any shared libs you notice).
+Propose an architecture and a phased implementation
+plan for [feature].
+Include an API contract (with example requests/
+responses), data/model changes, migration strategy,
+test strategy (unit/integration/e2e), rollout and
+rollback, plus the exact validation commands we
+should run after each phase.
+Output this as a numbered plan. Don’t modify code
+yet.
 ```
 
 If you want the agent to act like a disciplined teammate (and avoid it sprinting into implementation):
 
 ```
-Write the plan, then stop and wait for approval. If anything is ambiguous, ask questions instead of guessing.
+Write the plan, then stop and wait for approval. If
+anything is ambiguous, ask questions instead of
+guessing.
 ```
 
 A good plan becomes your north star — not something you follow blindly, but something you (and AI agent) keep useful. You’ll update it as you discover constraints, edge cases, or repo-specific realities. The point isn’t perfection. The point is having a shared map that keeps the work coherent as you move between repositories.
 
+![CLI Agent Pre-work](/images/blog/cliplan.png)
+
 ### Step 3 - Per-repository implementation, while keeping the plan alive
 
-Now you descend. One repository at a time, but without losing the system narrative. The trick is to treat implementation as execution of the plan, not a freestyle coding session.
+Now you descend. One repository at a time, but without losing the system narrative. The trick is to treat implementation as execution of the plan, not a freestyle coding session. I have described single repository workflow in [AI Vibe Coding Notes from the Basement](https://www.awesome-testing.com/2025/04/ai-vibe-coding-notes-from-the-basement) and [Test-Driven AI Development (TDAID)](https://www.awesome-testing.com/2025/10/test-driven-ai-development-tdaid) posts.
 
 Start with the repo that defines contracts and behaviour (often the backend), then move outward. After each repo, update the high-level plan: what’s done, what changed, what was discovered, what must be adjusted.
 
 If you believe that high-level phase definition is too big and require split into smaller increments start with per-repository plan:
 
 ```
-In @implementation-plan.md I have high-level implementation plan for new feature. Now do a deep dive into backend code and prepare a detailed implementation plan for phase 1. Split it into smaller increments. Each increment should be testable.
+In @implementation-plan.md I have high-level
+implementation plan for new feature. Now do a deep
+dive into backend code and prepare a detailed
+implementation plan for phase 1. Split it into
+smaller increments. Each increment should be
+testable.
 ```
 
 Example prompt to kick off a implementation phase:
 ```
 Implement Phase 1 from the agreed plan.
-Rules: keep changes minimal and reviewable; write/adjust tests; don’t touch other repos yet; and finish by listing the validation commands and expected outcomes.
-If you need to change the plan, explain why and update the plan explicitly.
+Rules: keep changes minimal and reviewable;
+write/adjust tests; don’t touch other repos yet; and
+finish by listing the validation commands and
+expected outcomes.
+If you need to change the plan, explain why and
+update the plan explicitly.
 ```
 
 Then, and this is important: once the agent has produced working code, move into the IDE. Treat the agent’s output as a draft. Useful, often surprisingly competent — but still a draft.
@@ -168,18 +199,28 @@ This is where you do senior work: review diffs, refactor, improve naming, remove
 
 Example “handoff to IDE” prompt (to keep the session clean):
 ```
-Pause implementation. Summarise the backend changes as if you were writing a PR description: what changed, why, how to test, and what to look for in review. Also list any TODOs or risks you’re not confident about.
+Pause implementation. Summarise the backend changes
+as if you were writing a PR description: what
+changed, why, how to test, and what to look for in
+review. Also list any TODOs or risks you’re not
+confident about.
 
-Prepare a handoff prompt for another AI agent operating under limited backend-only context which I can just copy-paste and kick-off another agentic coding session.
+Prepare a handoff prompt for another AI agent
+operating under limited backend-only context which I
+can just copy-paste and kick-off another agentic
+coding session.
 ```
 
 ![CLI Agent Handoff](/images/blog/prompttocursor.png)
 
 When you move to the next repo (say frontend):
 ```
-Switch to frontend/. Implement Phase 2 based on the backend contract we just created.
-Keep the UI changes aligned with the success criteria. Add tests where appropriate.
-End with validation commands, and update the overall plan/status.
+Switch to frontend/. Implement Phase 2 based on the
+backend contract we just created.
+Keep the UI changes aligned with the success
+criteria. Add tests where appropriate.
+End with validation commands, and update the overall
+plan/status.
 ```
 
 By the time you’ve done two repos like this, you’ll feel the CLI advantage: you’re not “opening projects”, you’re executing a system-level operation with continuity.
@@ -194,9 +235,12 @@ Example prompt:
 We’ve implemented the feature across repos.
 Now act as a reviewer and expert engineer:
 - restate what we built and the final architecture,
-- list the top functional risks and how we mitigated them,
-- list the top non-functional risks (security, performance, reliability, privacy, maintainability),
-- propose a verification checklist (contract/e2e/smoke/observability),
+- list the top functional risks and how we mitigated
+  them,
+- list the top non-functional risks (security,
+  performance, reliability, privacy, maintainability),
+- propose a verification checklist (contract/e2e/
+  smoke/observability),
 - propose a rollout plan with rollback triggers,
 - suggest what to monitor after release.
 ```
@@ -205,7 +249,8 @@ If you want a brutally practical “are we actually done?” test:
 
 ```
 What evidence would prove we’re done?
-Don’t describe effort. Describe proofs: commands to run, signals to check, and what success looks like.
+Don’t describe effort. Describe proofs: commands to
+run, signals to check, and what success looks like.
 ```
 
 This is the moment where the CLI agent feels less like a code generator and more like a force multiplier for engineering judgement. It keeps you honest, it keeps the plan coherent across repos, and it makes verification explicit — which is exactly what you want when systems get bigger than any one IDE window.
@@ -254,6 +299,6 @@ The CLI agent shines somewhere else. It’s best at orchestration. It helps you 
 
 If you want to try this without turning it into a productivity philosophy, pick one feature and run the workflow end-to-end. Password reset is ideal: it forces you to coordinate backend flow, frontend UX, email delivery/testing environment, and verification. That’s the real world in miniature — and exactly where CLI agents feel natural.
 
-If you’re coming at this from the testing angle (that’s my bias), this ties directly into how I think about verification in an agentic world. My Agentic Testing post covers the broader idea: agents as participants in testing, not just code generators. And if you want the “sharp edges” perspective — what can go wrong and how to build guardrails — my write-up on Playwright MCP security pairs nicely with the reality that terminal agents are powerful and should be treated with respect.
+If you’re coming at this from the testing angle (that’s my bias), this ties directly into how I think about verification in an agentic world. My [Agentic Testing post](https://www.awesome-testing.com/2025/11/agentic-testing) covers the broader idea: agents as participants in testing, not just code generators. And if you want the “sharp edges” perspective — what can go wrong and how to build guardrails — my write-up on [Playwright MCP security](https://www.awesome-testing.com/2025/11/playwright-mcp-security) pairs nicely with the reality that terminal agents are powerful and should be treated with respect.
 
 Tooling will keep changing. The underlying shift won’t. We’re moving from “coding as typing” towards coding as orchestration + verification — and the terminal is simply where that way of working feels most natural.
