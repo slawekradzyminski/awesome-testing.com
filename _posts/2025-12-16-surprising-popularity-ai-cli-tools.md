@@ -67,10 +67,10 @@ This is where terminal agents feel oddly… natural. Asking an agent to move bet
 
 To make this less abstract, here’s a setup I’ve been playing with recently (and it’s representative of what modern “simple” work often looks like). I’m wiring local LLMs into an application that has a fairly standard split:
 
-- Backend: Spring / Java
-- Frontend: TypeScript / React
-- LLM layer: a mock LLM service (for predictable tests) and/or a local model wrapper
-- Infra: Docker files, Compose (or similar orchestration), plus the usual shared configuration bits
+- Backend: [Spring / Java](https://github.com/slawekradzyminski/test-secure-backend)
+- Frontend: [TypeScript / React](https://github.com/slawekradzyminski/vite-react-frontend)
+- LLM layer: a [mock LLM service](https://github.com/slawekradzyminski/ollama-mock) (for predictable tests) and/or a local model wrapper
+- Infra: Docker files, [Compose](https://github.com/slawekradzyminski/awesome-localstack) (or similar orchestration), plus the usual shared configuration bits
 
 Even in a small personal playground, I’m already spanning multiple repositories and multiple types of concerns: API design, UI integration, service contracts, containerisation, and test strategy. In a real organisation you can multiply this by “shared libraries”, “platform repos”, “deployment manifests”, “observability”, “feature flags”, and suddenly the system is the only sensible unit of work.
 
