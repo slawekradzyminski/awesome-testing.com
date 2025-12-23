@@ -11,16 +11,14 @@ tags:
   - Skills
   - MCP
 header:
-  og_image: /images/blog/aitestingskills.png
+  og_image: /images/blog/skillcreate.png
 description: >
   A deep dive into AI testing skills: from function calling and RAG to MCP limitations and the emergence of skills as the solution for building robust AI testing agents.
 ---
 
-![AI Testing Skills](/images/blog/aitestingskills.png)
+Over the last three years, rapid development of LLMs and AI agents enabled [Agentic Testing](https://www.awesome-testing.com/2025/11/agentic-testing) approach. I have described it as _testing done by AI agents_. Not scripts, not humans clicking around, but the same kind of AI coding agents I talk about quite often in my other posts.
 
-Over the last three years, rapid development of LLMs and AI Agents enabled [Agentic Testing](https://www.awesome-testing.com/2025/11/agentic-testing) approach. I have described it as _testing done by AI agents_. Not scripts, not humans clicking around, but the same kind of AI agents I talk about quite often in my other posts.
-
-his progress came in milestones. Function calling gave models “hands”. [RAG](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag) gave them “facts”. [MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) promised a universal connector for tools. But in real usage, MCP’s “plug anything in” convenience comes with a nasty tax: tool definitions and schemas can bloat prompts and get re-sent repeatedly, burning tokens before the agent even starts doing useful work.
+This progress came in milestones. [Function calling](https://www.awesome-testing.com/2025/07/playwright-mcp) gave models “hands”. [RAG](https://www.awesome-testing.com/2025/11/gemini-file-search-managed-rag) gave them “facts”. [MCP](https://www.awesome-testing.com/2025/07/playwright-mcp) promised a universal connector for tools. But in real usage, MCP’s “plug anything in” convenience comes with a nasty tax: tool definitions and schemas can bloat prompts and get re-sent repeatedly, burning tokens before the agent even starts doing useful work.
 
 This is where skills land as the next step: a practical answer to token waste, the lack of custom playbooks, and the awkward temptation to shove procedures into RAG (which is better treated as _documentation_, not _how-to_). Skills formalise procedural memory with progressive disclosure: load tiny metadata up front, pull the heavy instructions only when needed. 
 
@@ -30,7 +28,7 @@ In this post, we’ll walk that path (function calling → RAG → MCP → skill
 
 Picture the early LLM era as hiring a brilliant theorist… and then locking them in a room with nothing but a keyboard.
 
-They could talk—beautifully. They could draft plans, invent APIs, explain architectures, even write convincing pseudo-code. But they couldn’t touch anything. No filesystem. No browser. No database. No “run it and see”.
+They could talk, draft plans, invent APIs, explain architectures, even write convincing pseudo-code. But they couldn’t touch anything. No filesystem. No browser. No database. No “run it and see”.
 
 So if you wanted anything resembling a workflow — analyse → decide → act → verify → report — you had to fake it with [prompt chaining](https://www.promptingguide.ai/techniques/prompt_chaining): break the work into steps, call the model repeatedly, and feed each output into the next prompt. It occasionally worked, but it was brittle in all the ways any multi-step pipeline is brittle:
 
@@ -43,7 +41,7 @@ The milestones below are basically the story of how we moved from that fragile p
 
 ### Function calling: teaching language to act
 
-Function Calling (which I covered in detail in [How does Playwright MCP work?](https://www.awesome-testing.com/2025/07/playwright-mcp) post) is the moment we stopped treating the model as a novelist and started treating it as a coordinator.
+Function Calling (which I covered in detail in [How does Playwright MCP work](https://www.awesome-testing.com/2025/07/playwright-mcp) post) is the moment we stopped treating the model as a novelist and started treating it as a coordinator.
 
 Instead of asking the model to describe an action in prose (“now call the API with these parameters”), you offer it a set of tools and it can respond with a structured tool call: call X with arguments Y. Your application executes that call deterministically, then returns the result back to the model for the next step. 
 
@@ -82,9 +80,13 @@ If the model is going to choose between dozens of tools, it needs enough tool de
 
 It’s not that MCP must resend “the whole schema every time”, it’s that naïve clients often keep a large tool registry in context (or repeatedly include lots of tool descriptions), so you end up paying for schema-heavy descriptions across turns.
 
-Why does a CLI often feel “lighter”?
-
-Because a CLI is a small, stable surface area. Discovery is typically on demand (“help”, man pages, file listings), rather than preloading a catalogue of JSON schemas so the model can decide. In other words: the CLI is an interface designed to be remembered, while MCP tool registries are often designed to be described. 
+> Aside: Why does a CLI often feel “lighter”?
+>
+> Because a CLI is a small, stable surface area. Discovery is typically on
+> demand (“help”, man pages, file listings), rather than preloading a catalogue
+> of JSON schemas so the model can decide. In other words: the CLI is an
+> interface designed to be remembered, while MCP tool registries are often
+> designed to be described.
 
 This doesn’t make MCP bad. It just means that the naïve usage pattern can be a token furnace.
 
@@ -137,7 +139,10 @@ That `SKILL.md` has two parts:
 ```yaml
 ---
 name: api-testing
-description: Generate and run API checks for REST endpoints. Use when the user mentions HTTP, REST, OpenAPI, swagger, endpoints, contract tests, or postman collections.
+description: >
+  Generate and run API checks for REST endpoints. Use when the user mentions
+  HTTP, REST, OpenAPI, swagger, endpoints, contract tests, or postman
+  collections.
 ---
 ```
 
@@ -149,7 +154,8 @@ description: Generate and run API checks for REST endpoints. Use when the user m
 ## Instructions
 1. Identify the endpoints, auth, environments, and data setup.
 2. Decide the checks: contract, functional, negative, idempotency, rate limits, etc.
-3. Implement the checks using the project’s tooling (or propose the lightest viable harness).
+3. Implement the checks using the project’s tooling (or propose the
+   lightest viable harness).
 ...
 ```
 
@@ -160,7 +166,8 @@ As skills grow, you keep `SKILL.md` lean and “table-of-contents-like”, and p
 ```bash
 my-skill/
   SKILL.md              # required
-  references/           # optional docs (standards, runbooks, ADRs)
+  references/           # optional docs (standards,
+                        # runbooks, ADRs)
   scripts/              # optional executable helpers
   assets/               # optional templates/schemas
 ```
@@ -288,19 +295,27 @@ That's the outcome `SKILL.md` file:
 ```markdown
 ---
 name: playwright-api-testing
-description: Create, update, and run Playwright API tests in this repository. Use when the user asks to add or modify API tests, validate API behavior, work with HTTP clients in `http/`, or follow the repo's API testing rules and fixtures.
+description: >
+  Create, update, and run Playwright API tests in this repository. Use when
+  the user asks to add or modify API tests, validate API behavior, work with
+  HTTP clients in `http/`, or follow the repo's API testing rules and fixtures.
 ---
 
 # Playwright API Testing
 
 ## Overview
 
-Use this skill to design and implement API tests with Playwright that follow the repo's conventions: shared fixtures, HTTP client wrappers, and API test rules. Validate behavior against `api-docs.json` or live docs at `http://localhost:4001/v3/api-docs`.
+Use this skill to design and implement API tests with Playwright that follow
+the repo's conventions: shared fixtures, HTTP client wrappers, and API test
+rules. Validate behavior against `api-docs.json` or live docs at
+`http://localhost:4001/v3/api-docs`.
 
 ## Workflow
 
-1. Read rules in `.cursor/rules/api-test-rules.mdc` and follow them exactly (naming, ordering by status code, limited 400s, required lint/test runs).
-2. Confirm API schema via `api-docs.json` or `curl http://localhost:4001/v3/api-docs`.
+1. Read rules in `.cursor/rules/api-test-rules.mdc` and follow them exactly
+   (naming, ordering by status code, limited 400s, required lint/test runs).
+2. Confirm API schema via `api-docs.json` or
+   `curl http://localhost:4001/v3/api-docs`.
 3. Identify auth needs and obtain tokens using the existing fixtures or login flow.
 4. Add or update HTTP client wrappers in `http/` (one method per file, one endpoint per file).
 5. Write tests in `tests/api/` using `// given`, `// when`, `// then` comments and shared helpers.
@@ -309,7 +324,8 @@ Use this skill to design and implement API tests with Playwright that follow the
 ## Auth and Fixtures
 
 - Use `fixtures/apiAuthFixture.ts` for API tests that need authenticated users.
-- `createAuthFixture` signs up a generated user and logs in to return `{ token, userData }`.
+- `createAuthFixture` signs up a generated user and logs in to return
+  `{ token, userData }`.
 - Bearer tokens come from `/users/signin` responses (`loginResponse.token`).
 - Pass tokens via `Authorization: Bearer <token>` in HTTP client wrappers.
 
@@ -331,7 +347,8 @@ Use this skill to design and implement API tests with Playwright that follow the
 
 - Run `npm run test:api` after finishing API test changes.
 - Run `npm run lint` after each incremental change and before reporting results.
-- If failures look like app/API behavior changes, report them with the failing test names and expected vs actual status codes.
+- If failures look like app/API behavior changes, report them with the failing
+  test names and expected vs actual status codes.
 
 ## Quick References
 
@@ -376,4 +393,3 @@ That’s where skills fit. They package “how we do things” into a lightweigh
 - [Agentic Testing](https://www.awesome-testing.com/2025/11/agentic-testing)
 - [Why AI Coding Is Moving Back to the Terminal (CLI Agents)](https://www.awesome-testing.com/2025/12/why-ai-coding-is-moving-back-to-terminal)
 - [AI Testing Skills: The Evolution Beyond RAG and MCP](https://www.awesome-testing.com/2025/12/ai-testing-skills)
-
