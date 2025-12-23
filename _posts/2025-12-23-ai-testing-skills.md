@@ -37,7 +37,7 @@ So if you wanted anything resembling a workflow — analyse → decide → act �
 - latency and cost climbed because each “step” was another full model call
 - debugging meant figuring out which link in the chain dropped a constraint or quietly invented a detail
 
-The milestones below are basically the story of how we moved from that fragile prompt-chaining world into agents that can reliably do things — not just describe them.
+The milestones below are basically the story of how we moved from that fragile prompt-chaining world into agents that can reliably do things — not just describe them. The first fix was to give the theorist a pair of hands.
 
 ### Function calling: teaching language to act
 
@@ -68,9 +68,7 @@ The important distinction (which becomes critical later): RAG is naturally a doc
 
 Once tool use became normal, integration sprawl became the next bottleneck: every agent + every service meant bespoke glue.
 
-[MCP (Model Context Protocol)](https://www.awesome-testing.com/2025/07/playwright-mcp) is the “USB-C moment”: an open standard intended to make tool and context integrations reusable across ecosystems. MCP servers expose tools through a standard interface; MCP clients can list what’s available and call those tools in a consistent way, regardless of who built the server.
-
-MCP lets clients connect to whatever servers they want, and those servers expose tools, resources, and workflows in a standard way.
+[MCP (Model Context Protocol)](https://www.awesome-testing.com/2025/07/playwright-mcp) is the “USB-C moment”: an open standard intended to make tool and context integrations reusable across ecosystems. Clients can connect to whatever servers they want, and those servers expose tools, resources, and workflows through a consistent interface, regardless of who built the server.
 
 ### MCP vs CLI: the token efficiency tax
 
@@ -115,14 +113,13 @@ And that sets up the real question for the next section: what does a good playbo
 
 ## Skills Deep Dive
 
-Skills exist to solve a very specific “agent scaling” problem:
-- You want repeatable playbooks (procedural knowledge), not one-off prompting.
-- You don’t want to pay tokens for them unless they’re actually needed.
-- You want them to be shareable (per user, per repo, per team).
+Skills exist to solve a very specific “agent scaling” problem: you want repeatable playbooks (procedural knowledge), you don’t want to pay tokens for them unless they’re actually needed, and you want them to be shareable (per user, per repo, per team).
 
 The core design principle is **progressive disclosure**: only load a tiny bit of metadata up front, and pull in the heavy instructions/files only when the agent chooses that skill. [Anthropic](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) describes this as preloading `name` + `description` for every installed skill, then reading `SKILL.md` (and any linked files) only when relevant. 
 
 [Codex](https://developers.openai.com/codex/skills/) does the same: it loads just the name/description at startup, and keeps the body on disk until the skill is activated.
+
+The principle behind it is simple: facts belong in RAG, capabilities belong in tools, procedures belong in skills.
 
 ### Structure of a Skill
 
@@ -244,7 +241,7 @@ The best way to understand how to create skills is to use official Anthropic exa
 Anthropic’s [`webapp-testing`](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) skill is a good reference implementation because it is explicit about scope and mechanics. It doesn’t try to create a new “agent-native” browser abstraction. It standardises on a familiar runtime and makes the agent operate through it: 
 > To test local web applications, write native Python Playwright scripts.
 
-From there, the skill does three practical things: it teaches the agent how to choose an approach, how to stabilise a dynamic UI before acting, and how to keep context usage under control.
+From there, the skill does three practical things: it teaches the agent how to choose an approach, how to stabilise a dynamic UI before acting, and how to keep context usage under control. It matters here because it shows progressive disclosure in practice: procedures live in scripts/examples so the model doesn’t have to “carry” them in prompt space.
 
 **1) It encodes a selection strategy (not just advice).**
 
