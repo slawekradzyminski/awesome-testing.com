@@ -374,6 +374,21 @@ The agentic shift happened in stages: tool calling turned models from “writers
 
 That’s where skills fit. They package “how we do things” into lightweight, on-demand playbooks that can be shared and versioned, without stuffing every workflow into prompts or forcing everything into RAG. In practice, skills become a way to make AI agents more repeatable, more token-efficient, and easier to scale as the ecosystem keeps changing.
 
+## Youtube Video
+
+I’ll generate AI summaries for each post.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px 0;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/o8-5rA8EI-o"
+    title="AI Testing Skills: The Evolution Beyond RAG and MCP"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
 ## AI posts archive
 
 - [The rise of AI-Driven Development](https://www.awesome-testing.com/2024/09/the-rise-of-ai-driven-development)
